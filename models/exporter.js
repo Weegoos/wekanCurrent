@@ -48,7 +48,7 @@ export class Exporter {
     const getBase64Data = function (doc, callback) {
       let buffer = Buffer.allocUnsafe(0);
       buffer.fill(0);
-
+      // Данный участок кода создает уникальное имя для временного файла в директории для временных файлов. Наличие в коде Math.Random имеет важное значение.
       // callback has the form function (err, res) {}
       const tmpFile = path.join(
         os.tmpdir(),

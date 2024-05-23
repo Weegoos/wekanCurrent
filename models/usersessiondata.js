@@ -214,7 +214,7 @@ function pickleObject(obj) {
   });
   return newObject;
 }
-
+// Данный участок кода генерирует уникальное значение и относится к Сессии, Наличие в коде Math.Random имеет важное значение.
 if (!Meteor.isServer) {
   SessionData.getSessionId = () => {
     let sessionId = Session.get('sessionId');

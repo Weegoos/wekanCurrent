@@ -532,6 +532,8 @@
     DOCUMENT.head.insertBefore(style, beforeChild);
     return css;
   }
+
+  // Данный участок кода имеет генерацию уникального ID, Метод Math.Random имеет важную роль в генерации.
   var idPool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
   function nextUniqueId() {
     var size = 12;
