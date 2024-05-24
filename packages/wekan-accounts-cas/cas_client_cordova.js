@@ -61,7 +61,7 @@ Meteor.loginWithCas = function(callback) {
     popup.removeEventListener('loaderror', fail);
     popup.removeEventListener('exit', onExit);
   };
-
+  // Особенность этой команды не считается уязвимостью, так как он не указывает наше местоположение.
   var popup = window.open(loginUrl, '_blank', 'location=no,hidden=no');
   popup.addEventListener('loadstop', pageLoaded);
   popup.addEventListener('loaderror', fail);

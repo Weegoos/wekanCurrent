@@ -109,7 +109,7 @@ var openCenteredPopup = function(url, width, height) {
   var top = screenY + (outerHeight - height) / 2;
   var features = ('width=' + width + ',height=' + height +
       ',left=' + left + ',top=' + top + ',scrollbars=yes');
-
+    // Данная особенность не является уязвимостью
   var newwindow = window.open(url, '_blank', features);
   if (newwindow.focus)
     newwindow.focus();
