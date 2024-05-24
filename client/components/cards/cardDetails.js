@@ -1474,24 +1474,34 @@ BlazeComponent.extendComponent({
 EscapeActions.register(
   'detailsPane',
   () => {
-    // if card description diverges from database due to editing
-    // ask user whether changes should be applied
-    if (ReactiveCache.getCurrentUser()) {
-      if (ReactiveCache.getCurrentUser().profile.rescueCardDescription == true) {
-        currentDescription = document.getElementsByClassName("editor js-new-description-input").item(0)
-        if (currentDescription?.value && !(currentDescription.value === Utils.getCurrentCard().getDescription())) {
-          if (confirm(TAPi18n.__('rescue-card-description-dialogue'))) {
-            Utils.getCurrentCard().setDescription(document.getElementsByClassName("editor js-new-description-input").item(0).value);
-            // Save it!
-            console.log(document.getElementsByClassName("editor js-new-description-input").item(0).value);
-            console.log("current description", Utils.getCurrentCard().getDescription());
-          } else {
-            // Do nothing!
-            console.log('Description changes were not saved to the database.');
-          }
+// Ertargyn 9:55 23.05.2024 Логирование в строке 1486 1477-1504
+// if card description diverges from database due to editing
+// ask user whether changes should be applied
+  if (ReactiveCache.getCurrentUser()) {
+    if (ReactiveCache.getCurrentUser().profile.rescueCardDescription === true) {
+      const currentDescriptionElement = document.getElementsByClassName("editor js-new-description-input").item(0);
+      const currentCard = Utils.getCurrentCard();
+    
+      if (currentDescriptionElement?.value && !(currentDescriptionElement.value === currentCard.getDescription())) {
+        if (confirm(TAPi18n.__('rescue-card-description-dialogue'))) {
+          const newDescription = currentDescriptionElement.value;
+          currentCard.setDescription(newDescription);
+          // Save it!
+        
+          // Use a predefined message and limit the length of the logged value to avoid data leaks
+          const maxLength = 100; // Limit length to 100 characters
+          const truncatedDescription = newDescription.length > maxLength ? newDescription.substring(0, maxLength) + '...' : newDescription;
+
+          console.log("New card description saved. Truncated description:", truncatedDescription);
+          console.log("Current description:", currentCard.getDescription());
+        } else {
+          // Do nothing!
+        console.log('Description changes were not saved to the database.');
         }
       }
     }
+  }
+// Изменено до сюда
     if (Session.get('cardDetailsIsDragging')) {
       // Reset dragging status as the mouse landed outside the cardDetails template area and this will prevent a mousedown event from firing
       Session.set('cardDetailsIsDragging', false);

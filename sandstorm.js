@@ -414,7 +414,8 @@ if (isSandstorm && Meteor.isClient) {
     message.rpcId = id;
     const obj = {};
     obj[name] = message;
-    window.parent.postMessage(obj, '*');
+    // Используем вместо '*' -> 'origin' Ertargyn 10:31
+    window.parent.postMessage(obj, 'origin');
     return new Promise((resolve, reject) => {
       rpcs[id] = response => {
         if (response.error) {
@@ -465,7 +466,8 @@ if (isSandstorm && Meteor.isClient) {
   // so that they could appear in the browser window.
   // See https://docs.sandstorm.io/en/latest/developing/path/
   function updateSandstormMetaData(msg) {
-    return window.parent.postMessage(msg, '*');
+    // Используем вместо '*' -> 'origin' Ertargyn 10:31
+    return window.parent.postMessage(msg, 'origin');
   }
 
   FlowRouter.triggers.enter([

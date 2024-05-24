@@ -8,6 +8,6 @@ Tracker.autorun(() => {
   try {
     moment.locale(language);
   } catch (err) {
-    console.error(err);
+    console.error('Error setting moment locale'); // 16:35 Ertargyn вместо (err) просто указали что произошла ошибка и таким образом иожно избежать от утечки информации
   }
 });

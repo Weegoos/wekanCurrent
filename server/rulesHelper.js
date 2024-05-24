@@ -157,7 +157,8 @@ RulesHelper = {
         });
       } catch (e) {
         // eslint-disable-next-line no-console
-        console.error(e);
+        // Ertargyn 17:14 вместо (е) выводит сообщение и избегает от утечки инф
+        console.error('An unexpected error occurred');
         return;
       }
     }
@@ -197,7 +198,8 @@ RulesHelper = {
         }
       } catch (e) {
         // eslint-disable-next-line no-console
-        console.error(e);
+        // Ertargyn 17:14 вместо (е) выводит сообщение и избегает от утечки инф
+        console.error('An unexpected error occurred');
         return;
       }
     }

@@ -2218,11 +2218,14 @@
         if (mutation) {
           acc.push(mutation);
         }
-      } catch (e) {
+      }  catch (e) {
         if (!PRODUCTION) {
           if (e.name === 'MissingIcon') {
             console.error(e);
           }
+        } else {
+          // Ertargyn 16:57 Логирование общего сообщения об ошибке в продакшн-среде
+          console.error('An error occurred.');
         }
       }
 

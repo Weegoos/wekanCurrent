@@ -4,7 +4,15 @@ import { T9n } from 'meteor/useraccounts:core';
 import { TAPi18n } from './tap';
 
 T9n.setTracker({ Tracker });
-
+// Вспомогательная функция для логирования ошибок
+function logError(err) {
+  if (process.env.NODE_ENV !== 'production') {
+    console.error(err); // Логирование ошибок в консоль только в режиме разработки
+  } else {
+    // Логирование в файл или отправка на внешний сервис логирования в режиме продакшн
+    // Например, использование библиотеки Winston или аналогичных
+  }
+}
 T9n.map('ar', require('meteor-accounts-t9n/build/ar').ar);
 T9n.map('ca', require('meteor-accounts-t9n/build/ca').ca);
 T9n.map('cs', require('meteor-accounts-t9n/build/cs').cs);
@@ -57,7 +65,17 @@ Tracker.autorun(() => {
     try {
       T9n.setLanguage(language.split('-')[0]);
     } catch (err) {
-      console.error(err);
+      logError(err); // Логирование ошибки с использованием функции logError
     }
   }
 });
+
+// Проблема была здесь в том, 12:37 Ertargyn 
+// что при обработке ошибок данная строка кода логируете ошибку дважды. 
+//     try {
+//       T9n.setLanguage(language.split('-')[0]);
+//     } catch (err) {
+//       console.error(err);
+//     }
+//   }
+// });

@@ -147,7 +147,8 @@ tx pull -f -l lt
 echo "Persian:"
 tx pull -f -l fa
 
-echo "Persian (Iran) فارسی/پارسی (ایران‎):"
+# ошибка была в том что здесь использовалься 'U+200E' 9:36 22.05 Ertargyn
+echo "Persian (Iran) فارسی/پارسی (ایران):"
 tx pull -f -l fa_IR
 
 echo "Indonesian (Indonesia):"

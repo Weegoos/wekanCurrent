@@ -165,7 +165,8 @@ const middleware = (req, res, next) => {
     });
 
   } catch (err) {
-    console.log("account-cas: unexpected error : " + err.message);
+    // Ertargyn 16:46 устранить утечку внешней информации в этом месте кода, можно его заменить на log -> error
+    console.error("account-cas: unexpected error");
     end(res, redirectUrl);
   }
 };

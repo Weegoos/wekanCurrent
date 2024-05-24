@@ -136,7 +136,8 @@ class LdapConnection:
                             data['initials'] = ''
                         try:
                             data['photo'] = ldap_data[self.user_photo_attribute][0]
-                            data['photo_hash'] = hashlib.md5(data['photo']).digest()
+                            # Ertargyn 14:06 23.05.2024 вместо md5 используем sha256
+                            data['photo_hash'] = hashlib.sha256(data['photo']).digest()
                         except KeyError:
                             data['photo'] = None
                         data['is_superuser'] = f"{self.admin_group},{self.basedn}" in ldap_data['memberOf']

@@ -5079,8 +5079,11 @@
           if (e.name === 'MissingIcon') {
             console.error(e);
           }
+        } else {
+          // Ertargyn 16:51 В режиме продакшн можно логировать более общее сообщение а не все что связано с системой
+          console.error('An error occurred.');
         }
-      }
+      }      
 
       return acc;
     }, []);

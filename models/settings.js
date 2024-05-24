@@ -178,11 +178,12 @@ if (Meteor.isServer) {
       const defaultSetting = {
         disableRegistration: false,
         mailServer: {
-          username: '',
-          password: '',
-          host: '',
-          port: '',
-          enableTLS: false,
+          // 11:41 22.05.2024 Ошибка "Empty password" возникает из-за того, что поле пароля password в конфигурации почтового сервера остается пустым. Для устранения этой уязвимости нужно заполнить поле пароля безопасным значением, которое хранится в переменной окружения.
+          username: process.env.MAIL_USERNAME || '', 
+          password: process.env.MAIL_PASSWORD || '', 
+          host: process.env.MAIL_HOST || '', 
+          port: process.env.MAIL_PORT || '', 
+          enableTLS: process.env.MAIL_TLS === 'true', 
           from,
         },
         createdAt: now,

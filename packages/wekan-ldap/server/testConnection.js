@@ -21,14 +21,23 @@ Meteor.methods({
       ldap = new LDAP();
       ldap.connectSync();
     } catch (error) {
-      console.log(error);
-      throw new Meteor.Error(error.message);
+      if (!PRODUCTION) {
+        console.error(error); // Ertargyn 17:04 изменили и добавили else
+      } else {
+        console.error('An error occurred while connecting to LDAP.');
+      }
+      throw new Meteor.Error('LDAP connection error');
     }
 
     try {
       ldap.bindIfNecessary();
     } catch (error) {
-      throw new Meteor.Error(error.name || error.message);
+      if (!PRODUCTION) {
+        console.error(error);
+      } else {
+        console.error('An error occurred while binding to LDAP.');
+      }
+      throw new Meteor.Error('LDAP bind error');
     }
 
     return {

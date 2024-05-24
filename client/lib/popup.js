@@ -206,8 +206,15 @@ window.Popup = new (class {
   // is a reactive data source, the title will be changed reactively.
   _getTitle(popupName) {
     return () => {
+      // добавлено строка: 210-212 11:11 22.05.2024 Ertargyn ()
+      if (!popupName) {
+        throw new Error('popupName is empty or undefined');
+      }
+      
+      // В данном 209(далее 216) было добавлено 215 строка кода таким образом можно использовать переменную среду 
+      const encryptionKey = process.env.ENCRYPTION_KEY || 'defaultEncryptionKey';
       const translationKey = `${popupName}-title`;
-
+      
       // XXX There is no public API to check if there is an available
       // translation for a given key. So we try to translate the key and if the
       // translation output equals the key input we deduce that no translation
