@@ -2,6 +2,7 @@ Package.describe({
   name: 'meteor-autosize',
   summary: 'Automatically adjust textarea height based on user input.',
   version: '5.0.1',
+  // Использует meteor-autosize из репозитория GitHub, Batyr Ashim 23.05.2024
   git: "https://github.com/DeDeSt/meteor-autosize.git",
   documentation: 'README.md'
 });

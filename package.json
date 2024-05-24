@@ -1,6 +1,6 @@
 {
   "name": "wekan",
-  "version": "v7.45.0",
+  "version": "7.45.0",
   "description": "Open-Source kanban",
   "private": true,
   "repository": {
@@ -54,5 +54,15 @@
     "simpl-schema": "^3.4.6",
     "source-map-support": "^0.5.20",
     "uuid": "^8.3.2"
-  }
+  },
+  "main": "sandstorm.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "serve": "node sandstorm"
+  },
+  "type": "module",
+  "author": ""
 }

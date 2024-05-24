@@ -307,8 +307,15 @@
 				});
 				o.orientation.y = _plc[0] || 'auto';
 			}
+			// Batyr Ashim 22.05.2024
 			if (o.defaultViewDate instanceof Date || typeof o.defaultViewDate === 'string') {
-				o.defaultViewDate = DPGlobal.parseDate(o.defaultViewDate, format, o.language, o.assumeNearbyYear);
+				const parsedDate = DPGlobal.parseDate(o.defaultViewDate, format, o.language, o.assumeNearbyYear);
+				if (parsedDate && !isNaN(parsedDate.getTime())) {
+					o.defaultViewDate = parsedDate;
+				} else {
+					
+					console.error('Ошибка разбора даты:', o.defaultViewDate);
+				}
 			} else if (o.defaultViewDate) {
 				var year = o.defaultViewDate.year || new Date().getFullYear();
 				var month = o.defaultViewDate.month || 0;
@@ -542,10 +549,12 @@
 			return local;
 		},
 		_local_to_utc: function(local){
-			return local && new Date(local.getTime() - (local.getTimezoneOffset()*60000));
+			// Batyr Ashim 22.05.2024
+			return new Date(local.getTime() - (local.getTimezoneOffset() * 60000));
 		},
 		_zero_time: function(local){
-			return local && new Date(local.getFullYear(), local.getMonth(), local.getDate());
+			// Batyr Ashim 22.05.2024
+			return new Date(local.getFullYear(), local.getMonth(), local.getDate());
 		},
 		_zero_utc_time: function(utc){
 			return utc && UTCDate(utc.getUTCFullYear(), utc.getUTCMonth(), utc.getUTCDate());
@@ -777,11 +786,14 @@
 			dates = $.map(dates, $.proxy(function(date){
 				return DPGlobal.parseDate(date, this.o.format, this.o.language, this.o.assumeNearbyYear);
 			}, this));
+			// Batyr Ashim 22.05.2024
 			dates = $.grep(dates, $.proxy(function(date){
-				return (
-					!this.dateWithinRange(date) ||
-					!date
-				);
+				if (date instanceof Date && !this.dateWithinRange(date)) {
+					
+					return true;
+				} else {
+					return false;
+				}
 			}, this), true);
 			this.dates.replace(dates);
 
@@ -861,13 +873,29 @@
 				year = this.viewDate.getUTCFullYear(),
 				month = this.viewDate.getUTCMonth(),
 				today = UTCToday();
-			if (date.getUTCFullYear() < year || (date.getUTCFullYear() === year && date.getUTCMonth() < month)){
-				cls.push('old');
+			if (date instanceof Date){
+				// Batyr Ashim 22.05.2024
+				const dateYear = date.getUTCFullYear();
+				const dateMonth = date.getUTCMonth();
+				if (dateYear < year || (dateYear === year && dateMonth < month)) {
+					cls.push('old');
+				}
 			} else if (date.getUTCFullYear() > year || (date.getUTCFullYear() === year && date.getUTCMonth() > month)){
-				cls.push('new');
+				// Batyr Ashim 22.05.2024
+				const dateYear = date.getUTCFullYear();
+				const dateMonth = date.getUTCMonth();
+				if (dateYear < year || (dateYear === year && dateMonth < month)) {
+					cls.push('old');
+				}
 			}
-			if (this.focusDate && date.valueOf() === this.focusDate.valueOf())
-				cls.push('focused');
+			// Ashim Batyr 22.05.2024
+			if (this.focusDate instanceof Date && date instanceof Date) {
+				if (date.valueOf() === this.focusDate.valueOf()) {
+					cls.push('focused');
+				}
+			} else {
+				console.error('Ошибка: this.focusDate или date не является объектом Date');
+			}
 			// Compare internal UTC date with UTC today, not local today
 			if (this.o.todayHighlight && isUTCEquals(date, today)) {
 				cls.push('today');
@@ -885,18 +913,26 @@
 			}
 
 			if (this.range){
-				if (date > this.range[0] && date < this.range[this.range.length-1]){
-					cls.push('range');
+				// Batyr Ashim 22.05.2024
+				if (date instanceof Date && this.range[0] instanceof Date && this.range[this.range.length - 1] instanceof Date) {
+					if (date > this.range[0] && date < this.range[this.range.length - 1]) {
+						cls.push('range');
+					}
+				} else {
+					console.error('Ошибка: date, this.range[0] или this.range[this.range.length-1] не является объектом Date');
 				}
+				
 				if ($.inArray(date.valueOf(), this.range) !== -1){
 					cls.push('selected');
 				}
-				if (date.valueOf() === this.range[0]){
-          cls.push('range-start');
-        }
-        if (date.valueOf() === this.range[this.range.length-1]){
-          cls.push('range-end');
-        }
+				if (date instanceof Date && this.range[0] instanceof Date && date.valueOf() === this.range[0].valueOf()) {
+					cls.push('range-start');
+				}
+				
+				if (date instanceof Date && this.range[this.range.length - 1] instanceof Date && date.valueOf() === this.range[this.range.length - 1].valueOf()) {
+					cls.push('range-end');
+				}
+				
 			}
 			return cls;
 		},
@@ -1285,10 +1321,15 @@
 		},
 
 		_setDate: function(date, which){
-			if (!which || which === 'date')
-				this._toggle_multidate(date && new Date(date));
-			if ((!which && this.o.updateViewDate) || which === 'view')
-				this.viewDate = date && new Date(date);
+			// Batyr Ashim 22.05.2024
+			if (!which || which === 'date') {
+				this._toggle_multidate(date instanceof Date && new Date(date));
+			}
+			// Batyr Ashim 22.05.2024
+			if ((!which && this.o.updateViewDate) || which === 'view') {
+				this.viewDate = date instanceof Date && new Date(date);
+			}
+			
 
 			this.fill();
 			this.setValue();
@@ -1327,8 +1368,9 @@
 				test = dir === -1
 					// If going back one month, make sure month is not current month
 					// (eg, Mar 31 -> Feb 31 == Feb 28, not Mar 02)
+					// Batyr Ashim 22.05.2024
 					? function(){
-						return new_date.getUTCMonth() === month;
+						return new_date instanceof Date && new_date.getUTCMonth() === month;
 					}
 					// If going forward one month, make sure month is as expected
 					// (eg, Jan 31 -> Feb 31 == Feb 28, not Mar 02)
@@ -1391,10 +1433,11 @@
 				}).length > 0
 			);
 		},
-
+		// Batyr Ashim 22.05.2024
 		dateWithinRange: function(date){
-			return date >= this.o.startDate && date <= this.o.endDate;
+			return date instanceof Date && date >= this.o.startDate && date <= this.o.endDate;
 		},
+		
 
 		keydown: function(e){
 			if (!this.picker.is(':visible')){
@@ -1824,8 +1867,9 @@
 				}
 				return Datepicker.prototype._zero_utc_time(date);
 			}
+			// Batyr Ashim 22.05.2024
+			parts = date instanceof String && date.match(this.nonpunctuation) || [];
 
-			parts = date && date.match(this.nonpunctuation) || [];
 
 			function applyNearbyYear(year, threshold){
 				if (threshold === true)

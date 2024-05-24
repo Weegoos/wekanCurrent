@@ -109,8 +109,8 @@ var openCenteredPopup = function(url, width, height) {
   var top = screenY + (outerHeight - height) / 2;
   var features = ('width=' + width + ',height=' + height +
       ',left=' + left + ',top=' + top + ',scrollbars=yes');
-
-  var newwindow = window.open(url, '_blank', features);
+     // Batyr Ashim 22.05.2024 Unsafe target link (JavaScript)
+      var newwindow = window.open(url, '_blank', `${features},noopener,noreferrer`);
   if (newwindow.focus)
     newwindow.focus();
   return newwindow;

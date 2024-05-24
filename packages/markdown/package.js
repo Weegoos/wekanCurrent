@@ -2,6 +2,7 @@ Package.describe({
 	name: 'wekan-markdown',
 	summary: 'GitHub flavored markdown parser for Meteor based on markdown-it',
 	version: '1.0.9',
+	// Использует ссылку из репозитория GitHub, Batyr Ashim 23.05.2024
 	git: 'https://github.com/wekan/markdown.git',
 });
 

@@ -13,7 +13,8 @@ Tinytest.addAsync(
 'Triggers - runTriggers - redirect with url',
 function(test, done) {
   var store = [];
-  var url = "http://google.com";
+  // Batyr Ashim 23.05.2024
+  var url = "https://google.com";
   var triggers = MakeTriggers(2, store);
   triggers.splice(1, 0, function(context, redirect) {
     redirect(url); 
@@ -30,7 +31,8 @@ Tinytest.addAsync(
 'Triggers - runTriggers - redirect without url',
 function(test, done) {
   var store = [];
-  var url = "http://google.com";
+    // Batyr Ashim 23.05.2024
+  var url = "https://google.com";
   var triggers = MakeTriggers(2, store);
   triggers.splice(1, 0, function(context, redirect) {
     try {
@@ -49,7 +51,8 @@ Tinytest.addAsync(
 'Triggers - runTriggers - redirect in a different event loop',
 function(test, done) {
   var store = [];
-  var url = "http://google.com";
+    // Batyr Ashim 23.05.2024
+  var url = "https://google.com";
   var triggers = MakeTriggers(2, store);
   var doneCalled = false;
 
@@ -75,7 +78,8 @@ Tinytest.addAsync(
 'Triggers - runTriggers - redirect called multiple times',
 function(test, done) {
   var store = [];
-  var url = "http://google.com";
+    // Batyr Ashim 23.05.2024
+  var url = "https://google.com";
   var triggers = MakeTriggers(2, store);
   var redirectCalled = false;
 

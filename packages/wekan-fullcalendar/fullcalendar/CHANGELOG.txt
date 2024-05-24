@@ -382,7 +382,8 @@ v2.9.0 (2016-07-10)
 -------------------
 
 - Setters for (almost) all options (#564).
-  See [docs](http://fullcalendar.io/docs/utilities/dynamic_options/) for more info.
+# Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
+ See [docs](https://fullcalendar.io/docs/utilities/dynamic_options/) for more info.
 - Travis CI improvements (#3266)
 
 
@@ -821,12 +822,16 @@ which cover about half of FullCalendar's functionality. Special thanks to @incre
 
 In addition, the main development repo has been repurposed to also include the built distributable
 JS/CSS for the project and will serve as the new [Bower] endpoint.
-
+# Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
 [MomentJS]: http://momentjs.com/
+# Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
 [Upgrading-to-v2]: http://arshaw.com/fullcalendar/wiki/Upgrading-to-v2/
 [Date-Milestone]: https://code.google.com/p/fullcalendar/issues/list?can=1&q=milestone%3Ddate
+# Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
 [Karma]: http://karma-runner.github.io/
+# Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
 [Jasmine]: http://jasmine.github.io/
+# Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
 [Bower]: http://bower.io/
 
 

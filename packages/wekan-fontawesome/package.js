@@ -2,6 +2,7 @@ Package.describe({
   name: 'wekan-fontawesome',
   summary: 'Font Awesome (official)',
   version: '6.4.2',
+  // Использует Font Awesome из репозитория GitHub, Batyr Ashim 23.05.2024
   git: 'https://github.com/MeteorPackaging/Font-Awesome.git',
   documentation: 'README.md'
 });

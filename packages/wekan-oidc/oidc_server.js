@@ -134,53 +134,59 @@ if (Meteor.release) {
   userAgent += "/" + Meteor.release;
 }
 
-if (process.env.ORACLE_OIM_ENABLED !== 'true' && process.env.ORACLE_OIM_ENABLED !== true) {
+// Батыр Ашим 12:42 20.05.2024
+if (process.env.ORACLE_OIM_ENABLED === 'true' || process.env.ORACLE_OIM_ENABLED === true) {
   var getToken = function (query) {
     var debug = process.env.DEBUG === 'true';
     var config = getConfiguration();
-    if(config.tokenEndpoint.includes('https://')){
-      var serverTokenEndpoint = config.tokenEndpoint;
-    }else{
-      var serverTokenEndpoint = config.serverUrl + config.tokenEndpoint;
+    if (!config) {
+      throw new Error("Configuration is not defined");
     }
+    var serverTokenEndpoint = config.tokenEndpoint.includes('https://') ? config.tokenEndpoint : config.serverUrl + config.tokenEndpoint;
     var requestPermissions = config.requestPermissions;
     var response;
 
+    // OIM needs basic Authentication token in the header - ClientID + SECRET in base64
+    var dataToken = process.env.OAUTH2_CLIENT_ID + ':' + process.env.OAUTH2_SECRET;
+    var strBasicToken = Buffer.from(dataToken);
+    var strBasicToken64 = strBasicToken.toString('base64');
+
+    // eslint-disable-next-line no-console
+    if (debug) console.log('Basic Token: ', strBasicToken64);
+
     try {
       var postOptions = {
-          headers: {
-            Accept: 'application/json',
-            "User-Agent": userAgent
-          },
-          params: {
-            code: query.code,
-            client_id: config.clientId,
-            client_secret: OAuth.openSecret(config.secret),
-            redirect_uri: OAuth._redirectUri('oidc', config),
-            grant_type: 'authorization_code',
-            state: query.state
-          }
-        };
+        headers: {
+          Accept: 'application/json',
+          "User-Agent": userAgent,
+          "Authorization": "Basic " + strBasicToken64
+        },
+        params: {
+          code: query.code,
+          client_id: config.clientId,
+          client_secret: OAuth.openSecret(config.secret),
+          redirect_uri: OAuth._redirectUri('oidc', config),
+          grant_type: 'authorization_code',
+          state: query.state
+        }
+      };
       if (httpCa) {
-	postOptions['npmRequestOptions'] = { ca: httpCa };
+        postOptions['npmRequestOptions'] = { ca: httpCa };
       }
       response = HTTP.post(serverTokenEndpoint, postOptions);
     } catch (err) {
-      throw _.extend(new Error("Failed to get token from OIDC " + serverTokenEndpoint + ": " + err.message),
-        { response: err.response });
+      throw new Error("Failed to get token from OIDC " + serverTokenEndpoint + ": " + err.message);
     }
     if (response.data.error) {
       // if the http response was a json object with an error attribute
       throw new Error("Failed to complete handshake with OIDC " + serverTokenEndpoint + ": " + response.data.error);
     } else {
-      if (debug) {
-        //Ertargyn 10:21 23.05.2024 Логирование общего сообщения без чувствительной информации
-        console.log('XXX: getToken response: ', response.data);
-    }
+      if (debug) console.log('XXX: getToken response: ', response.data);
       return response.data;
     }
   };
 }
+
 
 if (process.env.ORACLE_OIM_ENABLED === 'true' || process.env.ORACLE_OIM_ENABLED === true) {
 

@@ -7,9 +7,13 @@ use JSON;
 use LWP::UserAgent;
 use MIME::Base64 qw/decode_base64/;
 use Try::Tiny;
+# Batyr Ashim 21.05.2024 9:55
+use Env::File;
+
+env_file('../app.env');
 
 my $BASE_URL = 'https://taskboard.example.com/api';
-my $TOKEN    = 'MY_TOKEN';
+my $TOKEN    = $ENV{'MY_TOKEN'};
 my $me       = 'MY_USER_ID';
 my $ua       = LWP::UserAgent->new();
 

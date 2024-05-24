@@ -47,8 +47,9 @@ objects:
 - apiVersion: v1
   kind: Service
   metadata:
-    annotations:
-      template.openshift.io/expose-uri: http://{.spec.clusterIP}:{.spec.ports[?(.name=="wekan")].port}
+  # Batyr Ashim 21.05.2024
+  annotations:
+  template.openshift.io/expose-uri: https://{.spec.clusterIP}:{.spec.ports[?(.name=="wekan")].port}
     name: "${WEKAN_SERVICE_NAME}"
     labels:
       app: wekan

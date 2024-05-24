@@ -85,7 +85,7 @@ if arguments == 2:
         listboard = 'https://api.trello.com/1/boards/' + boardid + '?key=' + key + '&token=' + token
         body = requests.get(listboard, headers=headers)
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+           #  Ashim Batyr 23.05.2024
         # ------- BOARD END -----------
 
     if sys.argv[1] == 'card':
@@ -97,7 +97,7 @@ if arguments == 2:
         listcard = 'https://api.trello.com/1/cards/' + cardid + '?fields=all&key=' + key + '&token=' + token
         body = requests.get(listcard, headers=headers)
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+        #  Ashim Batyr 23.05.2024
         # ------- BOARD END -----------
 
     if sys.argv[1] == 'actions':
@@ -109,7 +109,7 @@ if arguments == 2:
         listboardactions = 'https://api.trello.com/1/boards/' + boardid + '/actions?key=' + key + '&token=' + token
         body = requests.get(listboardactions, headers=headers)
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+          #  Ashim Batyr 23.05.2024
         # ------- BOARD ACTIONS END -----------
 
     if sys.argv[1] == 'reactions':
@@ -121,7 +121,7 @@ if arguments == 2:
         listreactions = 'https://api.trello.com/1/actions/' + actionid + '/reactionsSummary?key=' + key + '&token=' + token
         body = requests.get(listreactions, headers=headers)
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+         #  Ashim Batyr 23.05.2024
         # ------- REACTIONS OF ACTIONID END -----------
 
     if sys.argv[1] == 'attachments':
@@ -133,7 +133,7 @@ if arguments == 2:
         listcardattachments = 'https://api.trello.com/1/cards/' + cardid + '/attachments?key=' + key + '&token=' + token
         body = requests.get(listcardattachments, headers=headers)
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+    #  Ashim Batyr 23.05.2024
         # ------- LIST CARD ATTACHMENTS END -----------
 
     if sys.argv[1] == 'download':
@@ -165,7 +165,7 @@ if arguments == 1:
         listboards = 'https://api.trello.com/1/members/me/boards?key=' + key + '&token=' + token
         body = requests.get(listboards, headers=headers)
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+            #  Ashim Batyr 23.05.2024
         # ------- LIST OF BOARDS END -----------
 
     if sys.argv[1] == 'emoji':
@@ -176,5 +176,5 @@ if arguments == 1:
         listemoji = 'https://api.trello.com/1/emoji?key=' + key + '&token=' + token
         body = requests.get(listemoji, headers=headers)
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+       #  Ashim Batyr 23.05.2024
         # ------- LIST OF EMOJI END -----------

@@ -230,10 +230,13 @@ BlazeComponent.extendComponent({
         attachment.path &&
         Blaze.toHTML(
           HTML.A(
+            // Batyr Ashim 22.05.2024 Unsafe target link (JavaScript)
             {
               href: `${attachment.link()}?download=true`,
+              rel: 'noopener noreferrer',
               target: '_blank',
-            },
+          },
+          
             DOMPurify.sanitize(attachment.name),
           ),
         )) ||

@@ -223,7 +223,9 @@ var GcalEventSource = /** @class */ (function (_super) {
     GcalEventSource.prototype.buildRequestParams = function (start, end, timezone) {
         var apiKey = this.googleCalendarApiKey || this.calendar.opt('googleCalendarApiKey');
         var params;
+        // 
         if (!apiKey) {
+            // Ashim Batyr 23.05.2024
             this.reportError('Specify a googleCalendarApiKey. See http://fullcalendar.io/docs/google_calendar/');
             return null;
         }
@@ -284,7 +286,7 @@ var GcalEventSource = /** @class */ (function (_super) {
         }
         $.extend(this.ajaxSettings, rawProps);
     };
-    GcalEventSource.API_BASE = 'https://www.googleapis.com/calendar/v3/calendars';
+    // https://www.googleapis.com/calendar/v3/calendar нету в white list, удалил. Batyr Ashim 23.05.2024
     return GcalEventSource;
 }(fullcalendar_1.EventSource));
 exports.default = GcalEventSource;

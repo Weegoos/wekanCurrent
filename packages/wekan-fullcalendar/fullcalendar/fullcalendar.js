@@ -635,7 +635,9 @@ function durationHasTime(dur) {
 }
 exports.durationHasTime = durationHasTime;
 function isNativeDate(input) {
+    // Batyr Ashim 22.05.2024
     return Object.prototype.toString.call(input) === '[object Date]' || input instanceof Date;
+
 }
 exports.isNativeDate = isNativeDate;
 // Returns a boolean about whether the given input is a time string, like "06:40:00" or "06:00"
@@ -7473,9 +7475,11 @@ var DayGrid = /** @class */ (function (_super) {
             // because they rely on the locale's dow (possibly overridden by
             // our firstDay option), which may not be Monday. We cannot change
             // dow, because that would affect the calendar start day as well.
-            if (date._locale._fullCalendar_weekCalc === 'ISO') {
+            // Batyr Ashim 22.05.2024
+            if (date._locale && date._locale._fullCalendar_weekCalc === 'ISO') {
                 weekCalcFirstDoW = 1; // Monday by ISO 8601 definition
             }
+            
             else {
                 weekCalcFirstDoW = date._locale.firstDayOfWeek();
             }
@@ -7485,10 +7489,11 @@ var DayGrid = /** @class */ (function (_super) {
                 ' data-date="' + date.format() + '"' :
                 '') +
             '>';
-        if (this.cellWeekNumbersVisible && (date.day() === weekCalcFirstDoW)) {
-            html += view.buildGotoAnchorHtml({ date: date, type: 'week' }, { 'class': 'fc-week-number' }, date.format('w') // inner HTML
-            );
-        }
+            // Batyr Ashim 22.05.2024
+            if (this.cellWeekNumbersVisible && date.day() === weekCalcFirstDoW) {
+                html += view.buildGotoAnchorHtml({ date: date, type: 'week' }, { 'class': 'fc-week-number' }, date.format('w'));
+            }
+            
         if (isDayNumberVisible) {
             html += view.buildGotoAnchorHtml(date, { 'class': 'fc-day-number' }, date.format('D') // inner HTML
             );
@@ -7673,13 +7678,15 @@ var DayGrid = /** @class */ (function (_super) {
                 if (segsBelow.length) {
                     td = cellMatrix[levelLimit - 1][col];
                     moreLink = _this.renderMoreLink(row, col, segsBelow);
-                    moreWrap = $('<div>').append(moreLink);
+                    // Batyr Ashim 21.05.2024 9:33
+                    moreWrap = $('<div>').append(document.createTextNode(moreLink)); 
                     td.append(moreWrap);
                     moreNodes.push(moreWrap[0]);
                 }
                 col++;
             }
         };
+        
         if (levelLimit && levelLimit < rowStruct.segLevels.length) { // is it actually over the limit?
             levelSegs = rowStruct.segLevels[levelLimit - 1];
             cellMatrix = rowStruct.cellMatrix;
@@ -7698,24 +7705,24 @@ var DayGrid = /** @class */ (function (_super) {
                     totalSegsBelow += segsBelow.length;
                     col++;
                 }
-                if (totalSegsBelow) { // do we need to replace this segment with one or many "more" links?
-                    td = cellMatrix[levelLimit - 1][seg.leftCol]; // the segment's parent cell
+                if (totalSegsBelow) {
+                    td = cellMatrix[levelLimit - 1][seg.leftCol];
                     rowspan = td.attr('rowspan') || 1;
                     segMoreNodes = [];
-                    // make a replacement <td> for each column the segment occupies. will be one for each colspan
                     for (j = 0; j < colSegsBelow.length; j++) {
                         moreTd = $('<td class="fc-more-cell">').attr('rowspan', rowspan);
                         segsBelow = colSegsBelow[j];
-                        moreLink = this.renderMoreLink(row, seg.leftCol + j, [seg].concat(segsBelow) // count seg as hidden too
-                        );
-                        moreWrap = $('<div>').append(moreLink);
+                        moreLink = this.renderMoreLink(row, seg.leftCol + j, [seg].concat(segsBelow));
+                        // Batyr Ashim 21.05.2024 9:36
+                        moreWrap = $('<div>').text(moreLink); 
                         moreTd.append(moreWrap);
                         segMoreNodes.push(moreTd[0]);
                         moreNodes.push(moreTd[0]);
                     }
-                    td.addClass('fc-limited').after($(segMoreNodes)); // hide original <td> and inject replacements
+                    td.addClass('fc-limited').after($(segMoreNodes));
                     limitedNodes.push(td[0]);
                 }
+                
             }
             emptyCellsUntil(this.colCnt); // finish off the level
             rowStruct.moreEls = $(moreNodes); // for easy undoing later

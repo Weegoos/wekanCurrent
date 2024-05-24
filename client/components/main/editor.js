@@ -440,7 +440,8 @@ Template.viewer.events({
         // Open links in current browser tab, changed from _blank to _self, and back to _blank:
         // https://github.com/wekan/wekan/discussions/3534
         //window.open(href, '_self');
-        window.open(href, '_blank');
+         // Batyr Ashim 22.05.2024 Unsafe target link (JavaScript)
+        window.open(href, '_blank', 'noopener noreferrer');
       }
     }
     if (prevent) {

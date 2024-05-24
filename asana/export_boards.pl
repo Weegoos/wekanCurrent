@@ -6,9 +6,11 @@ use HTTP::Request;
 use JSON;
 use LWP::UserAgent;
 use MIME::Base64 qw/encode_base64/;
-
+use Env::File;
+env_file('../app.env');
+# Batyr Ashim 21.05.2024 9:59
 my $BASE_URL      = 'https://app.asana.com/api/1.0';
-my $ASANA_API_KEY = 'ASANA_PERSONAL_TOKEN';
+my $ASANA_API_KEY = $ENV{'ASANA_API_KEY'};
 my $ua            = LWP::UserAgent->new();
 
 open my $input_wekan, '<', 'template.json';

@@ -10,7 +10,9 @@
       # MongoDB database URL required
       export MONGO_URL=mongodb://127.0.0.1:27017/wekan
       #-----------------------------------------------------------------
+      # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 22.05.2024
       # If port is 80, must change ROOT_URL to: http://YOUR-WEKAN-SERVER-IPv4-ADDRESS , like http://192.168.0.100
+      # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 22.05.2024
       # If port is not 80, must change ROOT_URL to: http://YOUR-WEKAN-SERVER-IPv4-ADDRESS:YOUR-PORT-NUMBER , like http://192.168.0.100:2000
       # If ROOT_URL is not correct, these do not work: translations, uploading attachments.
       export ROOT_URL=http://localhost:2000
@@ -168,6 +170,7 @@
       # Default value: true
       export BROWSER_POLICY_ENABLED=true
       # When browser policy is enabled, HTML code at this Trusted URL can have iframe that embeds Wekan inside.
+      # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 22.05.2024
       # Example: export TRUSTED_URL=http://example.com
       export TRUSTED_URL=''
       # What to send to Outgoing Webhook, or leave out. Example, that includes all that are default: cardId,listId,oldListId,boardId,comment,user,card,commentId .

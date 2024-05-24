@@ -65,7 +65,7 @@ function npm_call(){
 echo
 PS3='Please enter your choice: '
 options=("Install Wekan dependencies" "Build Wekan" "Run Meteor for dev on http://localhost:4000" "Run Meteor for dev on http://CURRENT-IP-ADDRESS:4000" "Run Meteor for dev on http://CUSTOM-IP-ADDRESS:PORT" "Quit")
-
+# Батыр Ашим 21.05.2024 
 select opt in "${options[@]}"
 do
     case $opt in
@@ -171,22 +171,26 @@ do
 		WITH_API=true RICHER_CARD_COMMENT_EDITOR=false ROOT_URL=http://localhost:4000 meteor run --exclude-archs web.browser.legacy,web.cordova --port 4000
 		break
 		;;
-
-    "Run Meteor for dev on http://CURRENT-IP-ADDRESS:4000")
+	#  Batyr Ashim 21.05.2024
+    "Run Meteor for dev on https://CURRENT-IP-ADDRESS:4000")
 		IPADDRESS=$(ip a | grep 'noprefixroute' | grep 'inet ' | cut -d: -f2 | awk '{ print $2}' | cut -d '/' -f 1)
 		echo "Your IP address is $IPADDRESS"
-		WITH_API=true RICHER_CARD_COMMENT_EDITOR=false ROOT_URL=http://$IPADDRESS:4000 meteor run --exclude-archs web.browser.legacy,web.cordova --port 4000
+		#   Batyr Ashim 21.05.2024
+		WITH_API=true RICHER_CARD_COMMENT_EDITOR=false ROOT_URL=https://$IPADDRESS:4000 meteor run --exclude-archs web.browser.legacy,web.cordova --port 4000
 		break
 		;;
-
+	#  Выходит HTTP usage из-за ссылки http://CUSTOM-IP-ADDRESS:PORT Batyr Ashim 21.05.2024
     "Run Meteor for dev on http://CUSTOM-IP-ADDRESS:PORT")
 		ip address
 		echo "From above list, what is your IP address?"
 		read IPADDRESS
 		echo "On what port you would like to run Wekan?"
 		read PORT
-		echo "ROOT_URL=http://$IPADDRESS:$PORT"
-    WITH_API=true RICHER_CARD_COMMENT_EDITOR=false ROOT_URL=http://$IPADDRESS:$PORT meteor run --exclude-archs web.browser.legacy,web.cordova --port $PORT
+		# Batyr Ashim 21.05.2024
+		echo "ROOT_URL=https://$IPADDRESS:$PORT"
+# Batyr Ashim 21.05.2024
+   WITH_API=true RICHER_CARD_COMMENT_EDITOR=false ROOT_URL=https://$IPADDRESS:$PORT meteor run --exclude-archs web.browser.legacy,web.cordova --port $PORT
+
 		break
     ;;
 

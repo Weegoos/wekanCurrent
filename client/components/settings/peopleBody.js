@@ -880,15 +880,19 @@ UpdateUserOrgsOrTeamsElement = function(isNewUser = false){
   }
   index = lstInputValues.indexOf(selectedEltValue);
   indexId = lstInputValuesIds.indexOf(selectedEltValueId);
-  if(userOrgsTeamsAction == "addOrg" || userOrgsTeamsAction == "addTeam"){
-    if(index <= -1 && selectedEltValueId != "-1"){
+//   Batyr Ashim 22.05.2024
+if (userOrgsTeamsAction === "addOrg" || userOrgsTeamsAction === "addTeam") {
+  switch(true) {
+    case index <= -1 && selectedEltValueId !== "-1":
       lstInputValues.push(selectedEltValue);
-    }
-
-    if(indexId <= -1 && selectedEltValueId != "-1"){
+    case indexId <= -1 && selectedEltValueId !== "-1":
       lstInputValuesIds.push(selectedEltValueId);
-    }
+      break;
+    default:
+      break;
   }
+}
+
   else{
     if(index > -1 && selectedEltValueId != "-1"){
       lstInputValues.splice(index, 1);

@@ -470,22 +470,24 @@ export class FileStoreStrategyS3 extends FileStoreStrategy {
         Key: path
       };
 
-      if (http.request.headers.range) {
-        const vRef  = fileRef.versions[version];
-        let range   = _.clone(http.request.headers.range);
+      // Batyr Ashim 23.05.2024
+      if (http.request.headers && http.request.headers.range) {
+
+        const vRef = fileRef.versions[version];
+        let range = http.request.headers.range ? _.clone(http.request.headers.range) : null;
         const array = range.split(/bytes=([0-9]*)-([0-9]*)/);
         const start = parseInt(array[1]);
-        let end     = parseInt(array[2]);
+        let end = parseInt(array[2]);
         if (isNaN(end)) {
-          // Request data from AWS:S3 by small chunks
-          end       = (start + this.chunkSize) - 1;
+          end = (start + this.chunkSize) - 1;
           if (end >= vRef.size) {
-            end     = vRef.size - 1;
+            end = vRef.size - 1;
           }
         }
-        opts.Range   = `bytes=${start}-${end}`;
-        http.request.headers.range = `bytes=${start}-${end}`;
+        opts.Range = `bytes=${start}-${end}`;
+        http.request.setHeader('range', `bytes=${start}-${end}`);
       }
+      
 
       const fileColl = this;
       s3Client.getObject(opts, function (error) {
@@ -495,10 +497,12 @@ export class FileStoreStrategyS3 extends FileStoreStrategy {
             http.response.end();
           }
         } else {
-          if (http.request.headers.range && this.httpResponse.headers['content-range']) {
-            // Set proper range header in according to what is returned from AWS:S3
-            http.request.headers.range = this.httpResponse.headers['content-range'].split('/')[0].replace('bytes ', 'bytes=');
-          }
+          // Batyr Ashim 23.05.2024
+          if (http.request.headers && this.httpResponse.headers && this.httpResponse.headers['content-range']) {
+            const contentRangeHeader = this.httpResponse.headers['content-range'];
+            const rangeValue = contentRangeHeader.split('/')[0].replace('bytes ', 'bytes=');
+            http.request.headers.range = rangeValue;
+        }
 
           const dataStream = new stream.PassThrough();
           fileColl.serve(http, fileRef, fileRef.versions[version], version, dataStream);

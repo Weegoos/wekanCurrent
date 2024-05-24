@@ -2,6 +2,7 @@ Package.describe({
   summary: "CAS support for accounts",
   version: "0.1.0",
   name: "wekan-accounts-cas",
+   // Использует meteor-accounts-cas из репозитория GitHub, Batyr Ashim 23.05.2024
   git: "https://github.com/wekan/meteor-accounts-cas"
 });
 
@@ -21,7 +22,7 @@ Package.onUse(function(api) {
 
 Npm.depends({
   xml2js: "0.4.17",
-  cas: "https://github.com/anrizal/node-cas/tarball/2baed530842e7a437f8f71b9346bcac8e84773cc"
+  // Ashim Batyr 23.05.2024 нету в white list
 });
 
 Cordova.depends({

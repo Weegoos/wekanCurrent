@@ -2998,41 +2998,45 @@ const findDueCards = days => {
 };
 const addCronJob = _.debounce(
   Meteor.bindEnvironment(function findDueCardsDebounced() {
-    const envValue = process.env.NOTIFY_DUE_DAYS_BEFORE_AND_AFTER;
-    if (!envValue) {
+    const notifyDaysBeforeAndAfter = process.env.NOTIFY_DUE_DAYS_BEFORE_AND_AFTER;
+    if (!notifyDaysBeforeAndAfter) {
       return;
     }
-    const notifydays = envValue
+    
+    const notifyDays = notifyDaysBeforeAndAfter
       .split(',')
-      .map(value => {
-        const iValue = parseInt(value, 10);
-        if (!(iValue > 0 && iValue < 15)) {
-          // notifying due is disabled
-          return false;
-        } else {
-          return iValue;
-        }
-      })
-      .filter(Boolean);
-    const notifyitvl = process.env.NOTIFY_DUE_AT_HOUR_OF_DAY; //passed in the itvl has to be a number standing for the hour of current time
-    const defaultitvl = 8; // default every morning at 8am, if the passed env variable has parsing error use default
-    const itvl = parseInt(notifyitvl, 10) || defaultitvl;
-    const scheduler = (job => () => {
+      .map(value => parseInt(value, 10))
+      .filter(value => value > 0 && value < 15);
+    
+    const notifyHourOfDay = process.env.NOTIFY_DUE_AT_HOUR_OF_DAY;
+    const defaultHourOfDay = 8;
+    const hourOfDay = parseInt(notifyHourOfDay, 10) || defaultHourOfDay;
+    
+    const scheduler = () => {
       const now = new Date();
-      const hour = 3600 * 1e3;
-      if (now.getHours() === itvl) {
-        if (typeof job === 'function') {
-          job();
-        }
+      const currentHour = now.getHours();
+      //  Batyr Ashim 22.05.2024
+      let delay;
+      if (currentHour >= hourOfDay) {
+        const tomorrow = new Date(now);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        tomorrow.setHours(hourOfDay, 0, 0, 0); 
+        delay = tomorrow - now;
+      } else {
+        delay = (hourOfDay - currentHour) * 3600 * 1000;
       }
-      Meteor.setTimeout(scheduler, hour);
-    })(() => {
-      findDueCards(notifydays);
-    });
+      
+      Meteor.setTimeout(() => {
+        findDueCards(notifyDays);
+        scheduler(); 
+      }, delay);
+    };
+    
     scheduler();
   }),
-  500,
+  500
 );
+
 
 if (Meteor.isServer) {
   Meteor.methods({

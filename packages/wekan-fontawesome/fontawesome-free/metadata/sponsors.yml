@@ -27,7 +27,8 @@ algolia:
   icons:
     - algolia
   label: Algolia
-  url: 'http://www.algolia.com'
+  # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
+ url: 'https://www.algolia.com'
 amazon-web-services:
   icons:
     - aws
@@ -37,6 +38,7 @@ amilia:
   icons:
     - amilia
   label: Amilia
+    # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://www.amilia.com'
 angry-creative:
   icons:
@@ -52,11 +54,13 @@ apper-systems-ab:
   icons:
     - apper
   label: Apper Systems AB
-  url: 'http://www.apper.com'
+    # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
+  url: 'http://www.apper.com' 
 'asymmetrik,ltd':
   icons:
     - asymmetrik
   label: 'Asymmetrik, Ltd.'
+    # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://asymmetrik.com'
 ausmed-education:
   icons:
@@ -72,11 +76,13 @@ bi-mobject:
   icons:
     - bimobject
   label: BIMobject
+    # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://bimobject.com'
 bity:
   icons:
     - bity
   label: Bity
+    # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://bity.com'
 blackpulp-designs:
   icons:
@@ -113,6 +119,7 @@ c-panel:
   icons:
     - cpanel
   label: cPanel
+    # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://cpanel.com'
 cab-md:
   icons:
@@ -128,11 +135,13 @@ cibltd:
   icons:
     - drum-steelpan
   label: Comprehensive Insurance Brokers Limited
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://www.cibltd.com'
 clear-blue-technologies:
   icons:
     - solar-panel
   label: Clear Blue Technologies
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://www.clearbluetechnologies.com'
 clicdata:
   icons:
@@ -187,11 +196,13 @@ cmplid:
   icons:
     - cmplid
   label: Cmplid
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://cmplid.com'
 cuttlefish:
   icons:
     - cuttlefish
   label: Cuttlefish
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://wearecuttlefish.com'
 cymedica:
   icons:
@@ -212,11 +223,13 @@ deploy-dog:
   icons:
     - deploydog
   label: deploy.dog
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://deploy.dog'
 deskpro:
   icons:
     - deskpro
   label: Deskpro
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://www.deskpro.com'
 discourse:
   icons:
@@ -232,6 +245,7 @@ draft2-digital:
   icons:
     - draft2digital
   label: Draft2Digital
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://draft2digital.com'
 dragnsurvey:
   icons:
@@ -242,6 +256,7 @@ dyalog-apl:
   icons:
     - dyalog
   label: Dyalog APL
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://www.dyalog.com'
 econopublish:
   icons:
@@ -258,6 +273,7 @@ firstdraft:
   icons:
     - firstdraft
   label: firstdraft
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://www.firstdraft.com'
 fleetplan:
   icons:
@@ -286,6 +302,7 @@ gofore:
   icons:
     - gofore
   label: Gofore
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://gofore.com'
 graflr:
   icons:
@@ -301,6 +318,7 @@ gripfire-inc:
   icons:
     - gripfire
   label: 'Gripfire, Inc.'
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://gripfire.io'
 guilded:
   icons:
@@ -409,6 +427,7 @@ hub-spot:
   icons:
     - hubspot
   label: HubSpot
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://www.HubSpot.com'
 icis:
   icons:
@@ -469,6 +488,7 @@ joget:
   icons:
     - joget
   label: Joget
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://www.joget.org'
 john-campion:
   icons:
@@ -521,6 +541,7 @@ med-apps:
   icons:
     - medapps
   label: MedApps
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://medapps.com.au'
 medapps:
   icons:
@@ -556,11 +577,13 @@ mix:
   icons:
     - mix
   label: Mix
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://mix.com'
 mizuni:
   icons:
     - mizuni
   label: Mizuni
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://www.mizuni.com'
 mrt:
   icons:
@@ -576,6 +599,7 @@ napster:
   icons:
     - napster
   label: Napster
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://www.napster.com'
 nfc-forum:
   icons:
@@ -621,6 +645,7 @@ nutritionix:
   icons:
     - nutritionix
   label: Nutritionix
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://www.nutritionix.com'
 octopus-deploy:
   icons:
@@ -700,6 +725,7 @@ phabricator:
   icons:
     - phabricator
   label: Phabricator
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://phacility.com'
 pindigo:
   icons:
@@ -721,6 +747,7 @@ polpharma:
   icons:
     - puzzle
   label: Polpharma
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://www.polpharma.com'
 preflight-technologies-inc:
   icons:
@@ -735,6 +762,7 @@ preflight-technologies-inc:
     - user-pilot
     - user-pilot-tie
   label: Preflight Technologies Incorporated
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://www.preflighttech.com'
 promo-wizard:
   icons:
@@ -770,6 +798,7 @@ readme-io:
   icons:
     - readme
   label: Readme.io
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://readme.io'
 red-river:
   icons:
@@ -806,6 +835,7 @@ rock-rms:
   icons:
     - rockrms
   label: Rock RMS
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://rockrms.com'
 rocket-chat:
   icons:
@@ -859,6 +889,7 @@ schlix:
   icons:
     - schlix
   label: SCHLIX
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://schlix.com'
 screenpal:
   icons:
@@ -869,6 +900,7 @@ search-eng-in:
   icons:
     - searchengin
   label: SearchEng.in
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://searcheng.in'
 service-stack:
   icons:
@@ -890,6 +922,7 @@ shp:
   icons:
     - school
   label: SHP
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://shp.com'
 silicon-barn-inc:
   icons:
@@ -1008,6 +1041,7 @@ the-red-yeti:
   icons:
     - the-red-yeti
   label: The Red Yeti
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://theredyeti.com'
 the-us-sunnah-foundation:
   icons:
@@ -1338,6 +1372,7 @@ vaadin:
   icons:
     - vaadin
   label: Vaadin
+   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
   url: 'http://vaadin.com'
 van-raam:
   icons:

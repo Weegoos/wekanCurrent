@@ -23,6 +23,8 @@ Package.describe({
   summary: "Login service for Sandstorm.io applications",
   version: "0.8.0",
   name: "wekan-accounts-sandstorm",
+  // Использует wekan-accounts-sandstorm из репозитория GitHub, Batyr Ashim 23.05.2024
+
   git: "https://github.com/sandstorm-io/meteor-accounts-sandstorm.git"
 });
 

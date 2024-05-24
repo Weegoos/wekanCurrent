@@ -1,5 +1,7 @@
 Package.describe({
   name: "wekan-bootstrap-datepicker",
+  // Использует bootstrap-datepicker из репозитория GitHub, Batyr Ashim 23.05.2024
+
   git: "https://github.com/uxsolutions/bootstrap-datepicker.git",
   summary: "A datepicker for twitter bootstrap (@twbs)",
   version: "1.10.0",

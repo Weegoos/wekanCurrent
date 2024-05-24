@@ -565,14 +565,11 @@ class SchemaProperty(object):
                         input += '>>'
                     input += context.text_at(line, line)
                 input = ''.join(input)
-                logger.error('{}:{}-{} can not parse {}:\n{}'.format(context.path,
-                                                                     p.loc.start.line,
-                                                                     p.loc.end.line,
-                                                                     p.type,
-                                                                     input))
+                    #  Ashim Batyr 23.05.2024
+                
                 logger.error('esprima tree:\n{}'.format(p))
 
-                logger.error(traceback.format_exc())
+                   #  Ashim Batyr 23.05.2024
                 sys.exit(1)
 
         self._doc = None
@@ -818,7 +815,8 @@ def parse_schemas(schemas_dir):
     for root, dirs, files in os.walk(schemas_dir):
         files.sort()
         for filename in files:
-            path = os.path.join(root, filename)
+                #  Ashim Batyr 23.05.2024
+            path = os.path.join(sanitize(root), sanitize(filename))
             context = parse_file(path)
 
             if context is None:
@@ -886,7 +884,7 @@ def parse_schemas(schemas_dir):
 
                                     end_of_previous_operation = operation.loc.end.line
             except TypeError:
-                logger.warning(context.txt_for(statement))
+                   #  Ashim Batyr 23.05.2024
                 logger.error('{}:{}-{} can not parse {}'.format(path,
                                                                 statement.loc.start.line,
                                                                 statement.loc.end.line,

@@ -4,7 +4,7 @@
 // This script reads event data from a JSON file and outputs those events which are within the range
 // supplied by the "start" and "end" GET parameters.
 //
-// An optional "timezone" GET parameter will force all ISO8601 date stings to a given timezone.
+// An optional "timezone" GET parameter will force all ISO8601 date strings to a given timezone.
 //
 // Requires PHP 5.2.0 or higher.
 //--------------------------------------------------------------------------------------------------
@@ -31,6 +31,10 @@ if (isset($_GET['timezone'])) {
 
 // Read and parse our events JSON file into an array of event data arrays.
 $json = file_get_contents(dirname(__FILE__) . '/../json/events.json');
+
+// Filter JSON data to prevent XSS
+$json = htmlspecialchars($json, ENT_QUOTES, 'UTF-8');
+
 $input_arrays = json_decode($json, true);
 
 // Accumulate an output array of event data arrays.
@@ -47,4 +51,5 @@ foreach ($input_arrays as $array) {
 }
 
 // Send JSON to the client.
-echo json_encode($output_arrays);
+// Batyr Ashim 10:02 21.05.2024
+echo json_encode(array_map('htmlspecialchars', $output_arrays, array_fill(0, count($output_arrays), ENT_QUOTES)), JSON_HEX_QUOT);

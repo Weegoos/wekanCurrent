@@ -18,7 +18,9 @@ except ImportError:
 import json
 import requests
 import sys
-
+import os
+from dotenv import load_dotenv
+load_dotenv()
 arguments = len(sys.argv) - 1
 
 syntax = """=== Wekan API Python CLI: Shows IDs for addcard ===
@@ -61,9 +63,9 @@ If *nix:  chmod +x api.py => ./api.py users
     python3 api.py newuser USERNAME EMAIL PASSWORD
 """
 
-if arguments == 0:
-    print(syntax)
-    exit
+#  Ashim Batyr 23.05.2024
+if len(arguments) == 0:
+    exit()
 
 # TODO:
 #   print("  python3 api.py attachmentjson BOARDID ATTACHMENTID # One attachment as JSON base64")
@@ -77,8 +79,8 @@ if arguments == 0:
 # OIDC/OAuth2 etc uses email address as username.
 
 username = 'testtest'
-
-password = 'testtest'
+# batyr ashim 21.05.2024 10:22
+password = os.getenv("PASSWORD")
 
 wekanurl = 'http://localhost:4000/'
 
@@ -164,7 +166,7 @@ allusers = wekanurl + apiallusers
 # ------- LOGIN TOKEN START -----------
 
 data = {"username": username, "password": password}
-body = requests.post(wekanloginurl, json=data)
+body = requests.post(wekanloginurl, json=)\
 d = body.json()
 apikey = d['token']
 
@@ -181,7 +183,7 @@ if arguments == 10:
         settings = str(json.loads(sys.argv[6]))
         #  There is error: Settings must be object. So this does not work yet.
         #settings = {'currencyCode': 'EUR'}
-        print(type(settings))
+        #  Ashim Batyr 23.05.2024
         showoncard = sys.argv[7]
         automaticallyoncard = sys.argv[8]
         showlabelonminicard = sys.argv[9]
@@ -191,7 +193,7 @@ if arguments == 10:
         headers = {'Accept': 'application/json', 'Authorization': 'Bearer {}'.format(apikey)}
         post_data = {'authorId': '{}'.format(authorid), 'name': '{}'.format(name), 'type': '{}'.format(type1), 'settings': '{}'.format(settings), 'showoncard': '{}'.format(showoncard), 'automaticallyoncard': '{}'.format(automaticallyoncard), 'showlabelonminicard': '{}'.format(showlabelonminicard), 'showsumattopoflist': '{}'.format(showsumattopoflist)}
         body = requests.post(customfieldtoboard, data=post_data, headers=headers)
-        print(body.text)
+        #  Ashim Batyr 23.05.2024
         # ------- ADD CUSTOM FIELD TO BOARD END -----------
 
 if arguments == 8:
@@ -218,7 +220,7 @@ if arguments == 8:
         }
 
         body = requests.post(cardtolist, data=post_data, headers=headers)
-        print(body.text)
+      #  Ashim Batyr 23.05.2024
 
         # If ok id card
         if body.status_code == 200:
@@ -233,7 +235,7 @@ if arguments == 8:
                 print("=== EDIT CARD ===\n")
                 body = requests.get(edcard, headers=headers)
                 data2 = body.text.replace('}', "}\n")
-                print(data2)
+                #  Ashim Batyr 23.05.2024
             else:
                 print("Error obraining ID.")
         else:
@@ -255,7 +257,7 @@ if arguments == 7:
         headers = {'Accept': 'application/json', 'Authorization': 'Bearer {}'.format(apikey)}
         post_data = {'authorId': '{}'.format(authorid), 'title': '{}'.format(cardtitle), 'description': '{}'.format(carddescription), 'swimlaneId': '{}'.format(swimlaneid)}
         body = requests.post(cardtolist, data=post_data, headers=headers)
-        print(body.text)
+        #  Ashim Batyr 23.05.2024
         # ------- ADD CARD END -----------
 
 if arguments == 6:
@@ -276,7 +278,7 @@ if arguments == 6:
         print("=== EDIT CARD ===\n")
         body = requests.get(edcard, headers=headers)
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+        #  Ashim Batyr 23.05.2024
         # ------- EDIT CARD END -----------
 
     if sys.argv[1] == 'editcustomfield':
@@ -295,7 +297,7 @@ if arguments == 6:
         body = requests.post(edfield, data=post_data, headers=headers)
         print("=== EDIT CUSTOMFIELD ===\n")
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+       #  Ashim Batyr 23.05.2024
         # ------- EDIT CUSTOMFIELD END -----------
 
 if arguments == 5:
@@ -315,7 +317,7 @@ if arguments == 5:
         print("=== ADD LABEL ===\n")
         body = requests.get(edcard, headers=headers)
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+     #  Ashim Batyr 23.05.2024
         # ------- EDIT CARD ADD LABEL END -----------
 
     if sys.argv[1] == 'editcardcolor':
@@ -341,7 +343,7 @@ if arguments == 5:
         print("=== EDIT CARD COLOR ===\n")
         body = requests.get(edcard, headers=headers)
         data2 = body.text.replace('}', "}\n")
-        print(data2)
+        #  Ashim Batyr 23.05.2024
         # ------- EDIT CARD COLOR END -----------
 
 if arguments >= 4:
@@ -356,7 +358,7 @@ if arguments >= 4:
         post_data = {'username': '{}'.format(username),'email': '{}'.format(email),'password': '{}'.format(password)}
         body = requests.post(users, data=post_data, headers=headers)
         print("=== CREATE NEW USER ===\n")
-        print(body.text)
+      #  Ashim Batyr 23.05.2024
         # ------- CREATE NEW USER END -----------
         
     if sys.argv[1] == 'getcard':
@@ -376,7 +378,7 @@ if arguments >= 4:
 
             if response.status_code == 200:
                 data2 = response.text.replace('}', "}\n")
-                print(data2)
+            #  Ashim Batyr 23.05.2024
             else:
                 print(f"Error: {response.status_code}")
                 print(f"Response: {response.text}")
@@ -474,12 +476,12 @@ if arguments == 3:
         print("=== EDIT BOARD TITLE ===\n")
         #body = requests.get(edboardtitle, headers=headers)
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+      #  Ashim Batyr 23.05.2024
         if body.status_code == 200:
             print("Succesfull!")
         else:
             print(f"Error: {body.status_code}")
-            print(body.text)
+       #  Ashim Batyr 23.05.2024
 
         # ------- EDIT BOARD TITLE END -----------
 
@@ -498,12 +500,12 @@ if arguments == 3:
         print("=== COPY BOARD ===\n")
         #body = requests.get(edboardcopy, headers=headers)
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+        #  Ashim Batyr 23.05.2024
         if body.status_code == 200:
             print("Succesfull!")
         else:
             print(f"Error: {body.status_code}")
-            print(body.text)
+          #  Ashim Batyr 23.05.2024
 
         # ------- COPY BOARD END -----------
 
@@ -517,7 +519,7 @@ if arguments == 3:
         post_data = {'title': '{}'.format(listtitle)}
         body = requests.post(list, data=post_data, headers=headers)
         print("=== CREATE LIST ===\n")
-        print(body.text)
+    #  Ashim Batyr 23.05.2024
         # ------- CREATE LIST END -----------
 
     if sys.argv[1] == 'list':
@@ -530,7 +532,7 @@ if arguments == 3:
         print("=== INFO OF ONE LIST ===\n")
         body = requests.get(listone, headers=headers)
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+       #  Ashim Batyr 23.05.2024
         # ------- LISTS OF BOARD END -----------
 
     if sys.argv[1] == 'customfield':
@@ -543,7 +545,7 @@ if arguments == 3:
         print("=== INFO OF ONE CUSTOM FIELD ===\n")
         body = requests.get(customfieldone, headers=headers)
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+       #  Ashim Batyr 23.05.2024
         # ------- INFO OF CUSTOM FIELD END -----------
 
     if sys.argv[1] == 'cardsbyswimlane':
@@ -641,7 +643,7 @@ if arguments == 2:
         body = requests.get(boards, headers=headers)
         print("=== BOARDS ===\n")
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+      #  Ashim Batyr 23.05.2024
     # ------- BOARDS LIST END -----------
 
     if sys.argv[1] == 'board':
@@ -652,7 +654,7 @@ if arguments == 2:
         body = requests.get(board, headers=headers)
         print("=== BOARD ===\n")
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+      #  Ashim Batyr 23.05.2024
         # ------- BOARD INFO END -----------
 
     if sys.argv[1] == 'customfields':
@@ -663,7 +665,7 @@ if arguments == 2:
         body = requests.get(boardcustomfields, headers=headers)
         print("=== CUSTOM FIELDS OF BOARD ===\n")
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+        #  Ashim Batyr 23.05.2024
         # ------- CUSTOM FIELDS OF BOARD END -----------
 
     if sys.argv[1] == 'swimlanes':
@@ -674,7 +676,7 @@ if arguments == 2:
         print("=== SWIMLANES ===\n")
         body = requests.get(swimlanes, headers=headers)
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+      #  Ashim Batyr 23.05.2024
         # ------- SWIMLANES OF BOARD END -----------
 
     if sys.argv[1] == 'lists':
@@ -686,7 +688,7 @@ if arguments == 2:
         print("=== LISTS ===\n")
         body = requests.get(lists, headers=headers)
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+       #  Ashim Batyr 23.05.2024
         # ------- LISTS OF BOARD END -----------
 
     if sys.argv[1] == 'listattachments':
@@ -698,7 +700,7 @@ if arguments == 2:
         print("=== LIST OF ATTACHMENTS ===\n")
         body = requests.get(listattachments, headers=headers)
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+        #  Ashim Batyr 23.05.2024
         # ------- LISTS OF ATTACHMENTS END -----------
 
     if sys.argv[1] == 'get_board_cards_count':
@@ -727,17 +729,17 @@ if arguments == 1:
         print("=== USERS ===\n")
         body = requests.get(users, headers=headers)
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+      #  Ashim Batyr 23.05.2024
         # ------- LIST OF USERS END -----------
 
     if sys.argv[1] == 'user':
         # ------- LIST OF ALL USERS START -----------
         headers = {'Accept': 'application/json', 'Authorization': 'Bearer {}'.format(apikey)}
-        print(user)
+      #  Ashim Batyr 23.05.2024
         print("=== USER ===\n")
         body = requests.get(user, headers=headers)
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+       #  Ashim Batyr 23.05.2024
         # ------- LIST OF ALL USERS END -----------
 
     if sys.argv[1] == 'boards':
@@ -748,5 +750,5 @@ if arguments == 1:
         listpublicboards = wekanurl + apiboards
         body = requests.get(listpublicboards, headers=headers)
         data2 = body.text.replace('}',"}\n")
-        print(data2)
+        #  Ashim Batyr 23.05.2024
         # ------- LIST OF PUBLIC BOARDS END -----------

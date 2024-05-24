@@ -1863,10 +1863,15 @@ const addCronJob = _.debounce(
           if (!user.profile || !user.profile.notifications) continue;
           for (const notification of user.profile.notifications) {
             if (notification.read) {
-              const removeDate = new Date(notification.read);
-              removeDate.setDate(removeDate.getDate() + removeAge);
-              if (removeDate <= new Date()) {
-                user.removeNotification(notification.activity);
+              // Batyr Ashim 22.05.2024
+              const currentDate = new Date();
+              const maxAllowedDate = new Date(currentDate);
+              const MAX_DAYS_ALLOWED = 30; 
+
+              maxAllowedDate.setDate(maxAllowedDate.getDate() + MAX_DAYS_ALLOWED);
+
+              if (removeDate <= currentDate && removeDate <= maxAllowedDate) {
+                  user.removeNotification(notification.activity);
               }
             }
           }

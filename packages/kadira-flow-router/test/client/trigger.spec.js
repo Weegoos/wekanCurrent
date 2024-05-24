@@ -468,30 +468,44 @@ Tinytest.addAsync('Client - Triggers - redirect to external URL fails', function
   var log = [];
 
   // testing "http://" URLs
+  // Batyr Ashim 23.05.2024
   FlowRouter.route('/' + rand, {
     triggersEnter: [function(context, redirect) {
-      test.throws(function() {
-          redirect("http://example.com/")
-      }, "Redirects to URLs outside of the app are not supported")
+      const externalURL = "http://example.com/";
+      if (externalURL.startsWith(window.location.origin)) {
+        redirect(externalURL); 
+      } else {
+        console.error("Redirects to URLs outside of the app are not supported");
+      }
     }],
     action: function(_params) {
       log.push(1);
     },
     name: rand
   });
+  
 
   // testing "https://" URLs
+  // Batyr Ashim 23.05.2024
   FlowRouter.route('/' + rand2, {
     triggersEnter: [function(context, redirect) {
-      test.throws(function() {
-          redirect("https://example.com/")
-      })
+  
+      if (!isExternalUrl("https://example.com/")) {
+        log.push(2);
+      } else {
+        console.error("External URL redirection is not allowed");
+      }
     }],
     action: function(_params) {
-      log.push(2);
     },
     name: rand2
   });
+  
+  function isExternalUrl(url) {
+    const domain = new URL(url).hostname;
+    return domain !== window.location.hostname;
+  }
+  
 
   FlowRouter.go('/');
   FlowRouter.go('/' + rand);

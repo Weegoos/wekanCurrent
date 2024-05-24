@@ -2,12 +2,14 @@ Package.describe({
   name: 'kadira:flow-router',
   summary: 'Carefully Designed Client Side Router for Meteor, fixed by Serubin',
   version: '2.12.1',
+  // Использует библиотеку FlowRouter из репозитория GitHub, Batyr Ashim 23.05.2024
   git: 'https://github.com/serubin/flow-router.git'
 });
 
 Npm.depends({
   // In order to support IE9, we had to fork pagejs and apply
   // this PR: https://github.com/visionmedia/page.js/pull/288
+  // Нужная ссылка, Batyr Ashim 23.05.2024
   'page':'https://github.com/kadirahq/page.js/archive/34ddf45ea8e4c37269ce3df456b44fc0efc595c6.tar.gz',
   'qs':'5.2.0'
  });

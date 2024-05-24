@@ -2,6 +2,7 @@ Package.describe({
     name: 'wekan-fullcalendar',
     summary: "Full-sized drag & drop event calendar (jQuery plugin)",
     version: "3.10.5",
+    // Использует fullcalendar из репозитория GitHub, Batyr Ashim 23.05.2024
     git: "https://github.com/fullcalendar/fullcalendar.git"
 });
 

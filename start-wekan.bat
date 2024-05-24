@@ -1,4 +1,15 @@
 @ECHO OFF
+setlocal enabledelayedexpansion
+for /f "tokens=1,* delims==" %%a in (wekan\app.env) do (
+    if /i "%%a"=="ROOT_URL" (
+        set "ROOT_URL=%%b"
+    )
+)
+
+if not defined ROOT_URL (
+    echo Ошибка: Переменная ROOT_URL не найдена в файле .env
+    exit /b 1
+)
 
 REM # ------------------- HOWTO ---------------------
 REM # https://github.com/wekan/wekan/wiki/Offline
@@ -11,10 +22,19 @@ SET WRITABLE_PATH=..
 REM # MongoDB database URL required
 SET MONGO_URL=mongodb://127.0.0.1:27017/wekan
 
+REM # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 22.05.2024
 REM # If port is 80, must change ROOT_URL to: http://YOUR-WEKAN-SERVER-IPv4-ADDRESS , like http://192.168.0.100
+REM # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 22.05.2024
 REM # If port is not 80, must change ROOT_URL to: http://YOUR-WEKAN-SERVER-IPv4-ADDRESS:YOUR-PORT-NUMBER , like http://192.168.0.100:2000
 REM # If ROOT_URL is not correct, these do not work: translations, uploading attachments.
-SET ROOT_URL=http://192.168.0.21
+REM # 22.05.2024 Ashim Batyr
+SET ROOT_URL=!ROOT_URL!
+set "ROOT_URL=!ROOT_URL:~1,-1!"
+set "SCRIPT_PATH=wekan\start-wekan.bat"
+set "FIND_TEXT=http://192.168.0.21"
+set "REPLACE_TEXT=!ROOT_URL!"
+
+@REM SET ROOT_URL=http://192.168.0.21
 
 REM # Must change to YOUR-PORT-NUMBER:
 SET PORT=80

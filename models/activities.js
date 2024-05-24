@@ -220,17 +220,21 @@ if (Meteor.isServer) {
             // ignore commenter mention himself?
             continue;
           }
-
+          // Batyr Ashim 22.05.2024
           if (activity.boardId && username === 'board_members') {
-            // mentions all board members
-            const knownUids = knownUsers.map(u => u.userId);
-            watchers = _.union(watchers, [...knownUids]);
-            title = 'act-atUserComment';
-          } else if (activity.cardId && username === 'card_members') {
+           
+            const boardMemberIds = knownUsers.map(user => user.userId);
+            watchers = [...new Set([...watchers, ...boardMemberIds])]; 
+            title = 'act-atUserComment'; 
+        } else if (activity.cardId && username === 'card_members') {
+          // Batyr Ashim 22.05.2024
             // mentions all card members if assigned
             const card = activity.card();
-            watchers = _.union(watchers, [...card.members]);
-            title = 'act-atUserComment';
+            if (card && Array.isArray(card.members)) { 
+              
+              watchers = [...new Set([...watchers, ...card.members])];
+              title = 'act-atUserComment'; 
+          }
           } else {
             const atUser = _.findWhere(knownUsers, { username });
             if (!atUser) {
