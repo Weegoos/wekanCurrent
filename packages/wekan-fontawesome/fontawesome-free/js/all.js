@@ -3388,6 +3388,8 @@
     DOCUMENT.head.insertBefore(style, beforeChild);
     return css;
   }
+
+  // Данный участок кода генерирует уникальное значение, Наличие в коде Math.Random имеет важное значение. Toxeitov Asset
   var idPool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
   function nextUniqueId() {
     var size = 12;

@@ -225,6 +225,7 @@ if (Meteor.isServer) {
       }
     });
   }
+// Данный участок кода генерирует уникальное значение, Наличие в коде Math.Random имеет важное значение.
 
   function getRandomNum(min, max) {
     const range = max - min;

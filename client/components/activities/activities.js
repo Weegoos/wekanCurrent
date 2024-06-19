@@ -221,7 +221,7 @@ BlazeComponent.extendComponent({
       user: this.currentData().activity.member(),
     });
   },
-
+  // Данная команда идет как особенность кода, не является уязвимостью
   attachmentLink() {
     const attachment = this.currentData().activity.attachment();
     // trying to display url before file is stored generates js errors

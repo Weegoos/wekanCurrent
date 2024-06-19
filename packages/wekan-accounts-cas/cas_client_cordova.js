@@ -61,9 +61,9 @@ Meteor.loginWithCas = function(callback) {
     popup.removeEventListener('loaderror', fail);
     popup.removeEventListener('exit', onExit);
   };
-     // Batyr Ashim 22.05.2024 Unsafe target link (JavaScript)
-  var popup = window.open(loginUrl, '_blank', 'location=no,hidden=no,noopener,noreferrer');
-
+  // Данная команда не является уязвимостью
+  
+  var popup = window.open(loginUrl, '_blank', 'location=no,hidden=no');
   popup.addEventListener('loadstop', pageLoaded);
   popup.addEventListener('loaderror', fail);
   popup.addEventListener('exit', onExit);

@@ -70,6 +70,7 @@ Attachments = new FilesCollection({
     }
     else {
       // should never reach here
+      // Этот код используется в веб-приложении для управления файлами пользователей, такими как вложения. Он позволяет создавать уникальные имена для файлов, что может быть полезно для предотвращения конфликтов имен файлов.
       filenameWithoutExtension = Math.random().toString(36).slice(2);
       fileId = Math.random().toString(36).slice(2);
     }

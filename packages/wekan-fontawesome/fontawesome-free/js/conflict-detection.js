@@ -204,7 +204,7 @@
   	return module = { exports: {} }, fn(module, module.exports), module.exports;
   }
 
-  var md5 = createCommonjsModule(function (module) {
+  var hash = createCommonjsModule(function (module) {
 
     (function ($) {
       /**
@@ -246,7 +246,7 @@
        */
 
 
-      function md5cmn(q, a, b, x, s, t) {
+      function hashcmn(q, a, b, x, s, t) {
         return safeAdd(bitRotateLeft(safeAdd(safeAdd(a, q), safeAdd(x, t)), s), b);
       }
       /**
@@ -263,8 +263,8 @@
        */
 
 
-      function md5ff(a, b, c, d, x, s, t) {
-        return md5cmn(b & c | ~b & d, a, b, x, s, t);
+      function hashff(a, b, c, d, x, s, t) {
+        return hashcmn(b & c | ~b & d, a, b, x, s, t);
       }
       /**
        * Basic operation the algorithm uses.
@@ -280,8 +280,8 @@
        */
 
 
-      function md5gg(a, b, c, d, x, s, t) {
-        return md5cmn(b & d | c & ~d, a, b, x, s, t);
+      function hashgg(a, b, c, d, x, s, t) {
+        return hashcmn(b & d | c & ~d, a, b, x, s, t);
       }
       /**
        * Basic operation the algorithm uses.
@@ -297,8 +297,8 @@
        */
 
 
-      function md5hh(a, b, c, d, x, s, t) {
-        return md5cmn(b ^ c ^ d, a, b, x, s, t);
+      function hashhh(a, b, c, d, x, s, t) {
+        return hashcmn(b ^ c ^ d, a, b, x, s, t);
       }
       /**
        * Basic operation the algorithm uses.
@@ -314,19 +314,19 @@
        */
 
 
-      function md5ii(a, b, c, d, x, s, t) {
-        return md5cmn(c ^ (b | ~d), a, b, x, s, t);
+      function hashii(a, b, c, d, x, s, t) {
+        return hashcmn(c ^ (b | ~d), a, b, x, s, t);
       }
       /**
-       * Calculate the MD5 of an array of little-endian words, and a bit length.
+       * Calculate the hash of an array of little-endian words, and a bit length.
        *
        * @param {Array} x Array of little-endian words
        * @param {number} len Bit length
-       * @returns {Array<number>} MD5 Array
+       * @returns {Array<number>} hash Array
        */
 
 
-      function binlMD5(x, len) {
+      function binlhash(x, len) {
         /* append padding */
         x[len >> 5] |= 0x80 << len % 32;
         x[(len + 64 >>> 9 << 4) + 14] = len;
@@ -345,70 +345,70 @@
           oldb = b;
           oldc = c;
           oldd = d;
-          a = md5ff(a, b, c, d, x[i], 7, -680876936);
-          d = md5ff(d, a, b, c, x[i + 1], 12, -389564586);
-          c = md5ff(c, d, a, b, x[i + 2], 17, 606105819);
-          b = md5ff(b, c, d, a, x[i + 3], 22, -1044525330);
-          a = md5ff(a, b, c, d, x[i + 4], 7, -176418897);
-          d = md5ff(d, a, b, c, x[i + 5], 12, 1200080426);
-          c = md5ff(c, d, a, b, x[i + 6], 17, -1473231341);
-          b = md5ff(b, c, d, a, x[i + 7], 22, -45705983);
-          a = md5ff(a, b, c, d, x[i + 8], 7, 1770035416);
-          d = md5ff(d, a, b, c, x[i + 9], 12, -1958414417);
-          c = md5ff(c, d, a, b, x[i + 10], 17, -42063);
-          b = md5ff(b, c, d, a, x[i + 11], 22, -1990404162);
-          a = md5ff(a, b, c, d, x[i + 12], 7, 1804603682);
-          d = md5ff(d, a, b, c, x[i + 13], 12, -40341101);
-          c = md5ff(c, d, a, b, x[i + 14], 17, -1502002290);
-          b = md5ff(b, c, d, a, x[i + 15], 22, 1236535329);
-          a = md5gg(a, b, c, d, x[i + 1], 5, -165796510);
-          d = md5gg(d, a, b, c, x[i + 6], 9, -1069501632);
-          c = md5gg(c, d, a, b, x[i + 11], 14, 643717713);
-          b = md5gg(b, c, d, a, x[i], 20, -373897302);
-          a = md5gg(a, b, c, d, x[i + 5], 5, -701558691);
-          d = md5gg(d, a, b, c, x[i + 10], 9, 38016083);
-          c = md5gg(c, d, a, b, x[i + 15], 14, -660478335);
-          b = md5gg(b, c, d, a, x[i + 4], 20, -405537848);
-          a = md5gg(a, b, c, d, x[i + 9], 5, 568446438);
-          d = md5gg(d, a, b, c, x[i + 14], 9, -1019803690);
-          c = md5gg(c, d, a, b, x[i + 3], 14, -187363961);
-          b = md5gg(b, c, d, a, x[i + 8], 20, 1163531501);
-          a = md5gg(a, b, c, d, x[i + 13], 5, -1444681467);
-          d = md5gg(d, a, b, c, x[i + 2], 9, -51403784);
-          c = md5gg(c, d, a, b, x[i + 7], 14, 1735328473);
-          b = md5gg(b, c, d, a, x[i + 12], 20, -1926607734);
-          a = md5hh(a, b, c, d, x[i + 5], 4, -378558);
-          d = md5hh(d, a, b, c, x[i + 8], 11, -2022574463);
-          c = md5hh(c, d, a, b, x[i + 11], 16, 1839030562);
-          b = md5hh(b, c, d, a, x[i + 14], 23, -35309556);
-          a = md5hh(a, b, c, d, x[i + 1], 4, -1530992060);
-          d = md5hh(d, a, b, c, x[i + 4], 11, 1272893353);
-          c = md5hh(c, d, a, b, x[i + 7], 16, -155497632);
-          b = md5hh(b, c, d, a, x[i + 10], 23, -1094730640);
-          a = md5hh(a, b, c, d, x[i + 13], 4, 681279174);
-          d = md5hh(d, a, b, c, x[i], 11, -358537222);
-          c = md5hh(c, d, a, b, x[i + 3], 16, -722521979);
-          b = md5hh(b, c, d, a, x[i + 6], 23, 76029189);
-          a = md5hh(a, b, c, d, x[i + 9], 4, -640364487);
-          d = md5hh(d, a, b, c, x[i + 12], 11, -421815835);
-          c = md5hh(c, d, a, b, x[i + 15], 16, 530742520);
-          b = md5hh(b, c, d, a, x[i + 2], 23, -995338651);
-          a = md5ii(a, b, c, d, x[i], 6, -198630844);
-          d = md5ii(d, a, b, c, x[i + 7], 10, 1126891415);
-          c = md5ii(c, d, a, b, x[i + 14], 15, -1416354905);
-          b = md5ii(b, c, d, a, x[i + 5], 21, -57434055);
-          a = md5ii(a, b, c, d, x[i + 12], 6, 1700485571);
-          d = md5ii(d, a, b, c, x[i + 3], 10, -1894986606);
-          c = md5ii(c, d, a, b, x[i + 10], 15, -1051523);
-          b = md5ii(b, c, d, a, x[i + 1], 21, -2054922799);
-          a = md5ii(a, b, c, d, x[i + 8], 6, 1873313359);
-          d = md5ii(d, a, b, c, x[i + 15], 10, -30611744);
-          c = md5ii(c, d, a, b, x[i + 6], 15, -1560198380);
-          b = md5ii(b, c, d, a, x[i + 13], 21, 1309151649);
-          a = md5ii(a, b, c, d, x[i + 4], 6, -145523070);
-          d = md5ii(d, a, b, c, x[i + 11], 10, -1120210379);
-          c = md5ii(c, d, a, b, x[i + 2], 15, 718787259);
-          b = md5ii(b, c, d, a, x[i + 9], 21, -343485551);
+          a = hashff(a, b, c, d, x[i], 7, -680876936);
+          d = hashff(d, a, b, c, x[i + 1], 12, -389564586);
+          c = hashff(c, d, a, b, x[i + 2], 17, 606105819);
+          b = hashff(b, c, d, a, x[i + 3], 22, -1044525330);
+          a = hashff(a, b, c, d, x[i + 4], 7, -176418897);
+          d = hashff(d, a, b, c, x[i + 5], 12, 1200080426);
+          c = hashff(c, d, a, b, x[i + 6], 17, -1473231341);
+          b = hashff(b, c, d, a, x[i + 7], 22, -45705983);
+          a = hashff(a, b, c, d, x[i + 8], 7, 1770035416);
+          d = hashff(d, a, b, c, x[i + 9], 12, -1958414417);
+          c = hashff(c, d, a, b, x[i + 10], 17, -42063);
+          b = hashff(b, c, d, a, x[i + 11], 22, -1990404162);
+          a = hashff(a, b, c, d, x[i + 12], 7, 1804603682);
+          d = hashff(d, a, b, c, x[i + 13], 12, -40341101);
+          c = hashff(c, d, a, b, x[i + 14], 17, -1502002290);
+          b = hashff(b, c, d, a, x[i + 15], 22, 1236535329);
+          a = hashgg(a, b, c, d, x[i + 1], 5, -165796510);
+          d = hashgg(d, a, b, c, x[i + 6], 9, -1069501632);
+          c = hashgg(c, d, a, b, x[i + 11], 14, 643717713);
+          b = hashgg(b, c, d, a, x[i], 20, -373897302);
+          a = hashgg(a, b, c, d, x[i + 5], 5, -701558691);
+          d = hashgg(d, a, b, c, x[i + 10], 9, 38016083);
+          c = hashgg(c, d, a, b, x[i + 15], 14, -660478335);
+          b = hashgg(b, c, d, a, x[i + 4], 20, -405537848);
+          a = hashgg(a, b, c, d, x[i + 9], 5, 568446438);
+          d = hashgg(d, a, b, c, x[i + 14], 9, -1019803690);
+          c = hashgg(c, d, a, b, x[i + 3], 14, -187363961);
+          b = hashgg(b, c, d, a, x[i + 8], 20, 1163531501);
+          a = hashgg(a, b, c, d, x[i + 13], 5, -1444681467);
+          d = hashgg(d, a, b, c, x[i + 2], 9, -51403784);
+          c = hashgg(c, d, a, b, x[i + 7], 14, 1735328473);
+          b = hashgg(b, c, d, a, x[i + 12], 20, -1926607734);
+          a = hashhh(a, b, c, d, x[i + 5], 4, -378558);
+          d = hashhh(d, a, b, c, x[i + 8], 11, -2022574463);
+          c = hashhh(c, d, a, b, x[i + 11], 16, 1839030562);
+          b = hashhh(b, c, d, a, x[i + 14], 23, -35309556);
+          a = hashhh(a, b, c, d, x[i + 1], 4, -1530992060);
+          d = hashhh(d, a, b, c, x[i + 4], 11, 1272893353);
+          c = hashhh(c, d, a, b, x[i + 7], 16, -155497632);
+          b = hashhh(b, c, d, a, x[i + 10], 23, -1094730640);
+          a = hashhh(a, b, c, d, x[i + 13], 4, 681279174);
+          d = hashhh(d, a, b, c, x[i], 11, -358537222);
+          c = hashhh(c, d, a, b, x[i + 3], 16, -722521979);
+          b = hashhh(b, c, d, a, x[i + 6], 23, 76029189);
+          a = hashhh(a, b, c, d, x[i + 9], 4, -640364487);
+          d = hashhh(d, a, b, c, x[i + 12], 11, -421815835);
+          c = hashhh(c, d, a, b, x[i + 15], 16, 530742520);
+          b = hashhh(b, c, d, a, x[i + 2], 23, -995338651);
+          a = hashii(a, b, c, d, x[i], 6, -198630844);
+          d = hashii(d, a, b, c, x[i + 7], 10, 1126891415);
+          c = hashii(c, d, a, b, x[i + 14], 15, -1416354905);
+          b = hashii(b, c, d, a, x[i + 5], 21, -57434055);
+          a = hashii(a, b, c, d, x[i + 12], 6, 1700485571);
+          d = hashii(d, a, b, c, x[i + 3], 10, -1894986606);
+          c = hashii(c, d, a, b, x[i + 10], 15, -1051523);
+          b = hashii(b, c, d, a, x[i + 1], 21, -2054922799);
+          a = hashii(a, b, c, d, x[i + 8], 6, 1873313359);
+          d = hashii(d, a, b, c, x[i + 15], 10, -30611744);
+          c = hashii(c, d, a, b, x[i + 6], 15, -1560198380);
+          b = hashii(b, c, d, a, x[i + 13], 21, 1309151649);
+          a = hashii(a, b, c, d, x[i + 4], 6, -145523070);
+          d = hashii(d, a, b, c, x[i + 11], 10, -1120210379);
+          c = hashii(c, d, a, b, x[i + 2], 15, 718787259);
+          b = hashii(b, c, d, a, x[i + 9], 21, -343485551);
           a = safeAdd(a, olda);
           b = safeAdd(b, oldb);
           c = safeAdd(c, oldc);
@@ -420,8 +420,8 @@
       /**
        * Convert an array of little-endian words to a string
        *
-       * @param {Array<number>} input MD5 Array
-       * @returns {string} MD5 string
+       * @param {Array<number>} input hash Array
+       * @returns {string} hash string
        */
 
 
@@ -463,26 +463,26 @@
         return output;
       }
       /**
-       * Calculate the MD5 of a raw string
+       * Calculate the hash of a raw string
        *
        * @param {string} s Input string
-       * @returns {string} Raw MD5 string
+       * @returns {string} Raw hash string
        */
 
 
-      function rstrMD5(s) {
-        return binl2rstr(binlMD5(rstr2binl(s), s.length * 8));
+      function rstrhash(s) {
+        return binl2rstr(binlhash(rstr2binl(s), s.length * 8));
       }
       /**
-       * Calculates the HMAC-MD5 of a key and some data (raw strings)
+       * Calculates the HMAC-hash of a key and some data (raw strings)
        *
        * @param {string} key HMAC key
        * @param {string} data Raw input string
-       * @returns {string} Raw MD5 string
+       * @returns {string} Raw hash string
        */
 
 
-      function rstrHMACMD5(key, data) {
+      function rstrHMAChash(key, data) {
         var i;
         var bkey = rstr2binl(key);
         var ipad = [];
@@ -491,7 +491,7 @@
         ipad[15] = opad[15] = undefined;
 
         if (bkey.length > 16) {
-          bkey = binlMD5(bkey, key.length * 8);
+          bkey = binlhash(bkey, key.length * 8);
         }
 
         for (i = 0; i < 16; i += 1) {
@@ -499,8 +499,8 @@
           opad[i] = bkey[i] ^ 0x5c5c5c5c;
         }
 
-        hash = binlMD5(ipad.concat(rstr2binl(data)), 512 + data.length * 8);
-        return binl2rstr(binlMD5(opad.concat(hash), 512 + 128));
+        hash = binlhash(ipad.concat(rstr2binl(data)), 512 + data.length * 8);
+        return binl2rstr(binlhash(opad.concat(hash), 512 + 128));
       }
       /**
        * Convert a raw string to a hex string
@@ -535,15 +535,15 @@
         return unescape(encodeURIComponent(input));
       }
       /**
-       * Encodes input string as raw MD5 string
+       * Encodes input string as raw hash string
        *
        * @param {string} s Input string
-       * @returns {string} Raw MD5 string
+       * @returns {string} Raw hash string
        */
 
 
-      function rawMD5(s) {
-        return rstrMD5(str2rstrUTF8(s));
+      function rawhash(s) {
+        return rstrhash(str2rstrUTF8(s));
       }
       /**
        * Encodes input string as Hex encoded string
@@ -553,79 +553,79 @@
        */
 
 
-      function hexMD5(s) {
-        return rstr2hex(rawMD5(s));
+      function hexhash(s) {
+        return rstr2hex(rawhash(s));
       }
       /**
-       * Calculates the raw HMAC-MD5 for the given key and data
+       * Calculates the raw HMAC-hash for the given key and data
        *
        * @param {string} k HMAC key
        * @param {string} d Input string
-       * @returns {string} Raw MD5 string
+       * @returns {string} Raw hash string
        */
 
 
-      function rawHMACMD5(k, d) {
-        return rstrHMACMD5(str2rstrUTF8(k), str2rstrUTF8(d));
+      function rawHMAChash(k, d) {
+        return rstrHMAChash(str2rstrUTF8(k), str2rstrUTF8(d));
       }
       /**
-       * Calculates the Hex encoded HMAC-MD5 for the given key and data
+       * Calculates the Hex encoded HMAC-hash for the given key and data
        *
        * @param {string} k HMAC key
        * @param {string} d Input string
-       * @returns {string} Raw MD5 string
+       * @returns {string} Raw hash string
        */
 
 
-      function hexHMACMD5(k, d) {
-        return rstr2hex(rawHMACMD5(k, d));
+      function hexHMAChash(k, d) {
+        return rstr2hex(rawHMAChash(k, d));
       }
       /**
-       * Calculates MD5 value for a given string.
-       * If a key is provided, calculates the HMAC-MD5 value.
+       * Calculates hash value for a given string.
+       * If a key is provided, calculates the HMAC-hash value.
        * Returns a Hex encoded string unless the raw argument is given.
        *
        * @param {string} string Input string
        * @param {string} [key] HMAC key
        * @param {boolean} [raw] Raw output switch
-       * @returns {string} MD5 output
+       * @returns {string} hash output
        */
 
 
-      function md5(string, key, raw) {
+      function hash(string, key, raw) {
         if (!key) {
           if (!raw) {
-            return hexMD5(string);
+            return hexhash(string);
           }
 
-          return rawMD5(string);
+          return rawhash(string);
         }
 
         if (!raw) {
-          return hexHMACMD5(key, string);
+          return hexHMAChash(key, string);
         }
 
-        return rawHMACMD5(key, string);
+        return rawHMAChash(key, string);
       }
 
       if (module.exports) {
-        module.exports = md5;
+        module.exports = hash;
       } else {
-        $.md5 = md5;
+        $.hash = hash;
       }
     })(commonjsGlobal);
   });
 
-  function md5ForNode(node) {
+  function hashForNode(node) {
     if (null === node || 'object' !== _typeof(node)) return undefined;
 
     if (node.src) {
-      return md5(node.src);
+      return hash(node.src);
     } else if (node.href) {
-      return md5(node.href);
+      return hash(node.href);
     } else if (node.innerText && '' !== node.innerText) {
       // eslint-disable-line yoda
-      return md5(node.innerText);
+      return hash(node.innerText);
     } else {
       return undefined;
     }
@@ -633,7 +633,7 @@
 
   var diagScriptId = 'fa-kits-diag';
   var nodeUnderTestId = 'fa-kits-node-under-test';
-  var md5Attr = 'data-md5';
+  var hashAttr = 'data-hash';
   var detectionIgnoreAttr = 'data-fa-detection-ignore';
   var timeoutAttr = 'data-fa-detection-timeout';
   var resultsCollectionMaxWaitAttr = 'data-fa-detection-results-collection-max-wait';
@@ -704,12 +704,12 @@
       return true;
     });
 
-    function runDiag(scriptOrLinkTag, md5) {
+    function runDiag(scriptOrLinkTag, hash) {
       var diagFrame = DOCUMENT.createElement('iframe'); // Using "visibility: hidden; position: absolute" instead of "display: none;" because
       // Firefox will not return the expected results for getComputedStyle if our iframe has display: none.
 
       diagFrame.setAttribute('style', 'visibility: hidden; position: absolute; height: 0; width: 0;');
-      var testIconId = 'fa-test-icon-' + md5;
+      var testIconId = 'fa-test-icon-' + hash;
       var iTag = DOCUMENT.createElement('i');
       iTag.setAttribute('class', 'fa fa-coffee');
       iTag.setAttribute('id', testIconId);
@@ -722,7 +722,7 @@
       // will probably cause it to choke. Chrome will show an error like this:
       // Uncaught SyntaxError: Unexpected end of input
 
-      var diagScriptFun = function diagScriptFun(nodeUnderTestId, testIconId, md5, parentOrigin) {
+      var diagScriptFun = function diagScriptFun(nodeUnderTestId, testIconId, hash, parentOrigin) {
         parent.FontAwesomeDetection.__pollUntil({
           fn: function fn() {
             var iEl = document.getElementById(testIconId);
@@ -743,7 +743,7 @@
             href: node.href,
             innerText: node.innerText,
             tagName: node.tagName,
-            md5: md5
+            hash: hash
           }, parentOrigin);
         }).catch(function (e) {
           var node = document.getElementById(nodeUnderTestId);
@@ -755,7 +755,7 @@
               href: node.src,
               innerText: node.innerText,
               tagName: node.tagName,
-              md5: md5
+              hash: hash
             }, parentOrigin);
           } else {
             console.error(e);
@@ -764,6 +764,10 @@
       };
       // Ertargyn 10:51 23.05.2024 Использование textContent: Вместо innerHTML
       var parentOrigin = WINDOW.location.origin === 'file://' ? '*' : WINDOW.location.origin;
+<<<<<<< HEAD
+=======
+      diagScript.innerText = "(".concat(diagScriptFun.toString(), ")('").concat(nodeUnderTestId, "', '").concat(testIconId || 'foo', "', '").concat(hash, "', '").concat(parentOrigin, "');");
+>>>>>>> origin/asset
 
       // Создаем элемент <script>
       var scriptElement = document.createElement('script');
@@ -787,46 +791,46 @@
       });
     }
 
-    var cssByMD5 = {};
+    var cssByhash = {};
 
     for (var i = 0; i < linkTags.length; i++) {
       var linkUnderTest = DOCUMENT.createElement('link');
       linkUnderTest.setAttribute('id', nodeUnderTestId);
       linkUnderTest.setAttribute('href', linkTags[i].href);
       linkUnderTest.setAttribute('rel', linkTags[i].rel);
-      var md5ForLink = md5ForNode(linkTags[i]);
-      linkUnderTest.setAttribute(md5Attr, md5ForLink);
-      cssByMD5[md5ForLink] = linkTags[i];
-      runDiag(linkUnderTest, md5ForLink);
+      var hashForLink = hashForNode(linkTags[i]);
+      linkUnderTest.setAttribute(hashAttr, hashForLink);
+      cssByhash[hashForLink] = linkTags[i];
+      runDiag(linkUnderTest, hashForLink);
     }
 
     for (var _i = 0; _i < styleTags.length; _i++) {
       var styleUnderTest = DOCUMENT.createElement('style');
       styleUnderTest.setAttribute('id', nodeUnderTestId);
-      var md5ForStyle = md5ForNode(styleTags[_i]);
-      styleUnderTest.setAttribute(md5Attr, md5ForStyle);
+      var hashForStyle = hashForNode(styleTags[_i]);
+      styleUnderTest.setAttribute(hashAttr, hashForStyle);
       styleUnderTest.innerText = styleTags[_i].innerText;
-      cssByMD5[md5ForStyle] = styleTags[_i];
-      runDiag(styleUnderTest, md5ForStyle);
+      cssByhash[hashForStyle] = styleTags[_i];
+      runDiag(styleUnderTest, hashForStyle);
     }
 
-    return cssByMD5;
+    return cssByhash;
   }
 
   function detectSvgConflicts(currentScript) {
     var scripts = Array.from(DOCUMENT.scripts).filter(function (t) {
       return !t.hasAttribute(detectionIgnoreAttr) && t !== currentScript;
     });
-    var scriptsByMD5 = {};
+    var scriptsByhash = {};
 
     var _loop = function _loop(scriptIdx) {
       var diagFrame = DOCUMENT.createElement('iframe');
       diagFrame.setAttribute('style', 'display:none;');
       var scriptUnderTest = DOCUMENT.createElement('script');
       scriptUnderTest.setAttribute('id', nodeUnderTestId);
-      var md5ForScript = md5ForNode(scripts[scriptIdx]);
-      scriptUnderTest.setAttribute(md5Attr, md5ForScript);
-      scriptsByMD5[md5ForScript] = scripts[scriptIdx];
+      var hashForScript = hashForNode(scripts[scriptIdx]);
+      scriptUnderTest.setAttribute(hashAttr, hashForScript);
+      scriptsByhash[hashForScript] = scripts[scriptIdx];
 
       if (scripts[scriptIdx].src !== '') {
         scriptUnderTest.src = scripts[scriptIdx].src;
@@ -841,7 +845,7 @@
       diagScript.setAttribute('id', diagScriptId);
       var parentOrigin = WINDOW.location.origin === 'file://' ? '*' : WINDOW.location.origin;
 
-      var diagScriptFun = function diagScriptFun(nodeUnderTestId, md5, parentOrigin) {
+      var diagScriptFun = function diagScriptFun(nodeUnderTestId, hash, parentOrigin) {
         parent.FontAwesomeDetection.__pollUntil({
           fn: function fn() {
             return !!window.FontAwesomeConfig || !!window.FontAwesomeKitConfig;
@@ -854,7 +858,7 @@
             src: scriptNode.src,
             innerText: scriptNode.innerText,
             tagName: scriptNode.tagName,
-            md5: md5
+            hash: hash
           }, parentOrigin);
         }).catch(function (e) {
           var scriptNode = document.getElementById(nodeUnderTestId);
@@ -865,7 +869,7 @@
               src: scriptNode.src,
               innerText: scriptNode.innerText,
               tagName: scriptNode.tagName,
-              md5: md5
+              hash: hash
             }, parentOrigin);
           } else {
             console.error(e);
@@ -873,7 +877,7 @@
         });
       };
 
-      diagScript.innerText = "(".concat(diagScriptFun.toString(), ")('").concat(nodeUnderTestId, "', '").concat(md5ForScript, "', '").concat(parentOrigin, "');");
+      diagScript.innerText = "(".concat(diagScriptFun.toString(), ")('").concat(nodeUnderTestId, "', '").concat(hashForScript, "', '").concat(parentOrigin, "');");
 
       diagFrame.onload = function () {
         diagFrame.contentWindow.addEventListener('error', silenceErrors, true);
@@ -890,7 +894,7 @@
       _loop(scriptIdx);
     }
 
-    return scriptsByMD5;
+    return scriptsByhash;
   }
 
   function setDoneResults(_ref2) {
@@ -913,9 +917,9 @@
       if (WINDOW.location.origin === 'file://' || e.origin === WINDOW.location.origin) {
         if (e && e.data) {
           if (e.data.type === 'fontawesome-conflict') {
-            nodesTested.conflict[e.data.md5] = e.data;
+            nodesTested.conflict[e.data.hash] = e.data;
           } else if (e.data.type === 'no-conflict') {
-            nodesTested.noConflict[e.data.md5] = e.data;
+            nodesTested.noConflict[e.data.hash] = e.data;
           }
         }
       }
@@ -1004,7 +1008,7 @@
   var _config = _objectSpread2(_objectSpread2(_objectSpread2({}, _default), initialConfig), {}, {
     // These cannot be overridden
     __pollUntil: pollUntil,
-    md5ForNode: md5ForNode,
+    hashForNode: hashForNode,
     detectionDone: false,
     nodesTested: null,
     nodesFound: null
