@@ -188,11 +188,11 @@ services:
       # This can be problematic with avatars https://github.com/wekan/wekan/issues/1776
       #  - https://example.com/wekan
       # If without https, can be only wekan node, no need for Caddy/Nginx/Apache if you don't need them
-      # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 22.05.2024
+      # Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
       #  - http://example.com
-      # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 22.05.2024
+      # Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
       #  - http://boards.example.com
-      # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 22.05.2024
+      # Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
       #  - http://192.168.1.100    <=== using at local LAN
       - ROOT_URL=http://localhost  #   <=== using only at same laptop/desktop where Wekan is installed
       # ==== EMAIL SETTINGS ====
@@ -695,7 +695,7 @@ services:
 #  wekan2:
 #    ....COPY CONFIG FROM ABOVE TO HERE...
 #    environment:
- # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 22.05.2024
+ # Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
 #      - ROOT_URL='http://10.10.10.10'
 #      ...COPY CONFIG FROM ABOVE TO HERE...
 #---------------------------------------------------------------------------------

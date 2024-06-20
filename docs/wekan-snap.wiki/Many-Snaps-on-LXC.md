@@ -60,7 +60,7 @@ Host x1
 
 2.11) AT SERVER: Create harddrive image: `qemu-img create -f qcow2 web.qcow2 700G`
 
-2.12) Download newest Kubuntu desktop iso with wget. 
+2.12) Download newest Kubuntu desktop iso with wget.
 
 2.13) Install kubuntu with full disk encryption. Modify amount of RAM (here 32 GB), file locations etc. Do not select to allocate encrypted disk image immediately, let image size grow.
 
@@ -107,7 +107,7 @@ If not, change to candidate:
 sudo snap refresh wekan_customer1 --channel=latest/candidate
 ```
 If it complains about old database version (was at stable), stop it, move old files somewhere safe, and start again.
-WARNING: this deletes 
+WARNING: this deletes
 ```
 sudo su
 mkdir old_customer1_common
@@ -259,7 +259,7 @@ function websync {
 
 Each customer has set in their nameserver to WeKan hosting server IP address:
 ```
-A 123.123.123.123  
+A 123.123.123.123
 ```
 After that, when ping wekan.company1.com shows 123.123.123.123 correctly, it's possible to get
 automatic Let's Encrypt SSL/TLS cert with Caddy2.
@@ -342,18 +342,18 @@ sudo snap install lxd
 
 lxd init
 
-Would you like to use LXD clustering? (yes/no) [default=no]: 
-Do you want to configure a new storage pool? (yes/no) [default=yes]: 
-Name of the new storage pool [default=default]: 
+Would you like to use LXD clustering? (yes/no) [default=no]:
+Do you want to configure a new storage pool? (yes/no) [default=yes]:
+Name of the new storage pool [default=default]:
 Name of the storage backend to use (dir, lvm, btrfs, ceph) [default=btrfs]: dir
-Would you like to connect to a MAAS server? (yes/no) [default=no]: 
-Would you like to create a new local network bridge? (yes/no) [default=yes]: 
-What should the new bridge be called? [default=lxdbr0]: 
+Would you like to connect to a MAAS server? (yes/no) [default=no]:
+Would you like to create a new local network bridge? (yes/no) [default=yes]:
+What should the new bridge be called? [default=lxdbr0]:
 What IPv4 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 10.1.1.1/24
-Would you like LXD to NAT IPv4 traffic on your bridge? [default=yes]: 
+Would you like LXD to NAT IPv4 traffic on your bridge? [default=yes]:
 What IPv6 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]:
-Would you like the LXD server to be available over the network? (yes/no) [default=no]: 
-Would you like stale cached images to be updated automatically? (yes/no) [default=yes]: 
+Would you like the LXD server to be available over the network? (yes/no) [default=no]:
+Would you like stale cached images to be updated automatically? (yes/no) [default=yes]:
 Would you like a YAML "lxd init" preseed to be printed? (yes/no) [default=no]:
 ```
 > The value you have specified is the “network address”, i.e “.0” is the network address of the subnet “10.1.1.0/24”. Instead you need to specify an IP in that network, such as “.1”, e.g. “10.1.1.1/24”
@@ -384,6 +384,7 @@ boards.example.com {
 }
 ```
 For [CloudFlare SSL](https://github.com/wekan/wekan/wiki/Caddy-Webserver-Config), like this to `/var/snap/wekan/common/Caddyfile`:
+<!-- Batyr Ashim 19.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 http://boards.example.com https://boards.example.com {
 	tls {

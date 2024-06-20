@@ -46,7 +46,7 @@ meteor run --exclude-archs web.browser.legacy,web.cordova --port 4000 --extra-pa
 
 > smeijer commented 25 days ago
 > Just wanted to let know that I haven't experienced this issue anymore since I've replaced a lot of `meteor publications` with `apollo/graphql requests`.
-> 
+>
 > The reactivity is thereby lost, but in my case a 30sec poll is also fine. On the places that I do require reactivity, I only `publish` a single `timestamp`. This timestamp is passed through to `apollo`, which triggers a `refetch` when the timestamp is changed.
 >
 > The [discussion here](https://forums.meteor.com/t/implementing-livedocument-as-an-alternative-to-livequery-discussion/40152) has also been helpfull to improve performance here and there.
@@ -105,6 +105,7 @@ Wekan for Sandstorm:
 - Add to your /home/username/.bashrc : <br /> `export PATH=$PATH:$HOME/projects/meteor-spk/meteor-spk-0.4.0`
 - Close and open your terminal, or read settings from .bashrc with<br />`source ~/.bashrc`
 - `cd wekan && meteor-spk dev`
+<!-- Batyr Ashim 19.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 - Then Wekan will be visible at local sandstorm at http://local.sandstorm.io:6080/
 - Sandstorm commands: `sudo sandstorm`. [Release scripts](https://github.com/wekan/wekan-maintainer/tree/master/releases). Official releases require publishing key that only xet7 has.
 

@@ -48,7 +48,7 @@ choco install -y mongodb
 4. Download and newest Wekan bundle wekan-x.xx.zip from https://releases.wekan.team
 
 5. Unzip wekan-x.xx.zip, it has directory name `bundle`
-
+<!-- Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 6. Download [start-wekan.bat](https://raw.githubusercontent.com/wekan/wekan/master/start-wekan.bat) to your bundle directory. Default settins are: `ROOT_URL=http://localhost` and `PORT=80`, so it works only in local [compatible browser](Browser-compatibility-matrix). You can edit [ROOT_URL](Settings) to be or `http://YOUR-IP-ADDRESS` so it works on local network with `http://YOUR-IP-ADDRESS` .
 
 7. Start Wekan in cmd.exe as Administrator:
@@ -157,7 +157,7 @@ Then edit docker-compose.yml with [these lines uncommented](https://github.com/w
         - USE_EDGE=${USE_EDGE}
     #-------------------------------------------------------------------------------------
 ```
-Then you can build Wekan with 
+Then you can build Wekan with
 ```
 docker-compose up -d --build
 ```
@@ -183,6 +183,7 @@ More info at https://github.com/wekan/wekan/wiki/Raspberry-Pi
 
 If you need to build from source, do as above, and build Wekan with `wekan/rebuild-wekan.sh`.
 After building, if you like to start meteor faster by excluding some parts, have rebuilds after file change, and test on local network devices, try with your computer IP address:
+<!-- Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 WITH_API=true RICHER_CARD_COMMENT_EDITOR=false ROOT_URL=http://192.168.0.200:4000 meteor --exclude-archs web.browser.legacy,web.cordova --port 4000
 ```
@@ -241,6 +242,7 @@ REM a) For development, available at local network, at your computer IP address.
 
 SET WITH_API=true
 SET RICHER_CARD_EDITOR=false
+<!-- Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 SET ROOT_URL=http://192.168.0.200:4000
 meteorz --port 4000
 

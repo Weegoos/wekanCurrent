@@ -1242,7 +1242,7 @@ This release adds the following new features:
 - [Count of attachments on minicard. (Badges renamed to Count of attachments)](https://github.com/wekan/wekan/pull/4940).
   Thanks to helioguardabaxo.
 - [Renamed Badge to Count of attachments on minicard. Changed icons to Cover image on minicard](https://github.com/wekan/wekan/commit/825742359ef0738b110ed0904853c604bdbd1bac).
-  Thanks to xet7. 
+  Thanks to xet7.
 - [Added conditional to show after list field only if board has at least one list. Now after list shows the last list by default](https://github.com/wekan/wekan/pull/4941).
   Thanks to helioguardabaxo.
 - [Changed Add List to be at left. Before it was at right](https://github.com/wekan/wekan/commit/467835192fbcd9d4016674fa2ee406258cc106e7).
@@ -9592,6 +9592,7 @@ This release fixes the following bugs:
 - [Fix Sandstorm export board from web](https://github.com/wekan/wekan/issues/2157).
 - [Fix Error when logging in to Wekan REST API when using Sandstorm Wekan](https://github.com/wekan/wekan/issues/1279).
   Sandstorm API works this way: Make API key, and from that key copy API URL and API KEY to below. It saves Wekan board to file.
+  <!--  Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
   `curl http://Bearer:APIKEY@api-12345.local.sandstorm.io:6080/api/boards/sandstorm/export?authToken=#APIKEY > wekanboard.json`
   If later API key does not work, you need to remove it and make a new one.
 
@@ -9607,7 +9608,8 @@ This release adds the following new features with Apache I-CLA, thanks to bentis
   but this doesn't fit well as the cards in the list can have arbitrary
   height.
   The idea to rely on the visibility of a spinner is based on
-  http://www.meteorpedia.com/read/Infinite_Scrolling
+  <!-- Batyr Ashim 20.06.2024 -->
+  https://www.meteorpedia.com/read/Infinite_Scrolling
 - [When writing to minicard, press Shift-Enter on minicard to go to next line
   below](https://github.com/wekan/wekan/commit/7a35099fb9778d5f3656a57c74af426cfb20fba3),
   to continue writing on same minicard 2nd line.

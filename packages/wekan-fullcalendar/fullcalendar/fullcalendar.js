@@ -4152,7 +4152,7 @@ var View = /** @class */ (function (_super) {
         if (dateMutation) {
             eventInstance.dateProfile = dateMutation.buildNewDateProfile(eventInstance.dateProfile, this.calendar);
         }
-        this.triggerEventDrop(eventInstance, 
+        this.triggerEventDrop(eventInstance,
         // a drop doesn't necessarily mean a date mutation (ex: resource change)
         (dateMutation && dateMutation.dateDelta) || moment.duration(), undoFunc, el, ev);
     };
@@ -7479,7 +7479,7 @@ var DayGrid = /** @class */ (function (_super) {
             if (date._locale && date._locale._fullCalendar_weekCalc === 'ISO') {
                 weekCalcFirstDoW = 1; // Monday by ISO 8601 definition
             }
-            
+
             else {
                 weekCalcFirstDoW = date._locale.firstDayOfWeek();
             }
@@ -7493,7 +7493,7 @@ var DayGrid = /** @class */ (function (_super) {
             if (this.cellWeekNumbersVisible && date.day() === weekCalcFirstDoW) {
                 html += view.buildGotoAnchorHtml({ date: date, type: 'week' }, { 'class': 'fc-week-number' }, date.format('w'));
             }
-            
+
         if (isDayNumberVisible) {
             html += view.buildGotoAnchorHtml(date, { 'class': 'fc-day-number' }, date.format('D') // inner HTML
             );
@@ -7678,15 +7678,16 @@ var DayGrid = /** @class */ (function (_super) {
                 if (segsBelow.length) {
                     td = cellMatrix[levelLimit - 1][col];
                     moreLink = _this.renderMoreLink(row, col, segsBelow);
-                    // Batyr Ashim 21.05.2024 9:33
-                    moreWrap = $('<div>').append(document.createTextNode(moreLink)); 
+                    // Batyr Ashim 19.06.2024
+                    moreWrap = $('<div>').append(moreLink); // Использование .append() jQuery
                     td.append(moreWrap);
                     moreNodes.push(moreWrap[0]);
                 }
                 col++;
             }
         };
-        
+
+
         if (levelLimit && levelLimit < rowStruct.segLevels.length) { // is it actually over the limit?
             levelSegs = rowStruct.segLevels[levelLimit - 1];
             cellMatrix = rowStruct.cellMatrix;
@@ -7714,7 +7715,7 @@ var DayGrid = /** @class */ (function (_super) {
                         segsBelow = colSegsBelow[j];
                         moreLink = this.renderMoreLink(row, seg.leftCol + j, [seg].concat(segsBelow));
                         // Batyr Ashim 21.05.2024 9:36
-                        moreWrap = $('<div>').text(moreLink); 
+                        moreWrap = $('<div>').text(moreLink);
                         moreTd.append(moreWrap);
                         segMoreNodes.push(moreTd[0]);
                         moreNodes.push(moreTd[0]);
@@ -7722,7 +7723,7 @@ var DayGrid = /** @class */ (function (_super) {
                     td.addClass('fc-limited').after($(segMoreNodes));
                     limitedNodes.push(td[0]);
                 }
-                
+
             }
             emptyCellsUntil(this.colCnt); // finish off the level
             rowStruct.moreEls = $(moreNodes); // for easy undoing later

@@ -67,6 +67,7 @@ type = s3
 provider = Minio
 access_key_id = ACCESS-KEY-HERE
 secret_access_key = SECRET-KEY-HERE
+<!-- Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 endpoint = http://192.168.0.100:9000
 acl = private
 ```
@@ -118,7 +119,7 @@ Docker volumes are there:
 sudo ls /var/lib/docker/volumes/
 
 wekan_wekan-db-dump
-wekan_wekan-db 
+wekan_wekan-db
 wekan_wekan-files
 ```
 Directories there are:

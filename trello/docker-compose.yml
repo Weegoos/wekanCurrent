@@ -175,7 +175,9 @@ services:
       # This can be problematic with avatars https://github.com/wekan/wekan/issues/1776
       #  - https://example.com/wekan
       # If without https, can be only wekan node, no need for Caddy/Nginx/Apache if you don't need them
+      #   Batyr Ashim 19.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
       #  - http://example.com
+      #  Batyr Ashim 19.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
       #  - http://boards.example.com
       #  - http://192.168.1.100    <=== using at local LAN
       - ROOT_URL=http://localhost  #   <=== using only at same laptop/desktop where Wekan is installed
@@ -223,7 +225,8 @@ services:
       # https://github.com/edemaine/kadira-compose
       # https://github.com/meteor/meteor-apm-agent
       # https://blog.meteor.com/kadira-apm-is-now-open-source-490469ffc85f
-      #- APM_OPTIONS_ENDPOINT=http://<kadira-ip>:11011
+      # Batyr Ashim 20.06.2024
+      #- APM_OPTIONS_ENDPOINT=https://<kadira-ip>:11011
       #- APM_APP_ID=
       #- APM_APP_SECRET=
       #---------------------------------------------------------------

@@ -87,7 +87,7 @@ curl  -H "Authorization: Bearer a6DM_gOPRwBdynfXaGBaiiEwTiAuigR_Fj_81QmNpnf" \
 ## Example of all steps of create user
 
 1) Login
-
+<!--   Batyr Ashim 19.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 curl http://example.com/users/login \
      -d "username=YOUR-USERNAME-HERE&password=YOUR-PASSWORD-HERE"
@@ -100,11 +100,12 @@ As response you get your id and token:
 ```
 
 2) Create user. Works both when serf-register enabled and disabled.
-
+<!--  Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 curl  -H "Authorization: Bearer YOUR-TOKEN-HERE" \
       -H "Content-type:application/json" \
       -X POST \
+
       http://example.com/api/users \
       -d '{ "username": "tester", "password": "tester", "email": "tester@example.com", "fromAdmin": "true" }'
 ```
@@ -116,7 +117,7 @@ As reply you get new user's id.
 ```
 
 3) You can get user details with your new user's id:
-
+<!-- Batyr Ashim 19.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 curl -H "Authorization: Bearer YOUR-TOKEN-HERE" \
       http://example.com/api/users/NEW-USER-ID-HERE
@@ -142,7 +143,7 @@ Returns the id of the created user.
 
 # User Delete
 
-> IMPORTANT : Should not be used as long as [this bug](https://github.com/wekan/wekan/issues/1289) exists. 
+> IMPORTANT : Should not be used as long as [this bug](https://github.com/wekan/wekan/issues/1289) exists.
 
 | URL | Requires Admin Auth | HTTP Method |
 | :--- | :--- | :--- |
@@ -157,7 +158,7 @@ Returns the id of the created user.
 ```bash
 curl -H "Authorization: Bearer a6DM_gOPRwBdynfXaGBaiiEwTiAuigR_Fj_81QmNpnf" \
       -X DELETE \
-      http://localhost:3000/api/users/EnhMbvxh65Hr7YvtG    
+      http://localhost:3000/api/users/EnhMbvxh65Hr7YvtG
 ```
 
 ## Example Result

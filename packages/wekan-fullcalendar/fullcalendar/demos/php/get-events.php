@@ -51,5 +51,8 @@ foreach ($input_arrays as $array) {
 }
 
 // Send JSON to the client.
-// Batyr Ashim 10:02 21.05.2024
-echo json_encode(array_map('htmlspecialchars', $output_arrays, array_fill(0, count($output_arrays), ENT_QUOTES)), JSON_HEX_QUOT);
+// Batyr Ashim 19.06.2024
+echo json_encode(array_map(function($array) {
+  return array_map('htmlspecialchars', $array, array_fill(0, count($array), ENT_QUOTES));
+}, $output_arrays), JSON_HEX_QUOT);
+

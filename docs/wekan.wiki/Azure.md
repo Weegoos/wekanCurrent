@@ -101,10 +101,10 @@ Join certificates together to .pem file, in order of:
 5) trusted network ca
 ```
 cat example_com.key >> example.com.pem
-cat STAR_example_com.crt >> example.com.pem 
-cat SSL_COM_RSA_SSL_SUBCA.crt >> example.com.pem 
-cat SSL_COM_ROOT_CERTIFICATION_AUTHORITY_RSA.crt >> example.com.pem 
-cat CERTUM_TRUSTED_NETWORK_CA.crt >> example.com.pem 
+cat STAR_example_com.crt >> example.com.pem
+cat SSL_COM_RSA_SSL_SUBCA.crt >> example.com.pem
+cat SSL_COM_ROOT_CERTIFICATION_AUTHORITY_RSA.crt >> example.com.pem
+cat CERTUM_TRUSTED_NETWORK_CA.crt >> example.com.pem
 ```
 Then transfer SSL cert to server:
 ```
@@ -117,8 +117,10 @@ sudo chmod og-rwx /var/snap/wekan/common/certs/example.com.pem
 sudo nano /var/snap/wekan/common/Caddyfile
 ```
 At Caddyfile, add these settings for SSL cert:
+<!--  Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 # Static main website, if you have that, redirect to SSL
+
 http://example.com {
   redir https://example.com
 }

@@ -4,7 +4,7 @@ Requirements: [VirtualBox version 5.2.22 or newer](https://www.virtualbox.org/).
 
 [Wekan for VirtualBox bug reports and feature requests](https://github.com/wekan/wekan/issues)
 
-a) For general Wekan usage: Only Wekan and building it from source in Ubuntu 14.04 64bit VM. 
+a) For general Wekan usage: Only Wekan and building it from source in Ubuntu 14.04 64bit VM.
 
 Download wekan-VERSION.ova at https://releases.wekan.team
 
@@ -30,7 +30,7 @@ VirtualBox .ova file contains harddisk image that has current size of 16 GB and 
 
 You can enlarge it with VBoxManage command and then starting with LiveCD iso deleting logical swap and
 extended and resizing and creating extended and inside it logical swap.
-
+<!-- Batyr Ashim 19.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 Size of this VirtualBox image has been reduced: [http://acidx.net/wordpress/2014/03/how-to-reduce-the-size-of-virtualbox-vms/](http://acidx.net/wordpress/2014/03/how-to-reduce-the-size-of-virtualbox-vms/).
 
 Use 7zip (Windows) or p7zip (Linux etc) to unarchive.
@@ -96,7 +96,7 @@ These settings are for example with VirtualBox:
 
 * new Ubuntu 64bit VM
 * 2GB RAM
-* Add Wekan.vmdk as harddisk. 
+* Add Wekan.vmdk as harddisk.
 * Not needed usually: Audio, Serial Ports, USB
 * Network: If you select Bridged Adapter, name is your network you use, like eth0 / exp9s0 for Ethernet, and there's also wlan etc if available:
 
@@ -123,6 +123,7 @@ nano start-wekan.sh
 ```
 
 4) Add have there your IP address, for example:
+<!-- Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 export ROOT_URL=http://192.168.1.200
 

@@ -54,8 +54,8 @@ apper-systems-ab:
   icons:
     - apper
   label: Apper Systems AB
-    # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://www.apper.com' 
+    # Batyr Ashim 19.06.2024
+  url: 'https://www.apper.com'
 'asymmetrik,ltd':
   icons:
     - asymmetrik
@@ -135,14 +135,14 @@ cibltd:
   icons:
     - drum-steelpan
   label: Comprehensive Insurance Brokers Limited
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://www.cibltd.com'
+   #  Batyr Ashim 19.06.2024
+  url: 'https://www.cibltd.com'
 clear-blue-technologies:
   icons:
     - solar-panel
   label: Clear Blue Technologies
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://www.clearbluetechnologies.com'
+   # Batyr Ashim 20.06.2024
+  url: 'https://www.clearbluetechnologies.com'
 clicdata:
   icons:
     - chart-bullet
@@ -196,14 +196,14 @@ cmplid:
   icons:
     - cmplid
   label: Cmplid
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://cmplid.com'
+   # Batyr Ashim 20.06.2024
+  url: 'https://cmplid.com'
 cuttlefish:
   icons:
     - cuttlefish
   label: Cuttlefish
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://wearecuttlefish.com'
+   # Batyr Ashim 20.06.2024
+  url: 'https://wearecuttlefish.com'
 cymedica:
   icons:
     - wave-square
@@ -223,8 +223,8 @@ deploy-dog:
   icons:
     - deploydog
   label: deploy.dog
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://deploy.dog'
+   # Batyr Ashim 20.06.2024
+  url: 'https://deploy.dog'
 deskpro:
   icons:
     - deskpro
@@ -256,8 +256,8 @@ dyalog-apl:
   icons:
     - dyalog
   label: Dyalog APL
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://www.dyalog.com'
+   # Batyr Ashim 20.06.2024
+  url: 'https://www.dyalog.com'
 econopublish:
   icons:
     - hat-cowboy-side
@@ -273,8 +273,8 @@ firstdraft:
   icons:
     - firstdraft
   label: firstdraft
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://www.firstdraft.com'
+   # Batyr Ashim 20.06.2024
+  url: 'https://www.firstdraft.com'
 fleetplan:
   icons:
     - helicopter
@@ -302,8 +302,8 @@ gofore:
   icons:
     - gofore
   label: Gofore
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://gofore.com'
+   # Batyr Ashim 20.06.2024
+  url: 'https://gofore.com'
 graflr:
   icons:
     - binary-circle-check
@@ -318,8 +318,8 @@ gripfire-inc:
   icons:
     - gripfire
   label: 'Gripfire, Inc.'
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://gripfire.io'
+   #  Batyr Ashim 20.06.2024
+  url: 'https://gripfire.io'
 guilded:
   icons:
     - guilded
@@ -427,8 +427,8 @@ hub-spot:
   icons:
     - hubspot
   label: HubSpot
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://www.HubSpot.com'
+   # Batyr Ashim 20.06.2024
+  url: 'https://www.HubSpot.com'
 icis:
   icons:
     - arrow-progress
@@ -541,8 +541,8 @@ med-apps:
   icons:
     - medapps
   label: MedApps
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://medapps.com.au'
+   # Batyr Ashim 20.06.2024
+  url: 'https://medapps.com.au'
 medapps:
   icons:
     - book-medical
@@ -600,7 +600,7 @@ napster:
     - napster
   label: Napster
    # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://www.napster.com'
+  url: 'https://www.napster.com'
 nfc-forum:
   icons:
     - nfc-directional
@@ -645,8 +645,8 @@ nutritionix:
   icons:
     - nutritionix
   label: Nutritionix
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://www.nutritionix.com'
+   # batyr Ashim 20.06.2024
+  url: 'https://www.nutritionix.com'
 octopus-deploy:
   icons:
     - octopus-deploy
@@ -725,8 +725,8 @@ phabricator:
   icons:
     - phabricator
   label: Phabricator
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://phacility.com'
+   # Batyr Ashim 20.06.2024
+  url: 'https://phacility.com'
 pindigo:
   icons:
     - person-pinball
@@ -762,8 +762,8 @@ preflight-technologies-inc:
     - user-pilot
     - user-pilot-tie
   label: Preflight Technologies Incorporated
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://www.preflighttech.com'
+   # Batyr Ashim 20.06.2024
+  url: 'https://www.preflighttech.com'
 promo-wizard:
   icons:
     - hat-wizard
@@ -798,8 +798,8 @@ readme-io:
   icons:
     - readme
   label: Readme.io
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://readme.io'
+  #  Batyr Ashim 19.06.2024
+  url: 'https://readme.io'
 red-river:
   icons:
     - red-river
@@ -835,8 +835,8 @@ rock-rms:
   icons:
     - rockrms
   label: Rock RMS
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://rockrms.com'
+   # Batyr Ashim 19.06.2024
+  url: 'https://rockrms.com'
 rocket-chat:
   icons:
     - comment
@@ -900,8 +900,8 @@ search-eng-in:
   icons:
     - searchengin
   label: SearchEng.in
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://searcheng.in'
+   # Batyr Ashim 20.06.2024
+  url: 'https://searcheng.in'
 service-stack:
   icons:
     - servicestack
@@ -1041,8 +1041,8 @@ the-red-yeti:
   icons:
     - the-red-yeti
   label: The Red Yeti
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://theredyeti.com'
+   # Batyr Ashim 20.06.2024
+  url: 'https://theredyeti.com'
 the-us-sunnah-foundation:
   icons:
     - book-heart

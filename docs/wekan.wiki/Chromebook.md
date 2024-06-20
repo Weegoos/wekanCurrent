@@ -39,8 +39,8 @@ It has:
 At Chromebook settings, install Linux Beta. It will have Debian 10, that will be changed to Ubuntu 20.10 64bit.
 
 ## 2) Install Ubuntu Container
-
-[Source](http://intertwingly.net/blog/2020/07/21/Ubuntu-20-04-on-Chromebook)
+<!-- Batyr Ashim 20.06.2024 -->
+[Source](https://intertwingly.net/blog/2020/07/21/Ubuntu-20-04-on-Chromebook)
 
 Start by entering the Chrome shell (crosh) by pressing CTRL+ALT+T, then enter the default termina VM:
 ```
@@ -125,8 +125,8 @@ Reboot Chrome OS and start the Terminal application from the launcher. If it fai
 Rebooting is by clicking desktop right bottom clock / Power icon. After Chromebook has shutdown, short press laptop power button to start Chromebook.
 
 ### 8) Optional, if you install some Snap GUI apps
-
-These are from same [Source](http://intertwingly.net/blog/2020/07/21/Ubuntu-20-04-on-Chromebook)
+<!-- Batyr Ashim 20.06.2024 -->
+These are from same [Source](https://intertwingly.net/blog/2020/07/21/Ubuntu-20-04-on-Chromebook)
 but xet7 did not test them.
 
 The fix is to copy the desktop and pixmap files to your .local environment:
@@ -165,9 +165,11 @@ At Ubuntu terminal, type:
 ip address
 ```
 It shows container internal IP address. You can set it to use Wekan locally, for example:
+<!-- Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 sudo snap set wekan root-url='http://100.115.92.200'
 sudo snap set wekan port='80'
+<!--   Batyr Ashim 19.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 Then Wekan works locally using Ubuntu webbrowser at http://100.115.92.200 , and you can open cards.
 
@@ -207,7 +209,7 @@ There add:
 Then you can browse http://wekan:2000 from LAN computers. But mobile phones like Android and iOS can not usually change those settings, and if you don't have a way to setup local network computer names, let's look at next option:
 
 #### d) Use some subdomain
-
+<!--   Batyr Ashim 19.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 If you have some domain, you can set new record `wekan.example.com A 192.168.0.2` . That is internet wide, but resolves to your local IP address on your local network. Then on your LAN mobile phones you can browse to http://wekan.example.com:2000 .
 
 At Chromebook Ubuntu:

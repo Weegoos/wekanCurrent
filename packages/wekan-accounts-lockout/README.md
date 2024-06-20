@@ -121,6 +121,6 @@ If you prefer, you can use `Meteor.settings`. It will overwrite any previous cas
 ```
 
 ## License
-
-This package is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+<!-- Batyr Ashim 20.06.2024 -->
+This package is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 

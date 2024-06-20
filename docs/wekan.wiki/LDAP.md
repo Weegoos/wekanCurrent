@@ -151,7 +151,7 @@ Using this docker-compose:
 https://docs.docker.com/compose/install/
 
 With this command:
-``` 
+```
 docker-compose up -d --no-build
 ```
 
@@ -205,6 +205,7 @@ services:
       # Change ROOT_URL to your real Wekan URL, for example:
       #   http://example.com
       #   http://example.com/wekan
+      <!-- Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
       #   http://192.168.1.100
       #---------------------------------------------------------------
       - ROOT_URL=
@@ -270,8 +271,8 @@ services:
       # When browser policy is enabled, HTML code at this Trusted URL can have iframe that embeds Wekan inside.
       - TRUSTED_URL=''
       #---------------------------------------------------------------
-      # What to send to Outgoing Webhook, or leave out. Example, that includes all that are default: cardId,listId,oldListId,boardId,comment,user,card,commentId . 
-      # example: WEBHOOKS_ATTRIBUTES=cardId,listId,oldListId,boardId,comment,user,card,commentId  
+      # What to send to Outgoing Webhook, or leave out. Example, that includes all that are default: cardId,listId,oldListId,boardId,comment,user,card,commentId .
+      # example: WEBHOOKS_ATTRIBUTES=cardId,listId,oldListId,boardId,comment,user,card,commentId
       - WEBHOOKS_ATTRIBUTES=''
       #---------------------------------------------------------------
       # LDAP_ENABLE : Enable or not the connection by the LDAP
@@ -320,10 +321,10 @@ services:
       # example : LDAP_BACKGROUND_SYNC_INTERVAL='every 15 minutes'
       # for more info: http://bunkat.github.io/later/parsers.html#text
       - LDAP_BACKGROUND_SYNC_INTERVAL='every 1 hour'
-      # LDAP_BACKGROUND_SYNC_KEEP_EXISTANT_USERS_UPDATED : 
+      # LDAP_BACKGROUND_SYNC_KEEP_EXISTANT_USERS_UPDATED :
       # example : LDAP_BACKGROUND_SYNC_KEEP_EXISTANT_USERS_UPDATED=true
       - LDAP_BACKGROUND_SYNC_KEEP_EXISTANT_USERS_UPDATED=false
-      # LDAP_BACKGROUND_SYNC_IMPORT_NEW_USERS : 
+      # LDAP_BACKGROUND_SYNC_IMPORT_NEW_USERS :
       # example : LDAP_BACKGROUND_SYNC_IMPORT_NEW_USERS=true
       - LDAP_BACKGROUND_SYNC_IMPORT_NEW_USERS=false
       # LDAP_ENCRYPTION : If using LDAPS
@@ -356,17 +357,17 @@ services:
       # LDAP_GROUP_FILTER_OBJECTCLASS : The object class for filtering
       # example : LDAP_GROUP_FILTER_OBJECTCLASS=group
       - LDAP_GROUP_FILTER_OBJECTCLASS=
-      # LDAP_GROUP_FILTER_GROUP_ID_ATTRIBUTE : 
-      # example : 
+      # LDAP_GROUP_FILTER_GROUP_ID_ATTRIBUTE :
+      # example :
       - LDAP_GROUP_FILTER_GROUP_ID_ATTRIBUTE=
-      # LDAP_GROUP_FILTER_GROUP_MEMBER_ATTRIBUTE : 
-      # example : 
+      # LDAP_GROUP_FILTER_GROUP_MEMBER_ATTRIBUTE :
+      # example :
       - LDAP_GROUP_FILTER_GROUP_MEMBER_ATTRIBUTE=
-      # LDAP_GROUP_FILTER_GROUP_MEMBER_FORMAT : 
-      # example : 
+      # LDAP_GROUP_FILTER_GROUP_MEMBER_FORMAT :
+      # example :
       - LDAP_GROUP_FILTER_GROUP_MEMBER_FORMAT=
-      # LDAP_GROUP_FILTER_GROUP_NAME : 
-      # example : 
+      # LDAP_GROUP_FILTER_GROUP_NAME :
+      # example :
       - LDAP_GROUP_FILTER_GROUP_NAME=
       # LDAP_UNIQUE_IDENTIFIER_FIELD : This field is sometimes class GUID (Globally Unique Identifier)
       # example : LDAP_UNIQUE_IDENTIFIER_FIELD=guid
@@ -377,22 +378,22 @@ services:
       # LDAP_USERNAME_FIELD : Which field contains the ldap username
       # example : LDAP_USERNAME_FIELD=username
       - LDAP_USERNAME_FIELD=sAMAccountName
-      # LDAP_MERGE_EXISTING_USERS : 
+      # LDAP_MERGE_EXISTING_USERS :
       # example : LDAP_MERGE_EXISTING_USERS=true
       - LDAP_MERGE_EXISTING_USERS=false
-      # LDAP_SYNC_USER_DATA : 
+      # LDAP_SYNC_USER_DATA :
       # example : LDAP_SYNC_USER_DATA=true
       - LDAP_SYNC_USER_DATA=false
-      # LDAP_SYNC_USER_DATA_FIELDMAP : 
+      # LDAP_SYNC_USER_DATA_FIELDMAP :
       # example : LDAP_SYNC_USER_DATA_FIELDMAP={"cn":"name", "mail":"email"}
-      # LDAP_SYNC_GROUP_ROLES : 
-      # example : 
+      # LDAP_SYNC_GROUP_ROLES :
+      # example :
       - LDAP_SYNC_GROUP_ROLES=''
       # LDAP_DEFAULT_DOMAIN : The default domain of the ldap it is used to create email if the field is not map correctly with the LDAP_SYNC_USER_DATA_FIELDMAP
-      # example : 
+      # example :
       - LDAP_DEFAULT_DOMAIN=mydomain.com
 #---------------------------------------------------------------
- 
+
     depends_on:
       - wekandb
       - wekanproxy
@@ -406,7 +407,7 @@ services:
       - wekan-tier
     ports:
       - 443:443
-      - 80:80 
+      - 80:80
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - ./nginx/ssl/ssl.conf:/etc/nginx/conf.d/ssl/ssl.conf:ro
@@ -427,6 +428,7 @@ services:
 #  wekan2:
 #    ....COPY CONFIG FROM ABOVE TO HERE...
 #    environment:
+#  Batyr Ashim 19.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
 #      - ROOT_URL='http://10.10.10.10'
 #      ...COPY CONFIG FROM ABOVE TO HERE...
 

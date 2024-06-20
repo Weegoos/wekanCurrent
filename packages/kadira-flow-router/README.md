@@ -61,8 +61,8 @@ FlowRouter.go('/blog/my-post-id');
 Then you can see some messages printed in the console.
 
 ## Routes Definition
-
-FlowRouter routes are very simple and based on the syntax of [path-to-regexp](https://github.com/pillarjs/path-to-regexp) which is used in both [Express](http://expressjs.com/) and `iron:router`.
+<!-- Batyr Ashim 20.06.2024 -->
+FlowRouter routes are very simple and based on the syntax of [path-to-regexp](https://github.com/pillarjs/path-to-regexp) which is used in both [Express](https://expressjs.com/) and `iron:router`.
 
 Here's the syntax for a simple route:
 

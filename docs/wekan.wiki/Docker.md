@@ -60,7 +60,7 @@ Then edit docker-compose.yml with [these lines uncommented](https://github.com/w
         - USE_EDGE=${USE_EDGE}
     #-------------------------------------------------------------------------------------
 ```
-Then you can build Wekan with 
+Then you can build Wekan with
 ```
 docker-compose up -d --build
 ```
@@ -68,7 +68,7 @@ docker-compose up -d --build
 ## Example for latest Wekan, port 2000 to Docker Wekan internal port 8080
 ```
 docker run -d --restart=always --name wekan-db mongo:5
-
+<!--   Batyr Ashim 19.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 docker run -d --restart=always --name wekan --link "wekan-db:db" -e "WITH_API=true" -e "MONGO_URL=mongodb://wekan-db:27017/wekan" -e "ROOT_URL=http://192.168.1.200:2000" -p 2000:8080 wekanteam/wekan:v5.41
 ```
 Specific release in above URL, not latest:
@@ -179,7 +179,7 @@ installs. You can also [enable Admin Panel manually](https://github.com/wekan/we
 
 ## Docker Hub - sometimes broken
 
-Currently there are two dockerhub builds for wekan. One at [mquandalle dockerhub](https://hub.docker.com/r/mquandalle/wekan/builds/) and another at [wekanteam dockerhub](https://hub.docker.com/r/wekanteam/wekan/builds/). 
+Currently there are two dockerhub builds for wekan. One at [mquandalle dockerhub](https://hub.docker.com/r/mquandalle/wekan/builds/) and another at [wekanteam dockerhub](https://hub.docker.com/r/wekanteam/wekan/builds/).
 
 [wekanteam dockerhub](https://hub.docker.com/r/wekanteam/wekan/builds/) is usually broken.
 

@@ -14,7 +14,7 @@
 - 2022-02-12 [Enable drag handles on iPad landscape mode automatically](https://github.com/wekan/wekan/issues/3755).
 - TODO:
   - Trying to find out some way how to make macOS App Store and iOS iPhone/iPad App Store versions of Wekan.
-  
+
 ## Docker: Easiest for install and use
 
 1. Install Docker Desktop for Mac and start it. Then:
@@ -31,6 +31,7 @@ ifconfig | grep broadcast | grep 'inet ' | cut -d: -f2 | awk '{ print $2}' | cut
 3. Edit docker-compose.yml-arm64
 ```
 nano docker-compose.yml-arm64
+<!--   Batyr Ashim 19.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 4. Change ROOT_URL to be your IP address, like http://192.168.0.100 :
 
@@ -130,7 +131,7 @@ Then edit docker-compose.yml with [these lines uncommented](https://github.com/w
         - USE_EDGE=${USE_EDGE}
     #-------------------------------------------------------------------------------------
 ```
-Then you can build Wekan with 
+Then you can build Wekan with
 ```
 docker-compose up -d --build
 ```

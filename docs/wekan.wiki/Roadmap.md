@@ -9,7 +9,7 @@ Please read Etiquette at [FAQ](FAQ) and [Developer Documentation](Developer-Docu
 # Old Roadmap below, not up-to-date
 
 # In progress
-
+<!-- Batyr Ashim 20.06.2024 -->
 GitHub Username | Feature | Status | Sponsor
 ------------ | ------------- | ------------ | ------------
 [xet7](https://github.com/xet7) | [Calendar View](https://github.com/wekan/wekan/issues/808) | In Progress | [Bountysource](https://www.bountysource.com/issues/41780513-add-feature-calendar-view)
@@ -17,8 +17,8 @@ GitHub Username | Feature | Status | Sponsor
 [Serubin](https://github.com/Serubin) | [Top-level projects](https://github.com/wekan/wekan/issues/641) | In Progress | [Bountysource](https://www.bountysource.com/issues/36035028-top-level-projects)
 [xet7](https://github.com/xet7), [thuanpq ](https://github.com/thuanpq) | [Teams/Organizations similar to Trello](https://github.com/wekan/wekan/issues/802) . Beginnings of user admin [already implemented](https://github.com/wekan/wekan/pull/1325) at [Wekan v0.55](https://github.com/wekan/wekan/blob/main/CHANGELOG.md#v055-2017-11-19-wekan-release) | In Progress | [FUUG.fi](https://fuug.fi/2017/wekan-kanban-taulun-perustoimintojen-kehitys-alkuun/) and [Bountysource](https://www.bountysource.com/issues/41780380-add-feature-teams-organizations-similar-to-trello)
 [andresmanelli](https://github.com/andresmanelli) | [Gogs issue/commit integration](https://github.com/wekan/wekan/issues/253) | [Part 1 in Wekan already](https://github.com/wekan/wekan/pull/1189) |
-[papoola](https://github.com/papoola) | [Custom Fields](https://github.com/wekan/wekan/issues/807) | In Progress | 
-[mfshiu](https://github.com/mfshiu) | [Custom Fields, Moving card on mobile phone, Filter cards by keyword](https://github.com/wekan/wekan/issues/1022#issuecomment-337646110), Integrate Wekan with [RIOT](http://riot.im) so user can be notified immediately on cell phone when Wekan cards change | Works, no pull request yet
+[papoola](https://github.com/papoola) | [Custom Fields](https://github.com/wekan/wekan/issues/807) | In Progress |
+[mfshiu](https://github.com/mfshiu) | [Custom Fields, Moving card on mobile phone, Filter cards by keyword](https://github.com/wekan/wekan/issues/1022#issuecomment-337646110), Integrate Wekan with [RIOT](https://riot.im) so user can be notified immediately on cell phone when Wekan cards change | Works, no pull request yet
 
 # Not started yet
 
@@ -43,7 +43,7 @@ Also see [other bounties at Bountysource](https://www.bountysource.com/teams/wek
 ## Done
 
 GitHub Username | Feature | Status | Sponsor
------------- | ------------- | ------------ | ------------  
+------------ | ------------- | ------------ | ------------
 [xet7](https://github.com/xet7) | Added fixes for [Excessive CPU usage](https://github.com/wekan/wekan-mongodb/issues/2) from various contributors to encourage [mfshiu](https://github.com/mfshiu) to contribute his Wekan features in progress | Done |
 [GhassenRjab](https://github.com/GhassenRjab), [thuanpq ](https://github.com/thuanpq) | [Move or copy cards from one board to another on Standalone](https://github.com/wekan/wekan/issues/797) | Done | [Bountysource](https://www.bountysource.com/issues/41780302-add-feature-move-or-copy-cards-from-one-board-to-another)
 [xet7](https://github.com/xet7) | [Copy URL of card](https://github.com/wekan/wekan/issues/1188) | Done at Standalone. |

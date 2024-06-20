@@ -180,6 +180,7 @@ services:
       #  - https://example.com/wekan
       # If without https, can be only wekan node, no need for Caddy/Nginx/Apache if you don't need them
       #  - http://example.com
+      # Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
       #  - http://boards.example.com
       #  - http://192.168.1.100    <=== using at local LAN
       - ROOT_URL=http://localhost  #   <=== using only at same laptop/desktop where Wekan is installed

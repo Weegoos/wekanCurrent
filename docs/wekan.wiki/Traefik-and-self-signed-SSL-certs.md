@@ -28,8 +28,8 @@ Copied these to /opt/traefik/certs and set permissions:
 ```
 chmod 644 /opt/traefik/certs/wekan1.crt
 
-chmod 600 /opt/traefik/certs/wekan1.key 
-```             
+chmod 600 /opt/traefik/certs/wekan1.key
+```
 
 Create a docker network web to use for traefik - this config doesn't require any ports exposed for wekan-app or wekan-db on the docker-host:
 
@@ -166,11 +166,12 @@ services:
       - "traefik.default.protocol=http"
     #note: mail url points to ip address of docker host which has postfix running as a relay
     # for docker apps. ping me at email: silvacraig@gmail.com if you want the postfix config.
-    # note here that an ip address is used instead of the servce name in the MONGO_URL - 
+    # note here that an ip address is used instead of the servce name in the MONGO_URL -
     # this is a bug that I have to work out. To identify the IP address use docker network
     #  inspect web when the wekandb is running
     environment:
       - MONGO_URL=mongodb://172.xx.xx.2:27017/wekan
+      <!-- Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
       - ROOT_URL=http://wekan.myinternaldomain.org
       - MAIL_URL=smtp://172.17.0.1:25/
       - MAIL_FROM='Wekan Support - <unix.admin@myinternaldomain.org>'
@@ -191,10 +192,10 @@ networks:
   web:
     external: true
 ```
-	
+
 One this is done - run wekan with:
 ```
-docker-compose up 
+docker-compose up
 ```
 This will run with logging output to the console - once its running ok - CTRL-C and start it up again with:
 ```

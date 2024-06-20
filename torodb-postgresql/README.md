@@ -40,7 +40,7 @@ cd torodb-postgresql
 ```bash
 docker-compose up -d
 ```
-
+<!--  Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 6) Wekan is at http://IPADDRESS or http://example.com (port 80)
 
 7) PostgreSQL connection URL for LibreOffice is `dbname=wekan hostaddr=127.0.0.1 port=15432 user=wekan password=wekan`.

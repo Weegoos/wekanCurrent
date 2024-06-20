@@ -4,10 +4,11 @@
 
 - Virtual Appliances Download: [VirtualBox, KVM, VMware, VMware ESX](https://www.univention.com/products/univention-app-center/app-catalog/wekan/)
 - [Video of installing Univention WeKan ® Appliance](https://wekan.github.io/UCS-4.4-with-wekan-10.200.2.25.webm)
+<!-- Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 - After installing, you get license key file in email. Go with webbrowser to VM ip address like http://192.x.x.x and upload license. After that also on VM screen console login as root is possible. If you install KDE app from App Center with webbrowser, you get KDE on VM screen.
 - [WeKan ® for Univention Feature Requests and Bug Reports](https://github.com/wekan/univention/issues)
 - [Univention Open Source repos](https://github.com/Univention)
-- [Univention interview at FLOSS Weekly 480](https://twit.tv/shows/floss-weekly/episodes/480) 
+- [Univention interview at FLOSS Weekly 480](https://twit.tv/shows/floss-weekly/episodes/480)
 - VM based on Debian. Free and Enterprise versions of Univention are same, only difference is paid support.
 - Univention VM can be standalone, or replace Windows Server Active Directory, or join to existing Active Directory. Has web UI, LDAP server, Users/Groups management, adding user to app.
 - WeKan ® LDAP login is integrated to Univention LDAP. Create at Univention web UI at Users management LDAP Domain Admin user, and add WeKan ® app for that user, to get WeKan ® Admin Panel. Normal users don't have Admin Panel.

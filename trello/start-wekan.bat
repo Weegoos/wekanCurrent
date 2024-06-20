@@ -12,8 +12,10 @@ REM # MongoDB database URL required
 SET MONGO_URL=mongodb://127.0.0.1:27017/wekan
 
 REM # If port is 80, must change ROOT_URL to: http://YOUR-WEKAN-SERVER-IPv4-ADDRESS , like http://192.168.0.100
+@REM  Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
 REM # If port is not 80, must change ROOT_URL to: http://YOUR-WEKAN-SERVER-IPv4-ADDRESS:YOUR-PORT-NUMBER , like http://192.168.0.100:2000
 REM # If ROOT_URL is not correct, these do not work: translations, uploading attachments.
+@REM Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
 SET ROOT_URL=http://192.168.0.21
 
 REM # Must change to YOUR-PORT-NUMBER:

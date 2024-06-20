@@ -85,7 +85,7 @@ See [Supported Settings Keys](Supported-settings-keys#matomo-web-analytics-integ
 
 ## [Rocket.Chat providing OAuth2 login to Wekan](https://github.com/wekan/wekan/wiki/OAuth2)
 
-Also, if you have Rocket.Chat using LDAP/SAML/Google/etc for logging into Rocket.Chat, then same users can login to Wekan when Rocket.Chat is providing OAuth2 login to Wekan. 
+Also, if you have Rocket.Chat using LDAP/SAML/Google/etc for logging into Rocket.Chat, then same users can login to Wekan when Rocket.Chat is providing OAuth2 login to Wekan.
 
 # Optional: Install Caddy - Every Site on HTTPS
 
@@ -172,7 +172,7 @@ $ sudo snap install wekan
 
 IMPORTANT: SETUP [URL SETTINGS](#url-settings) BELOW, SO OPENING CARDS ETC WORKS CORRECTLY. More info at [Supported settings keys](Supported-settings-keys).
 
-**IMPORTANT: Wekan Snap is bleeding edge, so any commits made to the wekan repository are pushed to the snap directly. Decide for yourself if you want to run wekan snap in production**  
+**IMPORTANT: Wekan Snap is bleeding edge, so any commits made to the wekan repository are pushed to the snap directly. Decide for yourself if you want to run wekan snap in production**
 
 Make sure you have connected all interfaces, check more by calling
 
@@ -207,7 +207,7 @@ $ sudo systemctl status snap.wekan.wekan
 Full URL to your Wekan, for example:
 
 ### Run Wekan on local network on selected port on computer IP address
-
+<!-- Batyr Ashim 19.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 $ sudo snap set wekan root-url='http://192.168.10.100:5000'
 ```

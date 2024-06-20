@@ -331,18 +331,15 @@ paths:
                 listId:
                   type: string
                 cardId:
-                  type: string  
+                  type: string
   /api/boards/{board}/attachments/{attachment}/export:
-    get:
+      get:
       operationId: exportJson
-      summary: This route is used to export a attachement to a json file format.
-      # description: |
-      #   If user is already logged-in, pass loginToken as param
-      #    "authToken": '/api/boards/:boardId/attachments/:attachmentId/export?authToken=:token'
-
-      # изменено batyr ashim 12:29 20.05.2024
-      description: "If user is already logged-in, pass loginToken as param 'authToken': '/api/boards/:boardId/attachments/:attachmentId/export?authToken=:token'"
-
+      summary: This route is used to export an attachment to a JSON file format.
+      # изменено batyr ashim 19.06.2024
+      description: |
+        If the user is already logged-in, pass the login token as a header.
+        Example: `Authorization: Bearer <token>`
       tags:
         - Boards
       parameters:
@@ -1374,13 +1371,14 @@ paths:
   /api/boards/{board}/export:
     get:
       operationId: exportJson
+      # batyr ashim 19.06.2024 был заменен "authToken" as a header "Authorization: Bearer <token>"
       summary: This route is used to export the board to a json file format.
-      description: |
+     description: |
         If user is already logged-in, pass loginToken as param
-         "authToken": '/api/boards/:boardId/export?authToken=:token'
+        "authToken" as a header "Authorization: Bearer <token>"
 
-         See https://blog.kayla.com.au/server-side-route-authentication-in-meteor/
-         for detailed explanations
+        See https://blog.kayla.com.au/server-side-route-authentication-in-meteor/
+        for detailed explanations
       tags:
         - Boards
       parameters:

@@ -62,5 +62,5 @@ docker run -d --restart=always --name wekan-db -v /volume1/docker/wekan/wekan-db
 
 docker run -d --restart=always --name wekan --link "wekan-db:db" -e "MONGO_URL=mongodb://db" -e "ROOT_URL=http://localhost:8080" -p 8080:80 wekanteam/wekan:meteor-1.4
 ```
-
+<!-- Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 8) Now Wekan is available at http://ip-address:port , for example: http://192.168.100.50:8080 . Wekan starts at boot, and restarts on error conditions.

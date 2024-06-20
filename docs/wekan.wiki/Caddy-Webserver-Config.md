@@ -107,6 +107,7 @@ Create file: `example.com.pem` with content of CloudFlare Origin Certificates.
 nano example.com.pem
 ```
 There add certs:
+<!-- Ашим Батыр 19.06.2024 ругается на сообщение -->
 ```
 -----BEGIN PRIVATE KEY-----
 -----END PRIVATE KEY-----
@@ -128,6 +129,7 @@ chmod 644 example.com.pem
 sudo nano /var/snap/wekan/common/Caddyfile
 ```
 There change config:
+<!-- Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 http://example.com https://example.com {
         tls {
@@ -159,6 +161,7 @@ Check that status of your domains have orange cloud color, so traffic goes throu
 
 Click CloudFlare login/example.com/Page Rules.
 Set for example:
+<!--  Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 1) http://example.com/*
 Always Use HTTPS

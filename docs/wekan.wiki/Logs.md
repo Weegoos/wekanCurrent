@@ -26,8 +26,9 @@ switched to db myDb
 > db.getProfilingLevel()
 2
 > db.system.profile.find().pretty()
+<!-- Batyr Ashim 20.06.2024 -->
 ```
-Source: http://docs.mongodb.org/manual/reference/method/db.setProfilingLevel/
+Source: https://docs.mongodb.org/manual/reference/method/db.setProfilingLevel/
 ```
 db.setProfilingLevel(2) means "log all operations".
 ```

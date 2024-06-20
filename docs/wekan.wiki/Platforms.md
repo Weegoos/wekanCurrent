@@ -4,7 +4,7 @@ Downloading and installing Wekan on various platforms.
 
 Only newest Wekan is supported. Please check you are running newest Wekan, because old versions of Wekan have old Node.js and other vulnerabilities.
 
-## Related 
+## Related
 
 * [Wekan new release ChangeLog](https://github.com/wekan/wekan/blob/main/CHANGELOG.md)
 * [Adding Users](Adding-users)
@@ -22,10 +22,11 @@ Only newest Wekan is supported. Please check you are running newest Wekan, becau
 
 - Virtual Appliances Download: [VirtualBox, KVM, VMware, VMware ESX](https://www.univention.com/products/univention-app-center/app-catalog/wekan/)
 - [Video of installing Univention Wekan Appliance](https://wekan.github.io/UCS-4.4-with-wekan-10.200.2.25.webm)
+<!--   Batyr Ashim 19.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 - After installing, you get license key file in email. Go with webbrowser to VM ip address like http://192.x.x.x and upload license. After that also on VM screen console login as root is possible. If you install KDE app from App Center with webbrowser, you get KDE on VM screen.
 - [Wekan for Univention Feature Requests and Bug Reports](https://github.com/wekan/univention)
 - [Univention Open Source repos](https://github.com/Univention)
-- [Univention interview at FLOSS Weekly 480](https://twit.tv/shows/floss-weekly/episodes/480) 
+- [Univention interview at FLOSS Weekly 480](https://twit.tv/shows/floss-weekly/episodes/480)
 - VM based on Debian. Free and Enterprise versions of Univention are same, only difference is paid support.
 - Univention VM can be standalone, or replace Windows Server Active Directory, or join to existing Active Directory. Has web UI, LDAP server, Users/Groups management, adding user to app.
 - Wekan LDAP login is integrated to Univention LDAP. Create at Univention web UI at Users management LDAP Domain Admin user, and add Wekan app for that user, to get Wekan Admin Panel. Normal users don't have Admin Panel.
@@ -58,7 +59,7 @@ Keep backups, Docker is more complex than others above. Use only if you have tim
   * [SLES 64bit](Install-Wekan-Docker-on-SUSE-Linux-Enterprise-Server-12-SP1)
 * [Proxy](https://github.com/wekan/wekan/issues/1480)
 
-*** 
+***
 ## Not exposed to Internet: Bundle for [RasPi 3, arm64, Windows and any Node+Mongo CPU architectures](Raspberry-Pi). No automatic updates, no sandboxing.
 
 New at 2019-06-30. If CPU architecture has enough RAM and fast harddisk, it can be used, but there

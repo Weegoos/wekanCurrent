@@ -1,4 +1,5 @@
-[FullCalendar](http://fullcalendar.io/) JQuery plugin packaged for Meteor 1.0
+<!-- Batyr Ashim 20.06.2024 -->
+[FullCalendar](https://fullcalendar.io/) JQuery plugin packaged for Meteor 1.0
 
 ### Instalation ###
 
@@ -11,7 +12,7 @@
 Options to FullCalendar can be passed as attributes:
 
     {{> fullcalendar defaultView='agendaWeek'}}
-    
+
 If you want to have options defined in JS (or have them reactive), you can do:
 
     <template name="example">

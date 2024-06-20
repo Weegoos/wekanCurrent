@@ -42,7 +42,7 @@
     - https://deno.com/blog/node-config-hell
 - How to not become slow and unresponsive after a week https://github.com/wekan/wekan/issues/5140
   - Run code like CGI, release all memory
-- Looking for most cross-platform web frameworks, supporting many different CPU, OS and database. 
+- Looking for most cross-platform web frameworks, supporting many different CPU, OS and database.
 - Both On-Premise AND MultiCloud possible
   - https://github.com/serverless/multicloud
   - https://github.com/xet7/multicloud
@@ -115,14 +115,15 @@ or have Javascript disabled for security reasons.
   - RISC OS https://www.riscosopen.org/content/downloads , https://www.riscosdev.com/direct/
   - ReactOS https://reactos.org , https://github.com/howinfo/howinfo/wiki/ReactOS
   - Redox OS https://www.redox-os.org
-  - Haiku, Linux, Windows, Amiga, Atari etc       
+  - Haiku, Linux, Windows, Amiga, Atari etc
 - Amiga: AWeb, iBrowse
 - Dillo Webbrowser at FreeDOS https://github.com/wekan/wekan/issues/4578#issuecomment-1248525591
 - Netscape, IE, etc all browsers at all OS/CPU
 - FreeDOS: Dillo, Arachne
 - Text based browsers: Lynx, Links, w3m (sudo apt-get install w3m w3m-img)
 - Ancient browsers:
-  - http://9p.sdf.org/who/tweedy/ancient_browsers/
+<!-- Batyr Ashim 20.06.2024 -->
+  - https://9p.sdf.org/who/tweedy/ancient_browsers/
   - https://news.ycombinator.com/item?id=34981257
 
 ## Browsers that are programmable
@@ -142,7 +143,7 @@ or have Javascript disabled for security reasons.
 
 ## Graphics
 
-- Raphael JS, supports also many legacy browsers, with VML and SVG graphics https://dmitrybaranovskiy.github.io/raphael/ 
+- Raphael JS, supports also many legacy browsers, with VML and SVG graphics https://dmitrybaranovskiy.github.io/raphael/
 - Related forked repos for various graphics at https://github.com/raphaeljsorg
 - Or alternatively, just use HTML4, images, imagemaps etc to be compatible to non-Javascript browsers
 

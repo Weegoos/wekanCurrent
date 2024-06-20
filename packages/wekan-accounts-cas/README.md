@@ -76,8 +76,8 @@ Meteor.settings = {
 	}
 }
 ```
-
-`proxyUrl` is not required. Setup [ROOT_URL](http://docs.meteor.com/api/core.html#Meteor-absoluteUrl) environment variable instead.
+<!-- Batyr Ashim 20.06.2024-->
+`proxyUrl` is not required. Setup [ROOT_URL](https://docs.meteor.com/api/core.html#Meteor-absoluteUrl) environment variable instead.
 
 Then, to start authentication, you have to call the following method from the client (for example in a click handler) :
 

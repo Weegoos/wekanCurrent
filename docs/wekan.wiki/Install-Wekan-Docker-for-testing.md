@@ -1,6 +1,6 @@
 **Purpose**: just to try Wekan on your own Linux workstation
-
-1. [Install Docker](http://docs.docker.com/linux/step_one/)
+<!-- Batyr Ashim 20.06.2024 -->
+1. [Install Docker](https://docs.docker.com/linux/step_one/)
 1. [Install Docker-Compose](http://docs.docker.com/compose/install/)
 1. Say we want to save our Wekan data on the host in directory `/home/johndoe/wekan/data`
 1. In a given directory (say `/home/johndoe/wekan`), create a `docker-compose.yml` file with:
@@ -39,7 +39,7 @@ to the new port
 
 ## Testing with mail server
 
-Above method will create an instance of Wekan without mailing features (users inviting, password recovery, neat registration) because MAIL_URL env var isn't set. This `docker-compose.yml` solves that problem by adding *mailserver* container.  
+Above method will create an instance of Wekan without mailing features (users inviting, password recovery, neat registration) because MAIL_URL env var isn't set. This `docker-compose.yml` solves that problem by adding *mailserver* container.
 
 ```yaml
 wekan:
@@ -49,6 +49,7 @@ wekan:
     - mailserver
   environment:
     - MONGO_URL=mongodb://wekandb/wekan
+    # Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
     - ROOT_URL=http://10.2.0.180:8081
     - MAIL_URL=smtp://wekan:wekan@mailserver:25
   ports:

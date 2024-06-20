@@ -95,7 +95,7 @@ export PATH="$PATH:/snap/juju-db/139/bin"
 ```
 Save and exit: Ctrl-o Enter Ctrl-x
 
-Exit ssh, and ssh to server again, 
+Exit ssh, and ssh to server again,
 ```
 exit
 
@@ -295,7 +295,7 @@ Look at what is your IP address at eth0, for example 192.168.0.x, with this comm
 ip address
 ```
 IP address will be added as your ROOT_URL.
-
+<!-- Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 You could also login to your router for example at http://192.168.0.1 to set static IP pointing always to your specific RasPi IP address, so that address would not change.
 
 Then edit this file:
@@ -316,6 +316,7 @@ After that start and enable Wekan:
 ```
 sudo systemctl start wekan
 sudo systemctl enable wekan
+<!--  Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 
 Wekan should work at your ROOT_URL in your webbrowser like http://192.168.0.x
@@ -386,6 +387,7 @@ nano start-wekan.sh
 ```
 There change ROOT_URL like [described here](https://github.com/wekan/wekan/Settings),
 for example your RasPi IP address and port, and MongoDB URL:
+<!-- Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 export ROOT_URL=http://192.168.0.x:2000
 export PORT=2000
@@ -439,7 +441,7 @@ mongorestore --drop --noIndexRestore
 ```
 <img src="https://wekan.github.io/wekan-raspi3-with-all-data.jpg" width="100%" alt="Wekan on RasPi3" />
 
-When using Firefox on network laptop (Core 2 Duo laptop, 8 GB RAM, SSD harddisk) to browse RasPi Wekan server, small boards load at about 3 seconds at first time. When loading, node CPU usage goes to about 100%. MongoDB CPU usage stays low, sometimes goes to 18%. This is because indexes has been added to Wekan MongoDB database. Loading my biggest Wekan board at first time takes 45 seconds, and next time takes about 2 seconds, because data is at browser cache. When Wekan browser tab is closed, node CPU usage drops 4-23%. There is no errors given by Wekan at RasPi3, RasPi3 arm64 behaves similar to x64 server that has 1 GB RAM. 
+When using Firefox on network laptop (Core 2 Duo laptop, 8 GB RAM, SSD harddisk) to browse RasPi Wekan server, small boards load at about 3 seconds at first time. When loading, node CPU usage goes to about 100%. MongoDB CPU usage stays low, sometimes goes to 18%. This is because indexes has been added to Wekan MongoDB database. Loading my biggest Wekan board at first time takes 45 seconds, and next time takes about 2 seconds, because data is at browser cache. When Wekan browser tab is closed, node CPU usage drops 4-23%. There is no errors given by Wekan at RasPi3, RasPi3 arm64 behaves similar to x64 server that has 1 GB RAM.
 
 <img src="https://wekan.github.io/wekan-raspi3-cpu-usage.jpg" width="100%" alt="Wekan on RasPi3" />
 
@@ -510,7 +512,7 @@ sudo systemctl enable mongodb
 wget https://releases.wekan.team/raspi3/start-wekan.sh
 nano start-wekan.sh
 ```
-There edit [ROOT_URL to have your IP address or domain, and PORT for your localhost port](Settings). 
+There edit [ROOT_URL to have your IP address or domain, and PORT for your localhost port](Settings).
 
 You can also allow node to run on port 80, when you check where node is:
 ```
@@ -612,7 +614,7 @@ Save and Exit: Ctrl-o Enter Ctrl-x Enter
 See above about downloading bundle, start-wekan.sh, dependencies etc.
 
 7) Shutdown RasPi3
-``` 
+```
 sudo shutdown -h now
 ```
 

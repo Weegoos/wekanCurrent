@@ -139,7 +139,8 @@ parts:
             #rm -rf ~/.meteor ~/.npm /usr/local/lib/node_modules
             rm -rf .build
             #echo "Using http npm packages so speedup install process https://stackoverflow.com/questions/39760113/callback-called-more-than-once-while-running-npm-install"
-            #echo "registry=http://registry.npmjs.org/" > ~/.npmrc
+            # Batyr Ashim 20.06.2024
+            #echo "registry=https://registry.npmjs.org/" > ~/.npmrc
             #echo "Installing npm, node-gyp, node-pre-gyp, fibers"
             #npm -g install n --unsafe-perm
             #n 14.21.4

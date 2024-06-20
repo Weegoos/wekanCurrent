@@ -3,8 +3,8 @@
 ```
 sudo a2enmod ssl proxy proxy_http proxy_wstunnel proxy_balancer
 ```
-
-[Apache Mod_Proxy documentation](http://httpd.apache.org/docs/current/mod/mod_proxy.html)
+<!-- Batyr Ashim 20.06.2024 -->
+[Apache Mod_Proxy documentation](https://httpd.apache.org/docs/current/mod/mod_proxy.html)
 
 ## 2) Restart Apache
 

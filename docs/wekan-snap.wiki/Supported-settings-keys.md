@@ -50,7 +50,8 @@ mail-from:	 wekan's admin mail from name email address
 		 For example: 'Boards Support <support@example.com>'
 		 Default value: 'wekan-admin@example.com'
 root-url:	 wekan's root url, eg http://127.0.0.1, https://example.com,
-		 https://wekan.example.com, http://example.com/wekan
+<!-- Batyr Ashim 20.06.2024 -->
+		 https://wekan.example.com, https://example.com/wekan
 		 Default value: 'http://127.0.0.1'
 port:		 port wekan is exposed at
 		 Default value: '8080'
@@ -88,7 +89,7 @@ trusted-url:     When browser policy is enabled, HTML code at this URL
                  Example: trusted-url='https://example.com'
                  Default value: ''
 webhooks-attributes: What to send to Outgoing Webhook, or leave out.
-                 Example, that includes all that are default: 
+                 Example, that includes all that are default:
                  cardId,listId,oldListId,boardId,comment,user,card,commentId .
                  To enable the Webhooks Attributes of Wekan:
                  snap set wekan webhooks-attributes=cardId,listId,oldListId,boardId,comment,user,card,commentId

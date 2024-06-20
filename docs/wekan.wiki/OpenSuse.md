@@ -21,7 +21,7 @@ More info at https://github.com/wekan/wekan/wiki/Adding-users
 4) If you instead would like to access WeKan from other
 laptops on your local network, check what is your computer
 IP address, and change your IP address here:
-
+<!-- Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 sudo snap set wekan root-url='http://192.168.0.200'
 ```

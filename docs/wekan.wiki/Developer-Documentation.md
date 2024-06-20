@@ -47,7 +47,7 @@ When you run this, you see .jade template files where is search input box, and .
   - Read Wekan source code, you can use some git history viewer GUI like gitk
   - Read [Meteor documentation](https://docs.meteor.com/) for [Meteor version](https://github.com/wekan/wekan/blob/main/.meteor/release) in use, other versions mentioned at [Dockerfile](https://github.com/wekan/wekan/blob/main/Dockerfile)
 - Docker up-to-date way: You can  clone wekan/wekan repo and update docker-compose.yml file ROOT_URL etc as documented at https://github.com/wekan/wekan-mongodb commented docker-compose.yml file, install docker, and build from source with docker with "docker-compose up -d --build"
-- Docker not up-to-date way: [Docker environment for Wekan development](https://github.com/wekan/wekan-dev). 
+- Docker not up-to-date way: [Docker environment for Wekan development](https://github.com/wekan/wekan-dev).
 
 ## Pull Request Workflow (Please read before submitting PR's)
 
@@ -62,7 +62,8 @@ When you run this, you see .jade template files where is search input box, and .
 
 - NOTE: Travis is currently broken and always shows warnings and errors like variables not defined or not used, so if your code works, ignore Travis.
 - Eslint for linting. To prevent Travis CI lint errors, you can test for lint errors by installing `npm install eslint` and running it with `npm run lint` and trying automatic fixing with `eslint --fix filename.js`
-- There is also probably not-currently-working as of 2018-05-05 [jsbeautifer website](http://jsbeautifier.org) with settings Indent with 2 spaces (topmost dropdown), [X] Space before conditional: "if(x)" / "if (x)", [X] Use JSLint-happy formatting tweaks.
+<!-- Batyr Ashim 20.06.2024 -->
+- There is also probably not-currently-working as of 2018-05-05 [jsbeautifer website](https://jsbeautifier.org) with settings Indent with 2 spaces (topmost dropdown), [X] Space before conditional: "if(x)" / "if (x)", [X] Use JSLint-happy formatting tweaks.
 
 ## Choosing issues to work on
 
@@ -76,9 +77,10 @@ When you run this, you see .jade template files where is search input box, and .
 Main point is to be friendly to those commenting of your code, and incorporate those suggestions that make most sense.
 
 # Build Pipeline
-
-- Templates are written in [JADE](https://naltatis.github.io/jade-syntax-docs/) instead of plain HTML. Also see [HTML to JADE converter](http://html2jade.org/).
-- CSS is written in the [Stylus](http://stylus-lang.com/) precompiler - see [Stylus to CSS converter](https://mikethedj4.github.io/Stylus2CSS/), and
+<!-- Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
+- Templates are written in [JADE](https://naltatis.github.io/jade-syntax-docs/) instead of plain HTML. Also see [HTML to JADE converter](https://html2jade.org/).
+<!--   Batyr Ashim 19.06.2024 -->
+- CSS is written in the [Stylus](https://stylus-lang.com/) precompiler - see [Stylus to CSS converter](https://mikethedj4.github.io/Stylus2CSS/), and
 - Meteor templates are created as BlazeLayout templates.
 - Instead of the allow/deny paradigm a lot of the `collections` defined in the project use `mutations` to define what kinds of operations are allowed.
 
@@ -86,7 +88,7 @@ For further details look for the 'feature summaries' in the Wiki (still in progr
 
 # Translations
 
-If adding new features, please also support the internationalization features built in. Refer to the [[Translations]] wiki page. 
+If adding new features, please also support the internationalization features built in. Refer to the [[Translations]] wiki page.
 
 # Export From Trello
 

@@ -2,8 +2,12 @@
 
 ## ROOT_URL / root-url
 - See https://github.com/wekan/wekan/issues/4803
-- Docker/Source/Bundle like this, no quotes, big letters, underscore: `ROOT_URL=http://192.168.0.100`
-- **Snap** like this, single quotes, small letters: `sudo snap set wekan root-url='http://192.168.0.100'`
+<!-- Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
+- Docker/Source/Bundle like this, no quotes, big letters, underscore:
+`ROOT_URL=http://192.168.0.100`
+- **Snap** like this, single quotes, small letters: `sudo snap set
+<!--  Batyr Ashim 19.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
+wekan root-url='http://192.168.0.100'`
 
 ## Webserver config
 * [Nginx](Nginx-Webserver-Config)
@@ -24,6 +28,7 @@ Examples:
 => Wekan locally http://192.168.1.150
 
 3) only wekan, no SSL, internal lan, caddy not enabled, wekan at different port:
+<!-- Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 - root-url='http://192.168.1.150:5000'
 - port='5000'
 => Wekan locally http://192.168.1.150:5000
@@ -39,7 +44,7 @@ Wekan runs http server on local port, so it is without SSL. To get SSL, some web
 ## Admin Panel
 
 First registered Wekan user will get [Admin Panel](Features) on new
-Docker and source based installs. You can also on MongoDB 
+Docker and source based installs. You can also on MongoDB
 [enable Admin Panel](https://github.com/wekan/wekan/blob/main/CHANGELOG.md#v0111-rc2-2017-03-05-wekan-prerelease) and [change you as board admin](https://github.com/wekan/wekan/issues/1060#issuecomment-310545976).
 
 ## LAN + VPN
@@ -51,8 +56,8 @@ Docker and source based installs. You can also on MongoDB
 [Using Proxy](https://github.com/wekan/wekan/issues/1480)
 
 ## Email
-
-[Troubleshooting Mail](Troubleshooting-Mail). For Exchange, you can use [DavMail](http://davmail.sourceforge.net), Wekan SMTP => DavMail => Exchange.
+<!-- Batyr Ashim 20.06.2024 -->
+[Troubleshooting Mail](Troubleshooting-Mail). For Exchange, you can use [DavMail](https://davmail.sourceforge.net), Wekan SMTP => DavMail => Exchange.
 
 ## RAM usage
 

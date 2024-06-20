@@ -82,7 +82,8 @@ Files in this directory are served by meteor as-is to the client. It hosts some 
    * **[filter.js](https://github.com/wekan/wekan/tree/main/client/lib/filter.js)**: registers `Filter` [Blaze](http://blazejs.org/) helper to support filtering cards by labels and by members;
    * **[modal.js](https://github.com/wekan/wekan/tree/main/client/lib/modal.js)**: registers `Modal` [Blaze](http://blazejs.org/) helper to support showing modal windows like the one for archived boards;
    * **[multiSelection.js](https://github.com/wekan/wekan/tree/main/client/lib/multiSelection.js)**: registers `Modal` [Blaze](http://blazejs.org/) helper to support multiple selection mode;
-   * **[unsavedEdits.js](https://github.com/wekan/wekan/tree/main/client/lib/unsavedEdits.js)**: registers `getUnsavedValue` and `hasUnsavedValue` [Blaze](http://blazejs.org/) helpers to preserve content entered in fields but not saved;
+   <!-- Batyr Ashim 20.06.2024 -->
+   * **[unsavedEdits.js](https://github.com/wekan/wekan/tree/main/client/lib/unsavedEdits.js)**: registers `getUnsavedValue` and `hasUnsavedValue` [Blaze](https://blazejs.org/) helpers to preserve content entered in fields but not saved;
 
 # Server
 
@@ -183,5 +184,5 @@ Other files:
 
 # Contributions to this page
 
-This documentation was contributed by [TNick](https://github.com/TNick) and [xet7](https://github.com/xet7) while Wekan was at commit [e2f768c](https://github.com/wekan/wekan/tree/e2f768c6a0f913b7c5f07695dce8cec692037255). 
+This documentation was contributed by [TNick](https://github.com/TNick) and [xet7](https://github.com/xet7) while Wekan was at commit [e2f768c](https://github.com/wekan/wekan/tree/e2f768c6a0f913b7c5f07695dce8cec692037255).
 Please add new files, fixes, updates, etc directly to this page.

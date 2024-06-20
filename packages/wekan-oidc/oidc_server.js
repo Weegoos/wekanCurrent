@@ -159,6 +159,7 @@ if (process.env.ORACLE_OIM_ENABLED === 'true' || process.env.ORACLE_OIM_ENABLED 
         headers: {
           Accept: 'application/json',
           "User-Agent": userAgent,
+          // Batyr Ashim 19.06.2024, Ругается на strBasicToken64 который объявлен var strBasicToken64 = strBasicToken.toString('base64'); здесь с помощью переменного окружения
           "Authorization": "Basic " + strBasicToken64
         },
         params: {
@@ -202,6 +203,8 @@ if (process.env.ORACLE_OIM_ENABLED === 'true' || process.env.ORACLE_OIM_ENABLED 
     var response;
 
     // OIM needs basic Authentication token in the header - ClientID + SECRET in base64
+    // Batyr Ashim ругается на null значение но, переменная объявлена здесь:  dataToken = process.env.OAUTH2_CLIENT_ID + ':' + process.env.OAUTH2_SECRET
+    // Batyr Ashim ругается на null значение но, переменная объявлена здесь:     var strBasicToken = Buffer.from(dataToken);
     var dataToken=null;
     var strBasicToken=null;
     var strBasicToken64=null;
@@ -218,6 +221,7 @@ if (process.env.ORACLE_OIM_ENABLED === 'true' || process.env.ORACLE_OIM_ENABLED 
           headers: {
             Accept: 'application/json',
             "User-Agent": userAgent,
+            // Batyr Ashim 19.06.2024, Ругается на strBasicToken64 который объявлен var strBasicToken64 = strBasicToken.toString('base64'); здесь с помощью переменного окружения
             "Authorization": "Basic " + strBasicToken64
           },
           params: {
@@ -242,8 +246,8 @@ if (process.env.ORACLE_OIM_ENABLED === 'true' || process.env.ORACLE_OIM_ENABLED 
       throw new Error("Failed to complete handshake with OIDC " + serverTokenEndpoint + ": " + response.data.error);
     } else {
       // eslint-disable-next-line no-console
-      if (debug) { 
-        //Ertargyn 10:21 23.05.2024 Логирование общего сообщения без чувствительной 
+      if (debug) {
+        //Ertargyn 10:21 23.05.2024 Логирование общего сообщения без чувствительной
         console.log('XXX: getToken response: ', response.data);
       }
       return response.data;
@@ -279,9 +283,9 @@ var getUserInfo = function (accessToken) {
                    {response: err.response});
   }
   if (debug) {
-    //Ertargyn 10:21 23.05.2024 Логирование общего сообщения без чувствительной 
+    //Ertargyn 10:21 23.05.2024 Логирование общего сообщения без чувствительной
    console.log('XXX: getUserInfo response: ', response.data);
-  }  
+  }
   return response.data;
 };
 

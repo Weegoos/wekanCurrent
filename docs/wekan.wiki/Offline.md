@@ -60,7 +60,7 @@ If there is already some webserver at port 80, change to other port:
 ```
 REM # Writable path required to exist and be writable for attachments to migrate and work correctly
 SET WRITABLE_PATH=..
-
+<!-- Batyr Ashim 19.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 SET ROOT_URL=http://IP-ADDRESS-HERE:2000
 
 SET PORT=2000
@@ -95,7 +95,7 @@ mongodump
 ```
 Backup will be is in directory `dump`. More info at https://github.com/wekan/wekan/wiki/Backup
 
-2.2. Backup part 2/2. If there is files at `WRITABLE_PATH` directory mentioned at `start-wekan.bat` of https://github.com/wekan/wekan , also backup those. For example, if there is `WRITABLE_PATH=..`, it means previous directory. So when WeKan is started with `node main.js` in bundle directory, it may create in previous directory (where is bundle) directory `files`, where is subdirectories like `files\attachments`, `files\avatars` or similar. 
+2.2. Backup part 2/2. If there is files at `WRITABLE_PATH` directory mentioned at `start-wekan.bat` of https://github.com/wekan/wekan , also backup those. For example, if there is `WRITABLE_PATH=..`, it means previous directory. So when WeKan is started with `node main.js` in bundle directory, it may create in previous directory (where is bundle) directory `files`, where is subdirectories like `files\attachments`, `files\avatars` or similar.
 
 2.3. Check required compatible version of Node.js from https://wekan.github.io `Install WeKan ® Server` section and Download that version node.exe for Windows 64bit from https://nodejs.org/dist/
 
@@ -170,6 +170,7 @@ ip address
 
 11. In Ubuntu Terminal, type with your IP address,
 at below instead of 192.168.0.100:
+<!--  Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 sudo snap set wekan root-url='http://192.168.0.100'
 
@@ -177,4 +178,5 @@ sudo snap set wekan port='80'
 ```
 
 12. Then at local network Wekan is at:
+<!-- Batyr Ashim 19.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 http://192.168.0.100
