@@ -179,6 +179,7 @@ services:
       # This can be problematic with avatars https://github.com/wekan/wekan/issues/1776
       #  - https://example.com/wekan
       # If without https, can be only wekan node, no need for Caddy/Nginx/Apache if you don't need them
+      #Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
       #  - http://example.com
       # Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
       #  - http://boards.example.com
@@ -743,6 +744,7 @@ services:
 #  wekan2:
 #    ....COPY CONFIG FROM ABOVE TO HERE...
 #    environment:
+# Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
 #      - ROOT_URL='http://10.10.10.10'
 #      ...COPY CONFIG FROM ABOVE TO HERE...
 #---------------------------------------------------------------------------------

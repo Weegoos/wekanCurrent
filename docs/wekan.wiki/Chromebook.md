@@ -174,7 +174,7 @@ sudo snap set wekan port='80'
 Then Wekan works locally using Ubuntu webbrowser at http://100.115.92.200 , and you can open cards.
 
 #### b) Use Wekan from other computers at LAN
-
+<!-- Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 Look at your Chromebook wifi settings `(i)`, what is your laptop IP address, and use it with below http address:
 ```
 sudo snap set wekan root-url='http://192.168.0.2:2000'
@@ -195,6 +195,7 @@ sudo nano /etc/hosts
 There add:
 ```
 127.0.0.1 localhost wekan
+<!--  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 Then with Ubuntu webbrowser you can browse http://wekan:2000 .
 
@@ -206,6 +207,7 @@ There add:
 ```
 192.168.0.2 wekan
 ```
+<!-- Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 Then you can browse http://wekan:2000 from LAN computers. But mobile phones like Android and iOS can not usually change those settings, and if you don't have a way to setup local network computer names, let's look at next option:
 
 #### d) Use some subdomain
@@ -220,6 +222,7 @@ There add:
 ```
 127.0.0.1 localhost wekan.example.com
 ```
+<!-- Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 So then you can browse to http://wekan.example.com:2000 from Chromebook Ubuntu Firefox, Chromebook Chrome, other LAN computers and mobile phones.
 
 #### Mobile app icon

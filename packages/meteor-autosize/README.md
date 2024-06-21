@@ -32,8 +32,8 @@ yes    | yes     | 9  | yes    | yes        | 4       | ?          | 8.1
 
 
 #### Documentation and Demo
-
-http://www.jacklmoore.com/autosize/
+<!-- Batyr Ashim 21.06.2024 -->
+https://www.jacklmoore.com/autosize/
 
 #### Original package
 

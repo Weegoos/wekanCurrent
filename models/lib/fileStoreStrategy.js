@@ -470,10 +470,11 @@ export class FileStoreStrategyS3 extends FileStoreStrategy {
         Key: path
       };
 
-      // Batyr Ashim 23.05.2024
+      // Здесь используется http метод который не могу изменить Batyr Ashim 21.06.2024
       if (http.request.headers && http.request.headers.range) {
 
         const vRef = fileRef.versions[version];
+        // Здесь используется http метод который не могу изменить Batyr Ashim 21.06.2024
         let range = http.request.headers.range ? _.clone(http.request.headers.range) : null;
         const array = range.split(/bytes=([0-9]*)-([0-9]*)/);
         const start = parseInt(array[1]);
@@ -485,9 +486,10 @@ export class FileStoreStrategyS3 extends FileStoreStrategy {
           }
         }
         opts.Range = `bytes=${start}-${end}`;
+        // Здесь используется http метод который не могу изменить Batyr Ashim 21.06.2024
         http.request.setHeader('range', `bytes=${start}-${end}`);
       }
-      
+
 
       const fileColl = this;
       s3Client.getObject(opts, function (error) {
@@ -497,10 +499,11 @@ export class FileStoreStrategyS3 extends FileStoreStrategy {
             http.response.end();
           }
         } else {
-          // Batyr Ashim 23.05.2024
+          // Здесь используется http метод который не могу изменить Batyr Ashim 21.06.2024
           if (http.request.headers && this.httpResponse.headers && this.httpResponse.headers['content-range']) {
             const contentRangeHeader = this.httpResponse.headers['content-range'];
             const rangeValue = contentRangeHeader.split('/')[0].replace('bytes ', 'bytes=');
+             // Здесь используется http метод который не могу изменить Batyr Ashim 21.06.2024
             http.request.headers.range = rangeValue;
         }
 

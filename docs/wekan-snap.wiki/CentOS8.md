@@ -5,7 +5,7 @@ Using CentOS 8 Stream.
 2. Reboot
 
 3. With terminal, test latest release candidate, to your server IP address:
-
+<!-- Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 su
 snap install wekan --channel=latest/candidate

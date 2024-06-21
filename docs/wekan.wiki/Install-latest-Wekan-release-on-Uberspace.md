@@ -89,7 +89,7 @@ echo "FREE_PORT: ${FREE_PORT}"
 ###################
 ### Setup Wekan ###
 ###################
-
+<!--  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ## Issue #907 - Port must be speccified in root url, when Version > 0.10.1
 MONGO_URL="mongodb://${MONGO_USER}:${MONGO_PASS}@127.0.0.1:${MONGO_PORT}/wekan?authSource=admin"
 ROOT_URL="http://${USER}.${HOSTNAME}:${FREE_PORT}/"

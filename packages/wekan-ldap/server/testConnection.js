@@ -22,7 +22,7 @@ Meteor.methods({
       ldap.connectSync();
     } catch (error) {
       if (!PRODUCTION) {
-        console.error(error); // Ertargyn 17:04 изменили и добавили else
+        // Batyr Ashim 21.06.2024
       } else {
         console.error('An error occurred while connecting to LDAP.');
       }
@@ -33,7 +33,7 @@ Meteor.methods({
       ldap.bindIfNecessary();
     } catch (error) {
       if (!PRODUCTION) {
-        console.error(error);
+      // Batyr Ashim 21.06.2024
       } else {
         console.error('An error occurred while binding to LDAP.');
       }

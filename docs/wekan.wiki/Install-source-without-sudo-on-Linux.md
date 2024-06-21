@@ -10,8 +10,9 @@ Anyone: If you get this working, edit this wiki and add remaining to be installe
 
 ## Related info
 - Node.js and npm version downloaded at [Dockerfile](https://github.com/wekan/wekan/blob/main/Dockerfile)
+<!-- Batyr Ashim 21.06.2024 -->
 - https://gist.github.com/isaacs/579814
-- http://linuxbrew.sh
+- https://linuxbrew.sh
 
 ## Only this run with sudo
 ```
@@ -46,7 +47,7 @@ fi
 
 ```
 npm -g install n
-npm -g install npm@4.6.1 
+npm -g install npm@4.6.1
 npm -g install node-gyp
 npm -g install node-pre-gyp
 npm -g install fibers@1.0.15

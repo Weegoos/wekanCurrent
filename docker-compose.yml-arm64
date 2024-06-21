@@ -746,7 +746,7 @@ services:
 #  wekan2:
 #    ....COPY CONFIG FROM ABOVE TO HERE...
 #    environment:
-# Выходит HTTP usage из-за ссылок в комментарии Batyr Ashim 21.05.2024
+#  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
 #      - ROOT_URL='http://10.10.10.10'
 #      ...COPY CONFIG FROM ABOVE TO HERE...
 #---------------------------------------------------------------------------------

@@ -67,8 +67,8 @@ sudo apt-get -y dist-upgrade
 ```
 
 ### Instructions
-
-When using VirtualBox bridged mode, you can browse from other computer to http://ipadress
+<!-- Batyr Ashim 21.06.2024 -->
+When using VirtualBox bridged mode, you can browse from other computer to https://ipadress
 to use Wekan. Node runs on port 80 and is started from /etc/rc.local on boot.
 See also README.txt at Ubuntu desktop, scripts at ~/repos directory, and
 /home/wekan/.bash_history how it was installed, including typos :)

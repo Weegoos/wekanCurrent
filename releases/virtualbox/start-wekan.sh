@@ -139,7 +139,7 @@
       # Default value: true
       export BROWSER_POLICY_ENABLED=true
       # When browser policy is enabled, HTML code at this Trusted URL can have iframe that embeds Wekan inside.
-      # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 22.05.2024
+      # Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
       # Example: export TRUSTED_URL=http://example.com
       export TRUSTED_URL=''
       # What to send to Outgoing Webhook, or leave out. Example, that includes all that are default: cardId,listId,oldListId,boardId,comment,user,card,commentId .

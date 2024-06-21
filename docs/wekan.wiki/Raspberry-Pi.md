@@ -15,6 +15,7 @@ WeKan only requires:
   - init.d script
   - any other script, that sets environment variables and in bundle directory does `node main.js`
 - most important environment settings are:
+<!--  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
   - `ROOT_URL=http://192.168.0.200` for WeKan server IP address at local network or `ROOT_URL=https://kanban.example.com` if [Caddy](Caddy-Webserver-Config)/[Nginx](Nginx-Webserver-Config)/[Apache2](Apache) proxies from HTTPS to WeKan http://127.0.0.1:4000 etc, see https://github.com/wekan/wekan/wiki/Settings
   - `PORT=80` or `PORT=4000` or some other port where WeKan Nodejs runs.
   - `MONGO_URL=mongodb://127.0.0.1:27017/wekan` where MongoDB server is, like localhost port 27017 using database name wekan. (Snap usually has MongoDB port at 27019, if it's not changed for example with `sudo snap set wekan mongodb-port='27020'`)
@@ -141,8 +142,8 @@ You should always check what distro, node etc version it has, before downloading
 - You see what is newest Node.js 12.x version from [Nodejs.org](https://nodejs.org/en/).
 
 ## Ubuntu 20.04
-
-- [Ubuntu 20.04 Server arm64](http://cdimage.ubuntu.com/ubuntu/releases/20.04/release/) for RasPi3 and RasPi4
+<!-- Batyr Ashim 21.06.2024 -->
+- [Ubuntu 20.04 Server arm64](https://cdimage.ubuntu.com/ubuntu/releases/20.04/release/) for RasPi3 and RasPi4
 - Try [MongoDB Server Community Edition webpage](https://www.mongodb.com/download-center/community) that has Ubuntu 18.04 Linux arm64 server .deb package of MongoDB 4.2.x, or MongoDB 3.6.x from repos
 - Newest Wekan with newest Meteor
 
@@ -184,6 +185,7 @@ With RasPi, you need:
 - Ubuntu SD card inserted to your RasPi.
 - Ethernet cable connected to your router/modem/hub, with connection to Internet.
 - USB keyboard and mouse connected.
+<!-- Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 - Monitor connected to HDMI. Or alternatively, look at your router webpage http://192.168.0.1 (or similar) what is your RasPi IP address, and ssh ubuntu@192.168.0.x with password ubuntu.
 - Power cable.
 
@@ -307,6 +309,7 @@ There add this text:
 NODE_ENV=production
 WITH_API=true
 MONGO_URL=mongodb://127.0.0.1:27017/wekan
+<!-- Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ROOT_URL=http://192.168.0.x
 PORT=80
 ```
@@ -335,8 +338,8 @@ MAIL_FROM='Board Support <wekan@example.com>'
 It is much more recommended to use [email sending service like AWS SES or some other service](Troubleshooting-Mail) that can ensure delivering email correctly, for Wekan email notifications etc.
 
 ## 8. Optional: Nginx and Let's Encrypt SSL
-
-If your router has ports forwarded to your RasPi (in virtual server settings at http://192.168.0.1), then you could also [install nginx and Let's Encrypt SSL](https://github.com/wekan/wekan-bash-install-autoupgrade/blob/master/install.sh) in front of Wekan.
+<!-- Batyr Ashim 21.06.2024 -->
+If your router has ports forwarded to your RasPi (in virtual server settings at https://192.168.0.1), then you could also [install nginx and Let's Encrypt SSL](https://github.com/wekan/wekan-bash-install-autoupgrade/blob/master/install.sh) in front of Wekan.
 
 ## 9. Updating Wekan
 Stop Wekan and move old stuff away:
@@ -378,6 +381,7 @@ Look at what is your IP address at eth0, for example 192.168.0.x, with this comm
 ```
 ip address
 ```
+<!-- Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 You could also login to your router for example at http://192.168.0.1 to set static IP pointing always to your specific RasPi IP address, so that address would not change.
 
 Make start-wekan.sh executeable, and edit it:
@@ -397,10 +401,13 @@ If you would like to run node as non-root user, and still have node at port 80, 
 ```
 which node
 ```
+
 And then adding capability to that path of node, for example:
 ```
 sudo setcap cap_net_bind_service=+ep /usr/local/bin/node
+
 ```
+<!-- Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 Then change to start-wekan.sh:
 ```
 export ROOT_URL=http://192.168.0.x
@@ -494,7 +501,7 @@ mongorestore --drop --noIndexRestore
 And maybe [run as service](https://www.certdepot.net/rhel7-install-wekan/)
 
 Or start at boot, by having [at bottom of /etc/rc.local](https://github.com/wekan/wekan/blob/main/releases/virtualbox/etc-rc.local.txt).
-
+<!-- Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 7) On other computer, with webbrowser go to http://192.168.0.12 (or other of your IP address you changed to start-wekan.sh)
 
 ### How to use bundle

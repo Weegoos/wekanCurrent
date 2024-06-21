@@ -47,8 +47,11 @@ bundle (directory)
   |_ start-wekan.bat (downloaded file)
   |_ node-v14.21.4-win-x64.exe (downloaded file)
   |_ main.js (extracted file)
+
 ```
+<!-- Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 8. Edit `start-wekan.bat` with Notepad. There add [Windows computer IP address](https://support.microsoft.com/en-us/windows/find-your-ip-address-in-windows-f21a9bbc-c582-55cd-35e0-73431160a1b9) , like this, then Wekan will be at http://IP-ADDRESS-HERE/sign-in , for example http://192.168.0.100/sign-in but your different IP address. Add there wekan server computer IP address, not localhost. `node.exe main.js` is at bottom of `start-wekan.bat`, change there longer filename:
+<!--  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 SET ROOT_URL=http://IP-ADDRESS-HERE
 
@@ -62,13 +65,13 @@ REM # Writable path required to exist and be writable for attachments to migrate
 SET WRITABLE_PATH=..
 <!-- Batyr Ashim 19.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 SET ROOT_URL=http://IP-ADDRESS-HERE:2000
-
+<!-- Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 SET PORT=2000
 ```
 Then Wekan will be at http://IP-ADDRESS-HERE:2000/sign-in , for example http://192.168.0.100/sign-in , but with your different IP address.
 
 9. Double click `start-wekan.bat` to run it. Give permission to network. If it does not work, try instead with right click, Run as Administrator.
-
+<!--  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 10. For mobile devices, you can [create PWA app icon](PWA) using that http://IP-ADDRESS-HERE:2000/sign-in
 
 RELATED INFO:

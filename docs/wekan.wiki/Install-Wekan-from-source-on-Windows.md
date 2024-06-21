@@ -22,11 +22,12 @@ Script for using MongoDB portable:
 - https://github.com/wekan/wekan/issues/883#issuecomment-283755906
 
 Requirements:
-- Install [MeteorJS](https://www.meteor.com/) 
+- Install [MeteorJS](https://www.meteor.com/)
 - Install [NodeJS](https://nodejs.org/en/download/releases/) (Optional but recommended)
 - Install Python 2.7 (Installation through Chocolatey(`choco install python2 -y`) is recomended)
 - If you are on windows 7, Install .NET 4.5.1+
-- **MUST MAKE SURE TO** Install [Visual C++ 2015 Build Tools](http://landinghub.visualstudio.com/visual-cpp-build-tools) or run this command from an elevated PowerShell or CMD.exe (run as Administrator) to install, `npm install --global --production windows-build-tools`
+<!-- Batyr Ashim 21.06.2024 -->
+- **MUST MAKE SURE TO** Install [Visual C++ 2015 Build Tools](https://landinghub.visualstudio.com/visual-cpp-build-tools) or run this command from an elevated PowerShell or CMD.exe (run as Administrator) to install, `npm install --global --production windows-build-tools`
 - Install Git
 - Restart Windows (Optional but recommended)
 
@@ -42,7 +43,7 @@ meteor npm config -g set msvs_version 2015
 
 # Running Wekan
 - Clone the repo (`https://github.com/wekan/wekan`)
-- Browse the wekan directory and run `meteor`, 
+- Browse the wekan directory and run `meteor`,
 - If you see any error regarding **xss**, do `meteor npm i --save xss` to install xss.
 - Set the Environment variables, or create a .env file with the following data.
 - open your browser, make changes and see it reflecting real-time.

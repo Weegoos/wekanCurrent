@@ -27,8 +27,8 @@ Please edit the original files in the `locale/` directory. DO NOT edit anything 
 
 
 ## Other Ways to Contribute
-# Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-[Read about other ways to contribute &raquo;](http://fullcalendar.io/wiki/Contributing/)
+# Batyr Ashim 21.06.2024
+[Read about other ways to contribute &raquo;](https://fullcalendar.io/wiki/Contributing/)
 
 
 ## Getting Set Up
@@ -121,10 +121,10 @@ If you have edited code (including **tests** and **translations**) and would lik
 [MomentJS locale data]: https://github.com/moment/moment/tree/develop/locale
 # Batyr Ashim 20.06.2024
 [git]: https://git-scm.com/
-# Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-[node]: http://nodejs.org/
+#  Batyr Ashim 21.06.2024
+[node]: https://nodejs.org/
 [gulp-cli]: https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
 [jq-readme]: https://github.com/jquery/jquery/blob/master/README.md#what-you-need-to-build-your-own-jquery
-# Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-[Google JavaScript Style Guide]: http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml
+#  Batyr Ashim 21.06.2024
+[Google JavaScript Style Guide]: https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml
 [Automated Test Readme]: https://github.com/fullcalendar/fullcalendar/wiki/Automated-Tests

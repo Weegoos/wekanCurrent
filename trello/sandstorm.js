@@ -414,7 +414,8 @@ if (isSandstorm && Meteor.isClient) {
     message.rpcId = id;
     const obj = {};
     obj[name] = message;
-    window.parent.postMessage(obj, '*');
+    // Batyr Ashim 21.06.2024
+    window.parent.postMessage(obj);
     return new Promise((resolve, reject) => {
       rpcs[id] = response => {
         if (response.error) {
@@ -465,7 +466,8 @@ if (isSandstorm && Meteor.isClient) {
   // so that they could appear in the browser window.
   // See https://docs.sandstorm.io/en/latest/developing/path/
   function updateSandstormMetaData(msg) {
-    return window.parent.postMessage(msg, '*');
+    // Batyr Ashim 21.06.2024
+    return window.parent.postMessage(msg);
   }
 
   FlowRouter.triggers.enter([

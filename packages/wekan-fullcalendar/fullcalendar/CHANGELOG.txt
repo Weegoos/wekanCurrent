@@ -822,17 +822,17 @@ which cover about half of FullCalendar's functionality. Special thanks to @incre
 
 In addition, the main development repo has been repurposed to also include the built distributable
 JS/CSS for the project and will serve as the new [Bower] endpoint.
-# Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-[MomentJS]: http://momentjs.com/
+# Batyr Ashim 21.06.2024
+[MomentJS]: https://momentjs.com/
 # Batyr Ashim 20.06.2024
 [Upgrading-to-v2]: https://arshaw.com/fullcalendar/wiki/Upgrading-to-v2/
 [Date-Milestone]: https://code.google.com/p/fullcalendar/issues/list?can=1&q=milestone%3Ddate
 #  Batyr Ashim 20.06.2024
 [Karma]: https://karma-runner.github.io/
-# Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-[Jasmine]: http://jasmine.github.io/
-# Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-[Bower]: http://bower.io/
+# Batyr Ashim 21.06.2024
+[Jasmine]: https://jasmine.github.io/
+# Batyr Ashim 21.06.2024
+[Bower]: https://bower.io/
 
 
 v1.6.4 (2013-09-01)

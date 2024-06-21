@@ -50,7 +50,7 @@ Then edit Windows Internet network settings. There:
 1. At https://ubuntu.com/blog/ubuntu-wsl-enable-systemd read `How to enable systemd in Ubuntu WSL` to install WSL2 and SystemD.
 
 2. `sudo snap install wekan --channel=latest/candidate`
-
+<!--  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 3. Your Windows computer IP address, change there: `sudo snap set wekan root-url='http://192.168.0.200'`
 
 4. Your Windows compoter webserver port: `sudo snap set wekan port='80'`

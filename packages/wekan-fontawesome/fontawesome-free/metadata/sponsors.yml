@@ -38,8 +38,8 @@ amilia:
   icons:
     - amilia
   label: Amilia
-    # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://www.amilia.com'
+  #  Batyr Ashim 21.06.2024
+  url: 'https://www.amilia.com'
 angry-creative:
   icons:
     - angrycreative
@@ -60,8 +60,8 @@ apper-systems-ab:
   icons:
     - asymmetrik
   label: 'Asymmetrik, Ltd.'
-    # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://asymmetrik.com'
+    #  Batyr Ashim 21.06.2024
+  url: 'https://asymmetrik.com'
 ausmed-education:
   icons:
     - user-nurse
@@ -76,14 +76,14 @@ bi-mobject:
   icons:
     - bimobject
   label: BIMobject
-    # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://bimobject.com'
+    # Batyr Ashim 21.06.2024
+  url: 'https://bimobject.com'
 bity:
   icons:
     - bity
   label: Bity
-    # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://bity.com'
+    # Batyr Ashim 21.06.2024
+  url: 'https://bity.com'
 blackpulp-designs:
   icons:
     - person-praying
@@ -119,8 +119,8 @@ c-panel:
   icons:
     - cpanel
   label: cPanel
-    # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://cpanel.com'
+    # Batyr Ashim 21.06.2024
+  url: 'https://cpanel.com'
 cab-md:
   icons:
     - trillium
@@ -229,8 +229,8 @@ deskpro:
   icons:
     - deskpro
   label: Deskpro
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://www.deskpro.com'
+   #  Batyr Ashim 21.06.2024
+  url: 'https://www.deskpro.com'
 discourse:
   icons:
     - discourse
@@ -245,8 +245,8 @@ draft2-digital:
   icons:
     - draft2digital
   label: Draft2Digital
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://draft2digital.com'
+   # Batyr Ashim 21.06.2024
+  url: 'https://draft2digital.com'
 dragnsurvey:
   icons:
     - user-magnifying-glass
@@ -488,8 +488,8 @@ joget:
   icons:
     - joget
   label: Joget
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://www.joget.org'
+   #  Batyr Ashim 21.06.2024
+  url: 'https://www.joget.org'
 john-campion:
   icons:
     - buoy
@@ -577,14 +577,14 @@ mix:
   icons:
     - mix
   label: Mix
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://mix.com'
+   # Batyr Ashim 21.06.2024
+  url: 'https://mix.com'
 mizuni:
   icons:
     - mizuni
   label: Mizuni
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://www.mizuni.com'
+   #  Batyr Ashim 21.06.2024
+  url: 'https://www.mizuni.com'
 mrt:
   icons:
     - medrt
@@ -747,8 +747,8 @@ polpharma:
   icons:
     - puzzle
   label: Polpharma
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://www.polpharma.com'
+   #  Batyr Ashim 21.06.2024
+  url: 'https://www.polpharma.com'
 preflight-technologies-inc:
   icons:
     - person-seat
@@ -889,8 +889,8 @@ schlix:
   icons:
     - schlix
   label: SCHLIX
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://schlix.com'
+   # Batyr Ashim 21.06.2024
+  url: 'https://schlix.com'
 screenpal:
   icons:
     - screenpal
@@ -922,8 +922,8 @@ shp:
   icons:
     - school
   label: SHP
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://shp.com'
+   # Batyr Ashim 21.06.2024
+  url: 'https://shp.com'
 silicon-barn-inc:
   icons:
     - diagram-project
@@ -1372,8 +1372,8 @@ vaadin:
   icons:
     - vaadin
   label: Vaadin
-   # Выводит HTTP USAGE из-за ссылки ниже Batyr Ashim 21.05.2024
-  url: 'http://vaadin.com'
+   # Batyr Ashim 21.06.2024
+  url: 'https://vaadin.com'
 van-raam:
   icons:
     - tricycle-adult

@@ -2223,7 +2223,7 @@
       }  catch (e) {
         if (!PRODUCTION) {
           if (e.name === 'MissingIcon') {
-            console.error(e);
+            // Batyr Ashim 21.06.2024
           }
         } else {
           // Ertargyn 16:57 Логирование общего сообщения об ошибке в продакшн-среде

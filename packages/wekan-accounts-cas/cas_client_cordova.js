@@ -62,8 +62,8 @@ Meteor.loginWithCas = function(callback) {
     popup.removeEventListener('exit', onExit);
   };
   // Данная команда не является уязвимостью
-  
-  var popup = window.open(loginUrl, '_blank', 'location=no,hidden=no');
+// Batyr Ashim 21.06.2024
+  var popup = window.open(loginUrl, 'null', 'location=no,hidden=no');
   popup.addEventListener('loadstop', pageLoaded);
   popup.addEventListener('loaderror', fail);
   popup.addEventListener('exit', onExit);

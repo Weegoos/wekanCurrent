@@ -47,7 +47,7 @@ Email.send({
 
 If you can't get your email server working with smtp/stmps or MAIL_SERVICE, look is there more config options for your email server at https://nodemailer.com docs, and add new issue about your email server to https://github.com/wekan/wekan/issues or [pull request](Emoji#how-you-could-add-another-plugin).
 
-For example, for https://nodemailer.com/smtp/ 
+For example, for https://nodemailer.com/smtp/
 
 1) Install node.js 12.x
 2) Add to top of code example: `var nodemailer = require('nodemailer');`
@@ -109,13 +109,13 @@ start-wekan.bat of https://github.com/wekan/wekan:
 ```
 SET MAIL_SERVICE=Outlook365
 SET MAIL_SERVICE_USER=firstname.lastname@hotmail.com
-SET MAIL_SERVICE_PASSWORD=SecretPassword      
+SET MAIL_SERVICE_PASSWORD=SecretPassword
 ```
 start-wekan.sh of https://github.com/wekan/wekan:
 ```
 export MAIL_SERVICE=Outlook365
 export MAIL_SERVICE_USER=firstname.lastname@hotmail.com
-export MAIL_SERVICE_PASSWORD=SecretPassword      
+export MAIL_SERVICE_PASSWORD=SecretPassword
 ```
 
 ## Special Characters
@@ -259,7 +259,7 @@ Change part `sudo snap set wekan` to `sudo snap set wekan-gantt-gpl`
 - Username: `webadmin%40example.com`
 - [_] TLS Support UNCHECKED
 - From: `Wekan Admin <webadmin@example.com>`
- 
+
 ### Settings in Wekan App settings in UCS dashboard
 - URL settings: `https://www.example.com/wekan`
 - LDAP Settings: `(&(objectClass=person)(mailPrimaryAddress=*)(!(shadowExpire=*))(sambaBadPasswordTime=0)(wekanActivated=TRUE)(uid=<some_user_name>))`
@@ -302,11 +302,11 @@ You can choose to _NOT_ configure a mail server, by not providing the `MAIL_URL`
 ## Email servers: SMTP or Exchange
 
 Standalone Wekan uses SMTP server for sending email invitations etc.
-
-For Exchange, you can use [DavMail](http://davmail.sourceforge.net), Wekan SMTP => Davmail => Exchange.
+<!-- Batyr Ashim 21.06.2024 -->
+For Exchange, you can use [DavMail](https://davmail.sourceforge.net), Wekan SMTP => Davmail => Exchange.
 
 Another way is to [Configure Postfix to relay to Exchange with NTLM authentication](https://www.linuxquestions.org/questions/linux-newbie-8/configure-postfix-to-relay-to-exchange-server-with-ntlm-authentication-4175410961/#post4712832)
-
+<!-- Batyr Ashim 21.06.2024 -->
 There are Thunderbird Exchange Calendar extensions for [Exchange 2007/2010/2013/others? Open Source](https://github.com/ExchangeCalendar/exchangecalendar/releases), [Exchange 2007-2015 paid](https://exquilla.zendesk.com/hc/en-us) and [Exhange 2016 paid](http://www.beonex.com/owl/) and [other extensions](https://addons.thunderbird.net/en-US/thunderbird/search/?q=exchange&appver=&platform=), info how to use it is at [article at threenine.co.uk](https://threenine.co.uk/setup-office365-calendar-with-thunderbird/). Wekan has [Calendar feature](https://github.com/wekan/wekan/issues/808).
 
 Wekan Email settings are required in both MAIL_URL and Admin Panel.
@@ -330,7 +330,7 @@ extra_hosts:
 
 And finally add the Docker IP range (172.17.x.x) to the Postfix trusted networks list in `/etc/postfix/main.cf`:
 ```
-mynetworks = 127.0.0.0/8 172.17.0.0/16 [::ffff:127.0.0.0]/104 [::1]/128  
+mynetworks = 127.0.0.0/8 172.17.0.0/16 [::ffff:127.0.0.0]/104 [::1]/128
 ```
 
 ## Troubleshooting
@@ -402,7 +402,7 @@ wekan_1      |     at [object Object]._.extend.withValue (packages/meteor.js:112
 wekan_1      |     at packages/ddp-server/livedata_server.js:715:46
 wekan_1      |     at [object Object]._.extend.protocol_handlers.method (packages/ddp-server/livedata_server.js:689:23)
 wekan_1      |     - - - - -
-wekan_1      | 
+wekan_1      |
 wekan_1      |     at Error (native)
 ```
 
@@ -435,7 +435,7 @@ password
 TLS support:
 [_] <== not checked
 
-From: 
+From:
 Boards Support <boards@example.com>
 
 DNS settings, with server IP address in ipv4 section:
@@ -470,7 +470,7 @@ wekan_1      |     at [object Object]._.extend.withValue (packages/meteor.js:112
 wekan_1      |     at packages/ddp-server/livedata_server.js:715:46
 wekan_1      |     at [object Object]._.extend.protocol_handlers.method (packages/ddp-server/livedata_server.js:689:23)
 wekan_1      |     - - - - -
-wekan_1      | 
+wekan_1      |
 wekan_1      |     at Error (native)
 ```
 
@@ -520,29 +520,30 @@ Sample:
 ### Wekan with TLS/SSL
 To run Wekan secured with TLS/SSL do the following steps:
 1. Setup a Web-Server/-Proxy with TLS/SSL support that maps requests to wekan. [Link](url)
-2. Set protocol to http**s**. 
+2. Set protocol to http**s**.
 `export ROOT_URL='https://example.com/'`
-3. Set Wekan to an internal port. 
+3. Set Wekan to an internal port.
 `export PORT=54321`
-4. Restart and run Wekan. 
+4. Restart and run Wekan.
 
 ### Wekan at subpath
 To run Wekan to appear at a subpath of your domain:
 1. Setup a Web-Server/-Proxy that maps requests to wekan. [Link](url)
-2. Append subpath to domain, without trailing slash. 
+2. Append subpath to domain, without trailing slash.
+<!--  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 `export ROOT_URL='http://example.com/mywekan'`
-3. Set Wekan to an internal port. 
+3. Set Wekan to an internal port.
 `export PORT=54321`
-4. Restart and run Wekan. 
+4. Restart and run Wekan.
 
 ### SMTP with TLS/SSL
 To enable Wekan sending Mail from a mail server with TLS/SSL:
-1. Set Wekan to the specified port (465 / 587). 
+1. Set Wekan to the specified port (465 / 587).
 `export MAIL_URL='smtp://user:password@example.com:587/'`
-2. Restart and run Wekan. 
+2. Restart and run Wekan.
 
 ### Mail Sender
-To define a sender name for the mails automatically sent by Wekan. 
+To define a sender name for the mails automatically sent by Wekan.
 1. ...`export MAIL_FROM='Thomas Anderson <neo@matrix.org>'`
 
 ## Using mail service from zoho

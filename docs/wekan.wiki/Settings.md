@@ -15,17 +15,18 @@ wekan root-url='http://192.168.0.100'`
 * [Caddy](Caddy-Webserver-Config)
 
 Examples:
-
 1) nginx SSL or without SSL, available at internet:
 - root-url='https://example.com'   or https://example.com/something or https://something.example.com , or with http
 - port='3001'
 - [Nginx example, proxying to local port 3001](Nginx-Webserver-Config)
 => Wekan at https://example.com
-
+<!-- Batyr Ashim 21.06.2024 -->
 2) only wekan, no SSL, internal lan, caddy not enabled:
-- root-url='http://192.168.1.150'
+<!-- Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
+- root-url='https://192.168.1.150'
 - port='80'
-=> Wekan locally http://192.168.1.150
+<!-- <!-- Batyr Ashim 21.06.2024 --> -->
+=> Wekan locally https://192.168.1.150
 
 3) only wekan, no SSL, internal lan, caddy not enabled, wekan at different port:
 <!-- Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->

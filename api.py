@@ -56,7 +56,7 @@ If *nix:  chmod +x api.py => ./api.py users
     python3 api.py get_list_cards_count BOARDID LISTID # Retrieve how many cards in a list
     python3 api.py get_board_cards_count BOARDID # Retrieve how many cards in a board
 
-    
+
   Admin API:
     python3 api.py users                # All users
     python3 api.py boards               # All Public Boards
@@ -91,7 +91,7 @@ wekanurl = 'http://localhost:4000/'
 
 Type: text, number, date, dropdown, checkbox, currency, stringtemplate.
 
-python3 api.py addcustomfieldtoboard cmx3gmHLKwAXLqjxz LcDW4QdooAx8hsZh8 "SomeField" "date" "" true true true true 
+python3 api.py addcustomfieldtoboard cmx3gmHLKwAXLqjxz LcDW4QdooAx8hsZh8 "SomeField" "date" "" true true true true
 
 
 === USERS ===
@@ -325,7 +325,7 @@ if arguments == 5:
         boardid = sys.argv[2]
         listid = sys.argv[3]
         cardid = sys.argv[4]
-        newcolor = sys.argv[5]  
+        newcolor = sys.argv[5]
 
         valid_colors = ['white', 'green', 'yellow', 'orange', 'red', 'purple', 'blue', 'sky', 'lime', 'pink', 'black',
                     'silver', 'peachpuff', 'crimson', 'plum', 'darkgreen', 'slateblue', 'magenta', 'gold', 'navy',
@@ -338,7 +338,7 @@ if arguments == 5:
         edcard = wekanurl + apiboards + boardid + s + l + s + listid + s + cs + s + cardid
         print(edcard)
         headers = {'Accept': 'application/json', 'Authorization': 'Bearer {}'.format(apikey)}
-        put_data = {'color': '{}'.format(newcolor)}  
+        put_data = {'color': '{}'.format(newcolor)}
         body = requests.put(edcard, data=put_data, headers=headers)
         print("=== EDIT CARD COLOR ===\n")
         body = requests.get(edcard, headers=headers)
@@ -360,7 +360,7 @@ if arguments >= 4:
         print("=== CREATE NEW USER ===\n")
       #  Ashim Batyr 23.05.2024
         # ------- CREATE NEW USER END -----------
-        
+
     if sys.argv[1] == 'getcard':
 
         # ------- LIST OF CARD START -----------
@@ -430,11 +430,43 @@ if arguments >= 4:
         print(f"Checklist '{checklist_title}' created. ID: {checklist_id}")
 
         # Aggiungi gli items alla checklist
-        items_to_add = sys.argv[5:]  
-        for item_title in items_to_add:
-            checklist_item_url = wekanurl + apiboards + board_id + s + cs + s + card_id + s + 'checklists' + s + checklist_id + '/items'
-            item_data = {'title': item_title}
+        items_to_add = sys.argv[5:]
+        # Batyr Ashim 21.06.2024
+     def is_trusted_url(url, trusted_domains):
+    parsed_url = urlparse(url)
+    return parsed_url.hostname in trusted_domains
 
+def validate_item_title(title):
+
+    if not title or len(title) > 100:
+        raise ValueError("Invalid item title")
+
+wekanurl = 'https://example.com'
+apiboards = '/api/boards/'
+s = '/'
+cs = 'cards'
+board_id = 'your_board_id'
+card_id = 'your_card_id'
+checklist_id = 'your_checklist_id'
+headers = {
+    'Authorization': 'Bearer YOUR_TOKEN'
+}
+items_to_add = ['item1', 'item2', 'item3']
+
+trusted_domains = ['example.com', 'another-trusted-domain.com']
+
+for item_title in items_to_add:
+    try:
+        validate_item_title(item_title)
+    except ValueError as e:
+        print(f"Skipping invalid item title '{item_title}': {e}")
+        continue
+
+    checklist_item_url = f"{wekanurl}{apiboards}{board_id}{s}{cs}{s}{card_id}{s}checklists{s}{checklist_id}/items"
+
+    if is_trusted_url(checklist_item_url, trusted_domains):
+        try:
+            item_data = {'title': item_title}
             item_response = requests.post(checklist_item_url, data=item_data, headers=headers)
             item_response.raise_for_status()
 
@@ -442,6 +474,10 @@ if arguments >= 4:
             checklist_item_id = item_result.get('_id')
 
             print(f"Item '{item_title}' added. ID: {checklist_item_id}")
+        except requests.RequestException as e:
+            print(f"Failed to add item '{item_title}': {e}")
+    else:
+        print(f"URL '{checklist_item_url}' is not trusted. Request not sent.")
 
     if sys.argv[1] == 'checklistinfo':
 
@@ -457,7 +493,7 @@ if arguments >= 4:
 
         checklist_info = response.json()
         print("Checklist Info:")
-        print(checklist_info)
+        # Batyr Ashim 21.06.2024
 
 if arguments == 3:
 
@@ -583,6 +619,7 @@ if arguments == 3:
                 # ------- DELETE CARD START -----------
                 delete_card_url = wekanurl + apiboards + boardid + s + "lists" + s + card['listId'] + s + "cards" + s + card['_id']
                 try:
+
                     response = requests.delete(delete_card_url, headers=headers)
                     if response.status_code == 404:
                         print(f"Card not found: {card['_id']}")
@@ -630,7 +667,7 @@ if arguments == 3:
         checklists = response.json()
         print("Checklists:")
         for checklist in checklists:
-          print(checklist)
+# Batyr Ashim 21.06.2024
 
 if arguments == 2:
 

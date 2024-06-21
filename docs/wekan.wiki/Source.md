@@ -29,7 +29,8 @@ Wekan for Sandstorm:
 - Add to your /home/username/.bashrc : <br /> `export PATH=$PATH:$HOME/projects/meteor-spk/meteor-spk-0.4.0`
 - Close and open your terminal, or read settings from .bashrc with<br />`source ~/.bashrc`
 - `cd wekan && meteor-spk dev`
-- Then Wekan will be visible at local sandstorm at http://local.sandstorm.io:6080/
+<!-- Batyr Ashim 21.06.2024 -->
+- Then Wekan will be visible at local sandstorm at https://local.sandstorm.io:6080/
 - Sandstorm commands: `sudo sandstorm`. [Release scripts](https://github.com/wekan/wekan-maintainer/tree/master/releases). Official releases require publishing key that only xet7 has.
 
 Docker:

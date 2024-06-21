@@ -177,7 +177,7 @@ window.ExportHtml = Popup => {
           }
         }
       } catch (e) {
-          console.log('Access to stylesheet blocked:', e);
+          // Batyr Ashim 21.06.2024
       }
     }
 

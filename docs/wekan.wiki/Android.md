@@ -30,6 +30,7 @@ If you connect to WLAN, you can get your IP address with command:
 ip address
 ```
 Edit start-wekan.sh so you can start Wekan for example:
+<!--  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 ROOT_URL=http://IP-ADDRESS:2000
 PORT=2000

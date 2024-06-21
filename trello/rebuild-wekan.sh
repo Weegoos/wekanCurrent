@@ -168,7 +168,7 @@ do
 		#---------------------------------------------------------------------
 		break
 		;;
-
+#  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
     "Run Meteor for dev on http://CURRENT-IP-ADDRESS:4000 with MONGO_URL=mongodb://127.0.0.1:27019/wekan")
                 if [[ "$OSTYPE" == "darwin"* ]]; then
                   IPADDRESS=$(ifconfig | grep broadcast | grep 'inet ' | cut -d: -f2 | awk '{ print $2}' | cut -d '/' -f 1 | grep '192.')
@@ -181,6 +181,7 @@ do
                 #---------------------------------------------------------------------
                 #Logging of terminal output to console and to ../wekan-log.txt at end of this line: 2>&1 | tee ../wekan-log.txt
                 #WARN_WHEN_USING_OLD_API=true NODE_OPTIONS="--trace-warnings"
+								#  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
                 MONGO_URL=mongodb://127.0.0.1:27019/wekan WRITABLE_PATH=.. WITH_API=true RICHER_CARD_COMMENT_EDITOR=false ROOT_URL=http://$IPADDRESS:4000 meteor run --exclude-archs web.browser.legacy,web.cordova --port 4000 2>&1 | tee ../wekan-log.txt
                 #---------------------------------------------------------------------
                 break
@@ -192,6 +193,7 @@ do
 		read IPADDRESS
 		echo "On what port you would like to run Wekan?"
 		read PORT
+		# Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
 		echo "ROOT_URL=http://$IPADDRESS:$PORT"
 		#---------------------------------------------------------------------
 		#Not in use, could increase RAM usage: NODE_OPTIONS="--max_old_space_size=4096"

@@ -180,7 +180,6 @@ do
 		WITH_API=true RICHER_CARD_COMMENT_EDITOR=false ROOT_URL=https://$IPADDRESS:4000 meteor run --exclude-archs web.browser.legacy,web.cordova --port 4000
 		break
 		;;
-	#  Выходит HTTP usage из-за ссылки http://CUSTOM-IP-ADDRESS:PORT Batyr Ashim 19.06.2024
     "Run Meteor for dev on http://CUSTOM-IP-ADDRESS:PORT")
 		ip address
 		echo "From above list, what is your IP address?"

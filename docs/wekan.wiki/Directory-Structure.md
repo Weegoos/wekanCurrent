@@ -55,7 +55,8 @@ Files in this directory are served by meteor as-is to the client. It hosts some 
 * **[users](https://github.com/wekan/wekan/tree/main/client/components/users)**:
   * **[userAvatar.jade](https://github.com/wekan/wekan/tree/main/client/components/users/userAvatar.jade)**: `userAvatar`, `userAvatarInitials`, `userPopup`, `memberName`, `changeAvatarPopup`, `cardMemberPopup`
   * **[userHeader.jade](https://github.com/wekan/wekan/tree/main/client/components/users/userHeader.jade)**: `headerUserBar`, `memberMenuPopup`, `editProfilePopup`, `editNotificationPopup`, `changePasswordPopup`, `changeLanguagePopup`, `changeSettingsPopup`;
-* **[mixins](https://github.com/wekan/wekan/tree/main/client/components/mixins)**: [extends](http://www.meteorpedia.com/read/Infinite_Scrolling) **[infiniteScrolling.js](https://github.com/wekan/wekan/tree/main/client/components/mixins/infiniteScrolling.js)** for card details, sidebar and also extends **[perfectScrollbar.js](https://github.com/wekan/wekan/tree/main/client/components/mixins/perfectScrollbar.js)**;
+  <!-- Batyr Ashim 21.06.2024 -->
+* **[mixins](https://github.com/wekan/wekan/tree/main/client/components/mixins)**: [extends](https://www.meteorpedia.com/read/Infinite_Scrolling) **[infiniteScrolling.js](https://github.com/wekan/wekan/tree/main/client/components/mixins/infiniteScrolling.js)** for card details, sidebar and also extends **[perfectScrollbar.js](https://github.com/wekan/wekan/tree/main/client/components/mixins/perfectScrollbar.js)**;
 
 ## config
 

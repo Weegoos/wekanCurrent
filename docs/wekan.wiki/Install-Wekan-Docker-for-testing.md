@@ -1,7 +1,8 @@
 **Purpose**: just to try Wekan on your own Linux workstation
 <!-- Batyr Ashim 20.06.2024 -->
 1. [Install Docker](https://docs.docker.com/linux/step_one/)
-1. [Install Docker-Compose](http://docs.docker.com/compose/install/)
+<!-- Batyr Ashim 21.06.2024 -->
+1. [Install Docker-Compose](https://docs.docker.com/compose/install/)
 1. Say we want to save our Wekan data on the host in directory `/home/johndoe/wekan/data`
 1. In a given directory (say `/home/johndoe/wekan`), create a `docker-compose.yml` file with:
 

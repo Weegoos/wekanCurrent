@@ -40,6 +40,7 @@ https://github.com/wekan/wekan/blob/main/docker-compose.yml-arm64#L185
 5. Save and exit: Cmd-o Enter Cmd-x.
 
 6. Start WeKan:
+<!--  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 docker-compose up -d -f docker-compose.yml-arm64
 ```
@@ -66,6 +67,7 @@ arch -x86_64 meteor npm install --save @babel/runtime
 3a) Run Meteor on localhost port 4000:
 ```
 WRITABLE_PATH=.. WITH_API=true RICHER_CARD_COMMENT_EDITOR=false arch -x86_64 meteor --port 4000
+<!--  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 3b) Run Meteor on computer IP address on local network port 4000:
 ```

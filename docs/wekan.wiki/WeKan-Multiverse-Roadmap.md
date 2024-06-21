@@ -151,7 +151,8 @@ or have Javascript disabled for security reasons.
 
 - Optionally, use some transpiler:
   - https://en.wikipedia.org/wiki/Source-to-source_compiler
-  - Haxe https://haxe.org , with HaxeUI [GUI/WebUI](http://haxeui.org/) and [TUI](https://github.com/haxeui/haxeui-pdcurses)
+  <!-- Batyr Ashim 21.06.2024 -->
+  - Haxe https://haxe.org , with HaxeUI [GUI/WebUI](https://haxeui.org/) and [TUI](https://github.com/haxeui/haxeui-pdcurses)
   - Wax https://github.com/xet7/wax
   - Nim https://nim-lang.org
   - V https://vlang.io

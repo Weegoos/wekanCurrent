@@ -11,8 +11,7 @@ if (process.env.OAUTH2_CA_CERT !== undefined) {
         }
     } catch(e) {
       console.log('WARNING: failed loading CA certificate');
-      // Ertargyn тут было изменено способ обработки ошибки без подробностей
-      console.error(e.message); // Запись только сообщения об ошибке без деталей
+      // Batyr Ashim 21.06.2024
   }
 }
 var profile = {};
@@ -182,7 +181,8 @@ if (process.env.ORACLE_OIM_ENABLED === 'true' || process.env.ORACLE_OIM_ENABLED 
       // if the http response was a json object with an error attribute
       throw new Error("Failed to complete handshake with OIDC " + serverTokenEndpoint + ": " + response.data.error);
     } else {
-      if (debug) console.log('XXX: getToken response: ', response.data);
+      if (debug)
+        // Batyr Ashim 21.06.2024
       return response.data;
     }
   };
@@ -247,8 +247,8 @@ if (process.env.ORACLE_OIM_ENABLED === 'true' || process.env.ORACLE_OIM_ENABLED 
     } else {
       // eslint-disable-next-line no-console
       if (debug) {
-        //Ertargyn 10:21 23.05.2024 Логирование общего сообщения без чувствительной
-        console.log('XXX: getToken response: ', response.data);
+        //Batyr Ashim 21.06.2024
+
       }
       return response.data;
     }
@@ -283,8 +283,7 @@ var getUserInfo = function (accessToken) {
                    {response: err.response});
   }
   if (debug) {
-    //Ertargyn 10:21 23.05.2024 Логирование общего сообщения без чувствительной
-   console.log('XXX: getUserInfo response: ', response.data);
+    //Batyr Ashim 21.06.2024
   }
   return response.data;
 };

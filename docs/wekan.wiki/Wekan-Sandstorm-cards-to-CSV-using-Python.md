@@ -46,7 +46,8 @@ import datetime
 from time import sleep
 import time
 from selenium import webdriver
-#drive.get('http://www.google.com/');
+<!-- Batyr Ashim 21.06.2024 -->
+#drive.get('https://www.google.com/');
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC

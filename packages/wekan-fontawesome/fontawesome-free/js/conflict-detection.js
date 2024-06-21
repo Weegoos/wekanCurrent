@@ -764,27 +764,25 @@
       };
       // Ertargyn 10:51 23.05.2024 Использование textContent: Вместо innerHTML
       var parentOrigin = WINDOW.location.origin === 'file://' ? '*' : WINDOW.location.origin;
-<<<<<<< HEAD
-=======
       diagScript.innerText = "(".concat(diagScriptFun.toString(), ")('").concat(nodeUnderTestId, "', '").concat(testIconId || 'foo', "', '").concat(hash, "', '").concat(parentOrigin, "');");
->>>>>>> origin/asset
+
 
       // Создаем элемент <script>
       var scriptElement = document.createElement('script');
-      
+
       // Устанавливаем содержимое скрипта
       var scriptContent = "(" + diagScriptFun.toString() + ")('" + nodeUnderTestId + "', '" + (testIconId || 'foo') + "', '" + md5 + "', '" + parentOrigin + "');";
       scriptElement.textContent = scriptContent;
-      
+
       diagFrame.onload = function () {
         diagFrame.contentWindow.addEventListener('error', silenceErrors, true);
-        
+
         // Добавляем созданный скрипт в <head> документа внутри iframe
         diagFrame.contentDocument.head.appendChild(scriptElement);
         diagFrame.contentDocument.head.appendChild(scriptOrLinkTag);
         diagFrame.contentDocument.body.appendChild(iTag);
       };
-      
+
 
       domready(function () {
         return DOCUMENT.body.appendChild(diagFrame);

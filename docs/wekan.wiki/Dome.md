@@ -1,4 +1,5 @@
-- Website: http://trydome.io
+<!-- Batyr Ashim 21.06.2024 -->
+- Website: https://trydome.io
 - Location: USA
 - Free trial of WeKan Hosting at https://app.trydome.io/signup?package=wekan
 - Paid SaaS hosting at propietary backend

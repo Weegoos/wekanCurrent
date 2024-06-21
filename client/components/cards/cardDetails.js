@@ -1481,18 +1481,18 @@ EscapeActions.register(
     if (ReactiveCache.getCurrentUser().profile.rescueCardDescription === true) {
       const currentDescriptionElement = document.getElementsByClassName("editor js-new-description-input").item(0);
       const currentCard = Utils.getCurrentCard();
-    
+
       if (currentDescriptionElement?.value && !(currentDescriptionElement.value === currentCard.getDescription())) {
         if (confirm(TAPi18n.__('rescue-card-description-dialogue'))) {
           const newDescription = currentDescriptionElement.value;
           currentCard.setDescription(newDescription);
           // Save it!
-        
+
           // Use a predefined message and limit the length of the logged value to avoid data leaks
           const maxLength = 100; // Limit length to 100 characters
           const truncatedDescription = newDescription.length > maxLength ? newDescription.substring(0, maxLength) + '...' : newDescription;
 
-          console.log("New card description saved. Truncated description:", truncatedDescription);
+          // Batyr Ashim 21.06.2024
           console.log("Current description:", currentCard.getDescription());
         } else {
           // Do nothing!

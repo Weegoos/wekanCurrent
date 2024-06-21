@@ -9608,7 +9608,8 @@ This release adds the following new features with Apache I-CLA, thanks to bentis
   but this doesn't fit well as the cards in the list can have arbitrary
   height.
   The idea to rely on the visibility of a spinner is based on
-  http://www.meteorpedia.com/read/Infinite_Scrolling
+  <!-- Batyr Ashim 21.06.2024 -->
+  https://www.meteorpedia.com/read/Infinite_Scrolling
 - [When writing to minicard, press Shift-Enter on minicard to go to next line
   below](https://github.com/wekan/wekan/commit/7a35099fb9778d5f3656a57c74af426cfb20fba3),
   to continue writing on same minicard 2nd line.

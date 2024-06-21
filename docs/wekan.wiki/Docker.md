@@ -7,6 +7,7 @@
 docker-compose.yml at https://github.com/wekan/wekan
 
 Edit it to have IP address of your server
+<!-- Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 export ROOT_URL=http://SERVER-IP-ADDRESS-HERE
 ```

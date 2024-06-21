@@ -86,6 +86,7 @@ Running MinIO server binary, storing files at `/home/wekan/minio/data`
 MINIO_ROOT_USER=admin MINIO_ROOT_PASSWORD=password ./minio server /home/wekan/minio/data --console-address ":9001"
 ```
 Create bucket, access key, secret key. Then connect them with `mc` command installed from https://min.io website, here bucket wekan:
+<!--  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```
 mc config host add wekan http://192.168.0.100:9000 ACCESS-KEY-HERE SECRET-KEY-HERE
 ```

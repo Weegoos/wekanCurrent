@@ -43,7 +43,7 @@ When a card is moved beweteen lists
 ### Archival
 
 A card is moved to archive
-
+<!-- Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```json
 {
   "text": "{{wekan-username}} Card \"{{card-title}}\" at list \"{{list-name}}\" at swimlane \"{{swimlane-name}}\" at board \"{{board-name}}\" moved to Archive\nhttp://{{wekan-host}}/b/{{board-id}}/{{board-name}}/{{card-id}}",
@@ -98,7 +98,7 @@ A user comments the card
 ### Comment edit
 
 A user edits a comment on the card
-
+<!--  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```json
 {
   "text": "{{wekan-username}} commented on card \"{{card-title}}\": \"{{comment}}\" at list __list__ at swimlane __swimlane__ at board \"{{board-name}}\"\nhttp://{{wekan-host}}/b/{{board-id}}/{{board-name}}/{{card-id}}",
@@ -134,7 +134,7 @@ A label is added to card
 ### Join member
 
 When a member is added to card
-
+<!--  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```json
 {
   "text": "{{wekan-username}} added member {{wekan-username}} to card \"{{card-title}}\" at list \"{{list-name}}\" at swimlane \"{{swimlane-name}}\" at board \"{{board-name}}\"\nhttp://{{wekan-host}}/b/{{board-id}}/{{board-name}}/{{card-id}}",
@@ -190,7 +190,7 @@ A custom field on card is set
 ```
 
 ### Add checklist
-
+<!--  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```json
 {
   "text": "{{wekan-username}} added checklist \"{{checklist-name}}\" to card \"{{card-title}}\" at list __list__ at swimlane __swimlane__ at board \"{{board-name}}\"\nhttp://{{wekan-host}}/b/{{board-id}}/{{board-name}}/{{card-id}}",
@@ -242,7 +242,7 @@ A custom field on card is set
 ```
 
 ### Checked item
-
+<!--  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```json
 {
   "text": "{{wekan-username}} checked {{checklist-name}} of checklist \"{{checklist-name}}\" at card \"{{card-title}}\" at list __list__ at swimlane __swimlane__ at board \"{{board-name}}\"\nhttp://{{wekan-host}}/b/{{board-id}}/{{board-name}}/{{card-id}}",
@@ -299,7 +299,7 @@ Webhooks that are raised on list events
 ```
 
 ### Archived list
-
+<!--  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```json
 {
   "text": "{{wekan-username}} List \"{{list-name}}\" at swimlane __swimlane__ at board \"{{board-name}}\" moved to Archive\nhttp://{{wekan-host}}/b/{{board-id}}/{{board-name}}",
@@ -325,7 +325,7 @@ Webhooks that are raised on list events
 ## Swimlane
 
 ### Create swimlane
-
+<!-- Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```json
 {
   "text": "{{wekan-username}} created swimlane \"{{swimlane-name}}\" to board \"{{board-name}}\"\nhttp://{{wekan-host}}/b/{{board-id}}/{{board-name}}",
@@ -349,7 +349,7 @@ Webhooks that are raised on list events
 ```
 
 ### Remove swimlane
-
+<!--  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 ```json
 {
   "text": "{{wekan-username}} act-removeSwimlane\nhttp://{{wekan-host}}/b/{{board-id}}/{{board-name}}",

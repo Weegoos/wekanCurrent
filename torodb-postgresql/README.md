@@ -30,7 +30,7 @@ ToroDB is compatible with MongoDB 3.0. WeKan 7.x is compatible with MongoDB 6.x.
 git clone https://github.com/wekan/wekan
 cd torodb-postgresql
 ```
-
+<!-- Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 3) IMPORTANT: In docker-compose.yml, to use Wekan on local network, change ROOT_URL=http://localhost to http://IPADRESS like http://192.168.10.100 or http://example.com
 
 4) OPTIONAL: In docker-compose.yml, change PostgreSQL database name, username and password from wekan to something else.
@@ -48,6 +48,7 @@ docker-compose up -d
    Username: wekan, Password: wekan , or others if you changed those at docker-compose.yml.
    Do not write to PostgreSQL, as it's readonly mirror. Write to MongoDB or make
    changes in Wekan. If server port 15432 open, PostgreSQL can be accessed also
+   <!--  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
    remotely at local network at http://IPADDRESS:15432/wekan
 
 8) MongoDB is at 127.0.0.1:28017

@@ -126,6 +126,7 @@ http://example.com {
 }
 
 # Wekan redirect to SSL
+<!--  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
 http://boards.example.com {
   redir https://boards.example.com
 }

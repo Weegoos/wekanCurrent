@@ -203,7 +203,9 @@ services:
       #---------------------------------------------------------------
       # == ROOT_URL SETTING ==
       # Change ROOT_URL to your real Wekan URL, for example:
+      <!-- Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
       #   http://example.com
+      <!-- Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
       #   http://example.com/wekan
       <!-- Batyr Ashim 20.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта -->
       #   http://192.168.1.100
@@ -319,7 +321,8 @@ services:
       - LDAP_BACKGROUND_SYNC=false
       # LDAP_BACKGROUND_SYNC_INTERVAL : At which interval does the background task sync
       # example : LDAP_BACKGROUND_SYNC_INTERVAL='every 15 minutes'
-      # for more info: http://bunkat.github.io/later/parsers.html#text
+      <!-- Batyr Ashim 2 -->
+      # for more info: https://bunkat.github.io/later/parsers.html#text
       - LDAP_BACKGROUND_SYNC_INTERVAL='every 1 hour'
       # LDAP_BACKGROUND_SYNC_KEEP_EXISTANT_USERS_UPDATED :
       # example : LDAP_BACKGROUND_SYNC_KEEP_EXISTANT_USERS_UPDATED=true

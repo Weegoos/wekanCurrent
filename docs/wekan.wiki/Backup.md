@@ -162,7 +162,7 @@ apt install nano
 ```bash
 export EDITOR=nano
 ```
-4. Now we start editing cron scheduler. 
+4. Now we start editing cron scheduler.
 ```bash
 crontab -e
 ```
@@ -395,6 +395,7 @@ matomo.example.com {
 }
 
 # Example CloudFlare free wildcard SSL Origin Certificate, there is example.com.pem at certificates directory with private key at to and cert at bottom.
+#  Batyr Ashim 21.06.2024 я не могу менять так как это не проблема, это нужная ссылка проекта
 http://example.com https://example.com {
         tls {
             load /var/snap/wekan/common/certificates
@@ -658,7 +659,7 @@ makesRestore()
     printf "\nMakes the untar of the archive.\n"
     tar -zxvf $file
     file="${file:0:${#file}-7}"
-    
+
     # Gets the version of the snap.
     version=$(snap list | grep wekan | awk -F ' ' '{print $3}')
 
@@ -722,7 +723,7 @@ Redash works with this kind of queries:
 		"_id": 1,
 		"booleanValue": 1,
 		"createdAt": 1,
-		"modifiedAt": 1,		
+		"modifiedAt": 1,
 	}
 }
 ```
@@ -747,7 +748,7 @@ It looks like this:
 
 https://redash.example.com/api/queries/1/results.json?api_key=...
 
-5) Only when saving first collection/table, Save API key to text file script like this `dl.sh` 
+5) Only when saving first collection/table, Save API key to text file script like this `dl.sh`
 ```bash
 #!/bin/bash
 
